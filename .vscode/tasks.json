@@ -1,0 +1,93 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "maven: compile",
+            "type": "shell",
+            "command": "mvn compile",
+            "group": "build",
+            "problemMatcher": "$maven-compiler-gcc",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "maven: clean compile",
+            "type": "shell",
+            "command": "mvn clean compile",
+            "group": "build",
+            "problemMatcher": "$maven-compiler-gcc",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "maven: test",
+            "type": "shell",
+            "command": "mvn test",
+            "group": "test",
+            "problemMatcher": "$maven-compiler-gcc",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "maven: clean test",
+            "type": "shell",
+            "command": "mvn clean test",
+            "group": "test",
+            "problemMatcher": "$maven-compiler-gcc",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "maven: package",
+            "type": "shell",
+            "command": "mvn package",
+            "group": "build",
+            "problemMatcher": "$maven-compiler-gcc",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "maven: clean install",
+            "type": "shell",
+            "command": "mvn clean install",
+            "group": "build",
+            "problemMatcher": "$maven-compiler-gcc",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "maven: run app",
+            "type": "shell",
+            "command": "mvn exec:java -Dexec.mainClass=\"com.zombicide.missiongen.App\"",
+            "group": "none",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "maven: clean",
+            "type": "shell",
+            "command": "mvn clean",
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        }
+    ]
+}

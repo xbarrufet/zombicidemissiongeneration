@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug App (Current File)",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug Mission Generation App",
+            "request": "launch",
+            "mainClass": "com.zombicide.missiongen.App",
+            "projectName": "mission-generation",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "java",
+            "name": "Run Mission Generation App",
+            "request": "launch",
+            "mainClass": "com.zombicide.missiongen.App",
+            "projectName": "mission-generation",
+            "console": "integratedTerminal",
+            "noDebug": true
+        },
+        {
+            "type": "java",
+            "name": "Debug All Tests",
+            "request": "launch",
+            "mainClass": "",
+            "projectName": "mission-generation",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": "test",
+            "preLaunchTask": "maven: test"
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "edition": "2ndEdition",
+    "collection": "original",
+    "imagePath": "assets/editions/2ndEdition/0_original/tileImages/8V.png",
+    "tileName": "8V",
+    "areas": [
+        {
+            "id": 1,
+            "x": 5,
+            "y": 7,
+            "width": 102,
+            "height": 132,
+            "areaType": "INDOOR"
+        },
+        {
+            "id": 2,
+            "x": 4,
+            "y": 148,
+            "width": 105,
+            "height": 95,
+            "areaType": "INDOOR"
+        },
+        {
+            "id": 3,
+            "x": 116,
+            "y": 7,
+            "width": 52,
+            "height": 92,
+            "areaType": "INDOOR"
+        },
+        {
+            "id": 4,
+            "x": 116,
+            "y": 106,
+            "width": 52,
+            "height": 138,
+            "areaType": "INDOOR"
+        },
+        {
+            "id": 5,
+            "x": 176,
+            "y": 2,
+            "width": 71,
+            "height": 73,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 6,
+            "x": 177,
+            "y": 79,
+            "width": 71,
+            "height": 93,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 7,
+            "x": 177,
+            "y": 176,
+            "width": 70,
+            "height": 71,
+            "areaType": "BASIC"
+        }
+    ],
+    "connections": [
+        {
+            "areaA": 1,
+            "areaB": 2
+        },
+        {
+            "areaA": 1,
+            "areaB": 3
+        },
+        {
+            "areaA": 2,
+            "areaB": 4
+        },
+        {
+            "areaA": 3,
+            "areaB": 4
+        },
+        {
+            "areaA": 4,
+            "areaB": 6
+        },
+        {
+            "areaA": 5,
+            "areaB": 6
+        },
+        {
+            "areaA": 6,
+            "areaB": 7
+        }
+    ]
+}

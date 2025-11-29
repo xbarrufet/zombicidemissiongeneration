@@ -1,0 +1,114 @@
+{
+    "edition": "2ndEdition",
+    "collection": "original",
+    "imagePath": "assets/editions/2ndEdition/0_original/tileImages/5R.png",
+    "tileName": "5R",
+    "areas": [
+        {
+            "id": 8,
+            "x": 82,
+            "y": 170,
+            "width": 85,
+            "height": 73,
+            "areaType": "INDOOR"
+        },
+        {
+            "id": 9,
+            "x": 82,
+            "y": 83,
+            "width": 86,
+            "height": 78,
+            "areaType": "INDOOR"
+        },
+        {
+            "id": 10,
+            "x": 2,
+            "y": 3,
+            "width": 71,
+            "height": 70,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 11,
+            "x": 77,
+            "y": 4,
+            "width": 95,
+            "height": 69,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 12,
+            "x": 175,
+            "y": 4,
+            "width": 73,
+            "height": 70,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 13,
+            "x": 176,
+            "y": 78,
+            "width": 70,
+            "height": 95,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 14,
+            "x": 177,
+            "y": 177,
+            "width": 70,
+            "height": 71,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 15,
+            "x": 2,
+            "y": 176,
+            "width": 71,
+            "height": 70,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 16,
+            "x": 2,
+            "y": 77,
+            "width": 70,
+            "height": 96,
+            "areaType": "BASIC"
+        }
+    ],
+    "connections": [
+        {
+            "areaA": 9,
+            "areaB": 8
+        },
+        {
+            "areaA": 10,
+            "areaB": 11
+        },
+        {
+            "areaA": 10,
+            "areaB": 16
+        },
+        {
+            "areaA": 11,
+            "areaB": 12
+        },
+        {
+            "areaA": 12,
+            "areaB": 13
+        },
+        {
+            "areaA": 13,
+            "areaB": 9
+        },
+        {
+            "areaA": 13,
+            "areaB": 14
+        },
+        {
+            "areaA": 15,
+            "areaB": 16
+        }
+    ]
+}

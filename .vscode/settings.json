@@ -1,0 +1,13 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.debug.settings.onBuildFailureProceed": true,
+    "maven.terminal.useJavaHome": true,
+    "maven.executable.path": "mvn",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
+}

@@ -1,0 +1,102 @@
+{
+    "edition": "2ndEdition",
+    "collection": "original",
+    "imagePath": "assets/editions/2ndEdition/0_original/tileImages/4R.png",
+    "tileName": "4R",
+    "areas": [
+        {
+            "id": 2,
+            "x": 78,
+            "y": 4,
+            "width": 94,
+            "height": 71,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 4,
+            "x": 6,
+            "y": 83,
+            "width": 72,
+            "height": 81,
+            "areaType": "INDOOR"
+        },
+        {
+            "id": 5,
+            "x": 85,
+            "y": 84,
+            "width": 159,
+            "height": 84,
+            "areaType": "INDOOR"
+        },
+        {
+            "id": 7,
+            "x": 77,
+            "y": 176,
+            "width": 96,
+            "height": 70,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 8,
+            "x": 2,
+            "y": 2,
+            "width": 72,
+            "height": 69,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 9,
+            "x": 176,
+            "y": 4,
+            "width": 72,
+            "height": 70,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 10,
+            "x": 176,
+            "y": 178,
+            "width": 71,
+            "height": 68,
+            "areaType": "BASIC"
+        },
+        {
+            "id": 11,
+            "x": 1,
+            "y": 177,
+            "width": 72,
+            "height": 68,
+            "areaType": "BASIC"
+        }
+    ],
+    "connections": [
+        {
+            "areaA": 4,
+            "areaB": 5
+        },
+        {
+            "areaA": 5,
+            "areaB": 2
+        },
+        {
+            "areaA": 7,
+            "areaB": 5
+        },
+        {
+            "areaA": 11,
+            "areaB": 7
+        },
+        {
+            "areaA": 7,
+            "areaB": 10
+        },
+        {
+            "areaA": 2,
+            "areaB": 8
+        },
+        {
+            "areaA": 2,
+            "areaB": 9
+        }
+    ]
+}
