@@ -28,7 +28,7 @@ public abstract class ZoneWorkAreaPanel extends JPanel {
 
     protected abstract ZoneDrawPanel getZoneDrawPanel();
 
-    private void setupLayout() {
+    protected void setupLayout() {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 

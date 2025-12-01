@@ -1,94 +1,116 @@
 {
-    "edition": "2ndEdition",
-    "collection": "original",
-    "imagePath": "assets/editions/2ndEdition/0_original/tileImages/5V.png",
-    "tileName": "5V",
-    "areas": [
-        {
-            "id": 4,
-            "x": 85,
-            "y": 6,
-            "width": 47,
-            "height": 88,
-            "areaType": "INDOOR"
-        },
-        {
-            "id": 5,
-            "x": 143,
-            "y": 6,
-            "width": 99,
-            "height": 131,
-            "areaType": "INDOOR"
-        },
-        {
-            "id": 6,
-            "x": 83,
-            "y": 110,
-            "width": 50,
-            "height": 134,
-            "areaType": "INDOOR"
-        },
-        {
-            "id": 7,
-            "x": 140,
-            "y": 147,
-            "width": 104,
-            "height": 98,
-            "areaType": "INDOOR"
-        },
-        {
-            "id": 8,
-            "x": 3,
-            "y": 3,
-            "width": 70,
-            "height": 72,
-            "areaType": "BASIC"
-        },
-        {
-            "id": 10,
-            "x": 3,
-            "y": 177,
-            "width": 69,
-            "height": 70,
-            "areaType": "BASIC"
-        },
-        {
-            "id": 11,
-            "x": 3,
-            "y": 78,
-            "width": 69,
-            "height": 94,
-            "areaType": "BASIC"
-        }
-    ],
-    "connections": [
-        {
-            "areaA": 4,
-            "areaB": 5
-        },
-        {
-            "areaA": 4,
-            "areaB": 6
-        },
-        {
-            "areaA": 6,
-            "areaB": 7
-        },
-        {
-            "areaA": 7,
-            "areaB": 5
-        },
-        {
-            "areaA": 8,
-            "areaB": 11
-        },
-        {
-            "areaA": 11,
-            "areaB": 10
-        },
-        {
-            "areaA": 10,
-            "areaB": 6
-        }
-    ]
+  "edition" : "2ndEdition",
+  "collection" : "0_original",
+  "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/5V.png",
+  "boardId" : "2ndEdition.0_original.5V",
+  "tileName" : "5V",
+  "areas" : [ {
+    "id" : "4fd48dc2-ca23-4178-81fe-8c1d3c52cfa7",
+    "x" : 0,
+    "y" : 0,
+    "width" : 75,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "TOP_LEFT_STREET",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "39dc237d-3f9f-46dc-9715-ecb87bd9b08e",
+    "x" : 0,
+    "y" : 75,
+    "width" : 75,
+    "height" : 100,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "MIDDLE_LEFT_STREET",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "8c9c4f30-daf2-49ae-9ae9-9564b5b690ea",
+    "x" : 0,
+    "y" : 175,
+    "width" : 75,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_LEFT_STREET",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "c6272a87-4b28-4d36-aa32-abb7fdcf6bfe",
+    "x" : 137,
+    "y" : 0,
+    "width" : 113,
+    "height" : 142,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "fd91fe6d-c792-48e9-bfb6-cce912824318",
+    "x" : 137,
+    "y" : 142,
+    "width" : 113,
+    "height" : 108,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : [ "GoalMarker" ]
+  }, {
+    "id" : "1767b1d5-5bf4-4c97-8bbe-638da4ff56ca",
+    "x" : 75,
+    "y" : 0,
+    "width" : 62,
+    "height" : 103,
+    "areaType" : "INDOOR_LIGHT",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "af0db6d7-e526-4697-9686-00072a30adfb",
+    "x" : 75,
+    "y" : 103,
+    "width" : 62,
+    "height" : 147,
+    "areaType" : "INDOOR_LIGHT",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : [ "PimpWeapon" ]
+  } ],
+  "connections" : [ {
+    "areaA" : "1767b1d5-5bf4-4c97-8bbe-638da4ff56ca",
+    "areaB" : "af0db6d7-e526-4697-9686-00072a30adfb",
+    "direction" : null
+  }, {
+    "areaA" : "1767b1d5-5bf4-4c97-8bbe-638da4ff56ca",
+    "areaB" : "c6272a87-4b28-4d36-aa32-abb7fdcf6bfe",
+    "direction" : null
+  }, {
+    "areaA" : "fd91fe6d-c792-48e9-bfb6-cce912824318",
+    "areaB" : "af0db6d7-e526-4697-9686-00072a30adfb",
+    "direction" : null
+  }, {
+    "areaA" : "fd91fe6d-c792-48e9-bfb6-cce912824318",
+    "areaB" : "c6272a87-4b28-4d36-aa32-abb7fdcf6bfe",
+    "direction" : null
+  }, {
+    "areaA" : "af0db6d7-e526-4697-9686-00072a30adfb",
+    "areaB" : "8c9c4f30-daf2-49ae-9ae9-9564b5b690ea",
+    "direction" : null
+  }, {
+    "areaA" : "fd91fe6d-c792-48e9-bfb6-cce912824318",
+    "areaB" : null,
+    "direction" : "SOUTH"
+  }, {
+    "areaA" : "fd91fe6d-c792-48e9-bfb6-cce912824318",
+    "areaB" : null,
+    "direction" : "EAST"
+  }, {
+    "areaA" : "c6272a87-4b28-4d36-aa32-abb7fdcf6bfe",
+    "areaB" : null,
+    "direction" : "NORTH"
+  }, {
+    "areaA" : "c6272a87-4b28-4d36-aa32-abb7fdcf6bfe",
+    "areaB" : null,
+    "direction" : "EAST"
+  }, {
+    "areaA" : "1767b1d5-5bf4-4c97-8bbe-638da4ff56ca",
+    "areaB" : null,
+    "direction" : "NORTH"
+  }, {
+    "areaA" : "af0db6d7-e526-4697-9686-00072a30adfb",
+    "areaB" : null,
+    "direction" : "SOUTH"
+  } ]
 }

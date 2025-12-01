@@ -1,0 +1,10 @@
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/config/ConfigLoaderTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/model/BaseBoardRotationTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/services/MissionFactoryServiceTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/DTO/BoardAreaDTOTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/services/EdgeConnectionPersistenceTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/model/board/MissionGridTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/AppTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/DTO/TileDTOTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/services/PersistanceServiceTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/model/TileTest.java

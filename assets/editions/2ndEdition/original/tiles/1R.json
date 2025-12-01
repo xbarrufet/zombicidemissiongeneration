@@ -9,63 +9,72 @@
     "y" : 4,
     "width" : 88,
     "height" : 68,
-    "areaType" : "BASIC"
+    "areaType" : "STREET",
+    "boardGameAssets" : [ ]
   }, {
     "id" : 4,
     "x" : 178,
     "y" : 80,
     "width" : 69,
     "height" : 93,
-    "areaType" : "BASIC"
+    "areaType" : "STREET",
+    "boardGameAssets" : [ ]
   }, {
     "id" : 8,
     "x" : 2,
     "y" : 177,
     "width" : 71,
     "height" : 71,
-    "areaType" : "BASIC"
+    "areaType" : "STREET",
+    "boardGameAssets" : [ ]
   }, {
     "id" : 10,
     "x" : 2,
     "y" : 3,
     "width" : 73,
     "height" : 68,
-    "areaType" : "BASIC"
+    "areaType" : "STREET",
+    "boardGameAssets" : [ ]
   }, {
     "id" : 11,
     "x" : 172,
     "y" : 4,
     "width" : 75,
     "height" : 71,
-    "areaType" : "BASIC"
+    "areaType" : "STREET",
+    "boardGameAssets" : [ ]
   }, {
     "id" : 12,
     "x" : 179,
     "y" : 177,
     "width" : 67,
     "height" : 68,
-    "areaType" : "BASIC"
+    "areaType" : "STREET",
+    "boardGameAssets" : [ ]
   }, {
     "id" : 13,
     "x" : 4,
     "y" : 84,
     "width" : 68,
     "height" : 84,
-    "areaType" : "INDOOR"
+    "areaType" : "INDOOR_LIGHT",
+    "boardGameAssets" : [ "PimpWeapon" ]
   }, {
     "id" : 14,
     "x" : 80,
     "y" : 84,
     "width" : 88,
     "height" : 87,
-    "areaType" : "INDOOR"
+    "areaType" : "INDOOR_LIGHT",
+    "boardGameAssets" : [ ]
   }, {
     "id" : 15,
     "x" : 80,
     "y" : 179,
     "width" : 88,
     "height" : 66,
-    "areaType" : "INDOOR"
+    "areaType" : "INDOOR_LIGHT",
+    "boardGameAssets" : [ ]
   } ],
   "connections" : [ {
     "areaA" : 10,

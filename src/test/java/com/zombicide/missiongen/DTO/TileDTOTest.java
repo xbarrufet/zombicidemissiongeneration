@@ -73,7 +73,7 @@ public class TileDTOTest {
     @Test
     public void testAddArea() {
         BoardAreaDTO area = new BoardAreaDTO();
-        area.id = 1;
+        area.id = "550e8400-e29b-41d4-a716-446655440000";
         area.x = 10;
         area.y = 20;
         area.width = 100;
@@ -83,20 +83,20 @@ public class TileDTOTest {
         tileDTO.areas.add(area);
 
         assertEquals("Should have 1 area", 1, tileDTO.areas.size());
-        assertEquals("Area id should match", 1, tileDTO.areas.get(0).id);
+        assertEquals("Area id should match", "550e8400-e29b-41d4-a716-446655440000", tileDTO.areas.get(0).id);
         assertEquals("Area type should match", "indoor", tileDTO.areas.get(0).areaType);
     }
 
     @Test
     public void testAddConnection() {
         BoardAreaConnectionDTO connection = new BoardAreaConnectionDTO();
-        connection.areaA = 1;
-        connection.areaB = 2;
+        connection.areaA = "550e8400-e29b-41d4-a716-446655440000";
+        connection.areaB = "550e8400-e29b-41d4-a716-446655440001";
 
         tileDTO.connections.add(connection);
 
         assertEquals("Should have 1 connection", 1, tileDTO.connections.size());
-        assertEquals("AreaA should match", 1, tileDTO.connections.get(0).areaA);
-        assertEquals("AreaB should match", 2, tileDTO.connections.get(0).areaB);
+        assertEquals("AreaA should match", "550e8400-e29b-41d4-a716-446655440000", tileDTO.connections.get(0).areaA);
+        assertEquals("AreaB should match", "550e8400-e29b-41d4-a716-446655440001", tileDTO.connections.get(0).areaB);
     }
 }

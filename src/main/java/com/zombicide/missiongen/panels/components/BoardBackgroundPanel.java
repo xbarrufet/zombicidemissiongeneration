@@ -13,28 +13,28 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JPanel;
-
 import org.slf4j.LoggerFactory;
 
 import com.zombicide.missiongen.config.ConfigLoader;
-import com.zombicide.missiongen.model.Board;
-import com.zombicide.missiongen.model.BoardArea;
+import com.zombicide.missiongen.model.areas.BoardArea;
+import com.zombicide.missiongen.model.board.BaseBoard;
 import com.zombicide.missiongen.panels.interfaces.BoardSelectionListener;
 
 public class BoardBackgroundPanel extends ZoneDrawPanel {
-    private double scaleTileToPanel;
-    private double scalePanelToTile;
+    protected double scaleTileToPanel;
+    protected double scalePanelToTile;
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(BoardBackgroundPanel.class);
 
     private final ConfigLoader config;
     private final List<BoardArea> selectedAreas;
     private final List<BoardSelectionListener> selectionListeners;
+    private final List<com.zombicide.missiongen.panels.interfaces.BoardChangeListener> boardChangeListeners;
 
     public BoardBackgroundPanel() {
         this.config = ConfigLoader.getInstance();
         this.selectedAreas = new ArrayList<>();
         this.selectionListeners = new ArrayList<>();
+        this.boardChangeListeners = new ArrayList<>();
         setupMouseListeners();
 
     }
@@ -61,7 +61,7 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
             // Normal click: clear selection and select only this area
             selectedAreas.clear();
             selectedAreas.add(clickedArea);
-            logger.info("Left click on area ID: {} (selected)", clickedArea.getId());
+            logger.info("Left click on area ID: {} (selected)", clickedArea.getAreaId());
             notifySelectionChanged();
         } else {
             // Click on empty space: clear selection
@@ -78,10 +78,10 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
             // SHIFT + click: toggle area in selection
             if (selectedAreas.contains(clickedArea)) {
                 selectedAreas.remove(clickedArea);
-                logger.info("SHIFT + Left click on area ID: {} (deselected)", clickedArea.getId());
+                logger.info("SHIFT + Left click on area ID: {} (deselected)", clickedArea.getAreaId());
             } else {
                 selectedAreas.add(clickedArea);
-                logger.info("SHIFT + Left click on area ID: {} (selected)", clickedArea.getId());
+                logger.info("SHIFT + Left click on area ID: {} (selected)", clickedArea.getAreaId());
             }
             notifySelectionChanged();
         } else {
@@ -103,18 +103,11 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
                 (int) (panelPoint.x * scalePanelToTile),
                 (int) (panelPoint.y * scalePanelToTile));
 
-        // Find the area that contains this point
-        for (BoardArea area : this.getBoard().getAreas()) {
-            if (area.isPointInside(tilePoint)) {
-                return area;
-            }
-        }
-
-        return null;
+        return this.getBoard().getAreaAtPoint(tilePoint);
     }
 
     @Override
-    public void setBoard(Board board) {
+    public void setBoard(BaseBoard board) {
         super.setBoard(board);
         this.selectedAreas.clear(); // Clear selection when board changes
         this.scalePanelToTile = (double) this.getBoard().getWidth() / this.getWidth();
@@ -143,6 +136,28 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
         List<BoardArea> selectedAreasCopy = new ArrayList<>(selectedAreas);
         for (BoardSelectionListener listener : selectionListeners) {
             listener.onSelectionChanged(selectedAreasCopy);
+        }
+    }
+
+    public void addBoardChangeListener(com.zombicide.missiongen.panels.interfaces.BoardChangeListener listener) {
+        if (listener != null && !boardChangeListeners.contains(listener)) {
+            boardChangeListeners.add(listener);
+        }
+    }
+
+    public void removeBoardChangeListener(com.zombicide.missiongen.panels.interfaces.BoardChangeListener listener) {
+        boardChangeListeners.remove(listener);
+    }
+
+    public void notifyAreasChanged() {
+        for (com.zombicide.missiongen.panels.interfaces.BoardChangeListener listener : boardChangeListeners) {
+            listener.onAreasChanged();
+        }
+    }
+
+    public void notifyConnectionsChanged() {
+        for (com.zombicide.missiongen.panels.interfaces.BoardChangeListener listener : boardChangeListeners) {
+            listener.onConnectionsChanged();
         }
     }
 
@@ -198,8 +213,8 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
     }
 
     public void drawArea(Graphics g, BoardArea boardArea) {
-        Point topLeft = new Point((int) (boardArea.getOrigin().x * scaleTileToPanel),
-                (int) (boardArea.getOrigin().y * scaleTileToPanel));
+        Point topLeft = new Point((int) (boardArea.getTopLeft().x * scaleTileToPanel),
+                (int) (boardArea.getTopLeft().y * scaleTileToPanel));
 
         Graphics2D g2d = (Graphics2D) g;
         g2d.setStroke(new BasicStroke(2));
@@ -215,8 +230,9 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
         g.drawRect(topLeft.x, topLeft.y, (int) (boardArea.getWidth() * scaleTileToPanel),
                 (int) (boardArea.getHeight() * scaleTileToPanel));
 
-        // Draw ID
-        String idText = String.valueOf(boardArea.getId());
+        // Draw ID, the last 3 characters
+        String areaId = boardArea.getAreaId().toString();
+        String idText = areaId.substring(areaId.length() - 3);
         g.setFont(new Font("Arial", Font.BOLD, 56));
         FontMetrics fm = g.getFontMetrics();
         int textWidth = fm.stringWidth(idText);
@@ -226,5 +242,14 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
         int centerY = (int) (topLeft.y + (boardArea.getHeight() * scaleTileToPanel + textHeight) / 2);
 
         g.drawString(idText, centerX, centerY);
+    }
+
+    public void deleteSelectedAreas() {
+        for (BoardArea area : this.getSelectedAreas()) {
+            this.getBoard().removeArea(area.getAreaId());
+        }
+        this.selectedAreas.clear();
+        this.repaint();
+        this.notifyAreasChanged();
     }
 }

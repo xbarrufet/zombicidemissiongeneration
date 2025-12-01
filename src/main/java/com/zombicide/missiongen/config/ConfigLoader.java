@@ -1,9 +1,13 @@
 package com.zombicide.missiongen.config;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+
+import javax.imageio.ImageIO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,6 +68,10 @@ public class ConfigLoader {
         return properties.getProperty(key);
     }
 
+    public int getPropertyAsInt(String key) {
+        return Integer.parseInt(properties.getProperty(key));
+    }
+
     /**
      * Gets a property value by key with a default value.
      * 
@@ -107,11 +115,32 @@ public class ConfigLoader {
         return getProperty("folders.tiles", "tiles");
     }
 
+    /**
+     * Gets the missions folder name.
+     * 
+     * @return The missions folder name
+     */
+    public String getMissionsFolder() {
+        return getProperty("folders.missions", "missions");
+    }
+
     public Color getPropertyAsColor(String string, Color defaultValue) {
         String colorString = getProperty(string);
         if (colorString == null) {
             return defaultValue;
         }
         return Color.decode(colorString);
+    }
+
+    public Image getNoTileYetImage() {
+        // devuelve la imagen no_tile_yet.png de la carpete resources/images
+        // debe cargar la imagen desde el classpath
+        Image image = null;
+        try {
+            image = ImageIO.read(this.getClass().getResource("/images/no_tile.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return image;
     }
 }

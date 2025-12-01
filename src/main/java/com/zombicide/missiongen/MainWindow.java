@@ -6,32 +6,84 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.zombicide.missiongen.model.Tile;
-import com.zombicide.missiongen.panels.ZoneSelecion;
-import com.zombicide.missiongen.panels.interfaces.TileSelectionListener;
+import com.zombicide.missiongen.model.board.MissionFactoryService;
+import com.zombicide.missiongen.panels.ZoneSelecionMissions;
+import com.zombicide.missiongen.panels.ZoneSelecionTiles;
+import com.zombicide.missiongen.panels.components.ZoneWorkAreaPanel;
+import com.zombicide.missiongen.panels.interfaces.LayoutChangeListener;
+import com.zombicide.missiongen.panels.interfaces.PanelSelectionListener;
+import com.zombicide.missiongen.panels.missionLayout.ZoneWorkAreaMissionLayout;
+import com.zombicide.missiongen.panels.missions.ZoneWorkAreaMissions;
 import com.zombicide.missiongen.panels.tiles.ZoneWorkAreaTiles;
 
-public class MainWindow extends JFrame implements TileSelectionListener {
+public class MainWindow extends JFrame implements LayoutChangeListener {
     private static final Logger logger = LoggerFactory.getLogger(MainWindow.class);
 
-    private ZoneSelecion zoneSelecion;
-    private ZoneWorkAreaTiles currentWorkAreaPanel;
+    private ZoneSelecionTiles zoneSelecionTiles;
+    private ZoneSelecionMissions zoneSelecionMissions;
+    private JPanel currentSelectionPanel;
+    private ZoneWorkAreaTiles tileWorkAreaPanel;
+    private ZoneWorkAreaMissionLayout missionWorkAreaPanel;
+    private ZoneWorkAreaMissions missionsViewerPanel;
+    private ZoneWorkAreaPanel currentWorkAreaPanel;
 
     public MainWindow() {
         super("Mission Generation - Zombicide");
         initComponents();
+        setupMenu();
         setupLayout();
         setupWindow();
     }
 
+    private void setupMenu() {
+        JMenuBar menuBar = new JMenuBar();
+
+        JMenu navigationMenu = new JMenu("Navigation");
+
+        JMenuItem tilesItem = new JMenuItem("Tiles");
+        tilesItem.addActionListener(e -> {
+            logger.info("Switching to Tiles workflow via menu");
+            this.replaceSelectionPanel(zoneSelecionTiles);
+            this.onTileLayoutSelected();
+        });
+
+        JMenuItem missionsItem = new JMenuItem("Missions");
+        missionsItem.addActionListener(e -> {
+            logger.info("Switching to Missions workflow via menu");
+            this.replaceSelectionPanel(zoneSelecionMissions);
+            this.onMissionLayoutSelected();
+        });
+
+        navigationMenu.add(tilesItem);
+        navigationMenu.add(missionsItem);
+
+        menuBar.add(navigationMenu);
+        setJMenuBar(menuBar);
+    }
+
     private void initComponents() {
-        zoneSelecion = new ZoneSelecion();
-        currentWorkAreaPanel = new ZoneWorkAreaTiles();
-        zoneSelecion.addTileSelectionListener(this);
+        zoneSelecionTiles = new ZoneSelecionTiles();
+        zoneSelecionMissions = new ZoneSelecionMissions(new MissionFactoryService(), this);
+
+        tileWorkAreaPanel = new ZoneWorkAreaTiles();
+        tileWorkAreaPanel.setOnSaveRequired(() -> zoneSelecionTiles.saveCurrentTile());
+
+        missionWorkAreaPanel = new ZoneWorkAreaMissionLayout(zoneSelecionMissions);
+        missionsViewerPanel = new ZoneWorkAreaMissions();
+
+        zoneSelecionTiles.addTileSelectionListener(tileWorkAreaPanel);
+        zoneSelecionMissions.addMissionSelectionListener(missionsViewerPanel);
+        zoneSelecionMissions.addCollectionSelectionListener(missionWorkAreaPanel.getZoneMissionGridProperties());
+
         logger.info("Components initialized");
     }
 
@@ -45,15 +97,19 @@ public class MainWindow extends JFrame implements TileSelectionListener {
         gbc.weightx = 0.0;
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
-        add(zoneSelecion, gbc);
 
-        // Work Area (contains ZoneDraw + ZoneProperties) - Right side (1000x750)
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
-        gbc.fill = GridBagConstraints.BOTH;
-        add(currentWorkAreaPanel, gbc);
+        // Start with Tiles selection
+        currentSelectionPanel = zoneSelecionTiles;
+        add(currentSelectionPanel, gbc);
+
+        // // Work Area (contains ZoneDraw + ZoneProperties) - Right side (1000x750)
+        // gbc.gridx = 1;
+        // gbc.gridy = 0;
+        // gbc.weightx = 1.0;
+        // gbc.weighty = 1.0;
+        // gbc.fill = GridBagConstraints.BOTH;
+        // add(tileWorkAreaPanel, gbc);
+        this.replaceWorkArea(tileWorkAreaPanel);
 
         logger.info("Layout configured");
     }
@@ -64,15 +120,15 @@ public class MainWindow extends JFrame implements TileSelectionListener {
      * 
      * @param newWorkAreaPanel The new panel to replace the current work area
      */
-    public void replaceWorkArea(ZoneWorkAreaTiles newWorkAreaPanel) {
+    public void replaceWorkArea(ZoneWorkAreaPanel newWorkAreaPanel) {
         if (newWorkAreaPanel == null) {
             logger.warn("Attempted to replace work area with null panel");
             return;
         }
-
         // Remove the current work area panel
-        remove(currentWorkAreaPanel);
-
+        if (currentWorkAreaPanel != null) {
+            remove(currentWorkAreaPanel);
+        }
         // Update reference
         currentWorkAreaPanel = newWorkAreaPanel;
 
@@ -92,17 +148,38 @@ public class MainWindow extends JFrame implements TileSelectionListener {
         logger.info("Work area panel replaced: {}", newWorkAreaPanel.getClass().getSimpleName());
     }
 
+    public void replaceSelectionPanel(JPanel newSelectionPanel) {
+        if (newSelectionPanel == null) {
+            return;
+        }
+        if (currentSelectionPanel != null) {
+            remove(currentSelectionPanel);
+        }
+        currentSelectionPanel = newSelectionPanel;
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 0.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+        add(currentSelectionPanel, gbc);
+
+        validate();
+        repaint();
+    }
+
     /**
      * Gets the current work area panel.
      * 
      * @return The current work area panel
      */
-    public ZoneWorkAreaTiles getCurrentWorkAreaPanel() {
-        return currentWorkAreaPanel;
+    public ZoneWorkAreaTiles getTileWorkAreaPanel() {
+        return tileWorkAreaPanel;
     }
 
-    public ZoneSelecion getZoneSelecion() {
-        return zoneSelecion;
+    public ZoneSelecionTiles getZoneSelecionTiles() {
+        return zoneSelecionTiles;
     }
 
     private void setupWindow() {
@@ -133,12 +210,22 @@ public class MainWindow extends JFrame implements TileSelectionListener {
         logger.info("Window displayed");
     }
 
-    /**
-     * Called when a tile is selected from ZoneSelecion
-     */
     @Override
-    public void onTileSelected(Tile tile) {
-        logger.info("Tile selected: {}", tile.getTileName());
-        this.currentWorkAreaPanel.setBoard(tile.getBoard());
+    public void onMissionLayoutSelected() {
+        this.replaceWorkArea(this.missionWorkAreaPanel);
+    }
+
+    @Override
+    public void onTileLayoutSelected() {
+        this.replaceWorkArea(this.tileWorkAreaPanel);
+    }
+
+    @Override
+    public void onMissionSelected() {
+        logger.info("Switching to mission viewer");
+        this.replaceWorkArea(this.missionsViewerPanel);
+        // Force layout update to ensure panel has correct size
+        this.missionsViewerPanel.revalidate();
+        this.missionsViewerPanel.repaint();
     }
 }

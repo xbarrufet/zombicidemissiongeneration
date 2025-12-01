@@ -2,7 +2,7 @@ package com.zombicide.missiongen.panels.interfaces;
 
 import java.util.List;
 
-import com.zombicide.missiongen.model.BoardArea;
+import com.zombicide.missiongen.model.areas.BoardArea;
 
 /**
  * Listener interface for board area selection changes.

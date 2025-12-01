@@ -1,22 +1,29 @@
 package com.zombicide.missiongen.DTO;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class BoardAreaDTO {
 
-    public int id;
+    public String id;
     public int x;
     public int y;
     public int width;
     public int height;
     public String areaType;
+    public String areaLocation;
+    public List<String> boardGameAssets;
 
-    public static BoardAreaDTO fromBoardArea(com.zombicide.missiongen.model.BoardArea area) {
+    public static BoardAreaDTO fromBoardArea(com.zombicide.missiongen.model.areas.BoardArea area) {
         BoardAreaDTO dto = new BoardAreaDTO();
-        dto.id = area.getId();
-        dto.x = area.getOrigin().x;
-        dto.y = area.getOrigin().y;
+        dto.areaLocation = area.getAreaLocation().toString();
+        dto.id = area.getAreaId().toString();
+        dto.x = area.getTopLeft().x;
+        dto.y = area.getTopLeft().y;
         dto.width = area.getWidth();
         dto.height = area.getHeight();
         dto.areaType = area.getAreaType().toString();
+        dto.boardGameAssets = area.getBoardGameAssets().stream().map(Enum::name).collect(Collectors.toList());
         return dto;
     }
 }

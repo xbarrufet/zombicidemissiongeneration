@@ -392,4 +392,43 @@ public class PersistanceServiceTest {
         // Verify the existing file was not modified
         assertEquals("Existing tile should not be overwritten", originalModified, existingJson.lastModified());
     }
+
+    @Test
+    public void testPersistMission() throws IOException {
+        // Create a test mission
+        java.awt.image.BufferedImage bufferedImage = new java.awt.image.BufferedImage(500, 500,
+                java.awt.image.BufferedImage.TYPE_INT_ARGB);
+        com.zombicide.missiongen.model.board.MissionBoard board = new com.zombicide.missiongen.model.board.MissionBoard(
+                "test-mission-board-id", bufferedImage, 500, 500);
+
+        com.zombicide.missiongen.model.Mission mission = new com.zombicide.missiongen.model.Mission(
+                2, 2, 500, 500, "Edition1", "Collection1",
+                "test-data-temp/editions/Edition1/Collection1/missionImages/mission_test-mission.png",
+                "test-mission", board);
+
+        // Persist the mission
+        service.persistMission(mission);
+
+        // Verify the JSON file was created
+        File missionsDir = new File(testDataDir, "Edition1/Collection1/missions");
+        File jsonFile = new File(missionsDir, "test-mission.json");
+
+        assertTrue("Mission JSON file should be created", jsonFile.exists());
+        assertTrue("Mission JSON file should not be empty", jsonFile.length() > 0);
+
+        // Verify JSON content
+        com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+        com.zombicide.missiongen.DTO.MissionDTO loadedDTO = mapper.readValue(jsonFile,
+                com.zombicide.missiongen.DTO.MissionDTO.class);
+
+        assertEquals("Edition should match", "Edition1", loadedDTO.edition);
+        assertEquals("Collection should match", "Collection1", loadedDTO.collection);
+        assertEquals("Mission name should match", "test-mission", loadedDTO.missionName);
+        assertEquals("Rows should match", 2, loadedDTO.rows);
+        assertEquals("Cols should match", 2, loadedDTO.cols);
+        assertEquals("Width should match", 500, loadedDTO.width);
+        assertEquals("Height should match", 500, loadedDTO.height);
+        assertNotNull("Areas list should not be null", loadedDTO.areas);
+        assertNotNull("Connections list should not be null", loadedDTO.connections);
+    }
 }

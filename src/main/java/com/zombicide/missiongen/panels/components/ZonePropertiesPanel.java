@@ -13,4 +13,6 @@ public class ZonePropertiesPanel extends BoardPanel {
         this.setMinimumSize(fixedSize);
         this.setMaximumSize(fixedSize);
     }
+
+    public static ZonePropertiesPanel EMPTY_PROPERTIES_PANEL = new ZonePropertiesPanel();
 }

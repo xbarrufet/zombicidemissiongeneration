@@ -1,0 +1,6 @@
+com/zombicide/missiongen/DTO/BoardAreaDTOTest.class
+com/zombicide/missiongen/AppTest.class
+com/zombicide/missiongen/model/TileTest.class
+com/zombicide/missiongen/DTO/TileDTOTest.class
+com/zombicide/missiongen/services/EdgeConnectionPersistenceTest.class
+com/zombicide/missiongen/config/ConfigLoaderTest.class

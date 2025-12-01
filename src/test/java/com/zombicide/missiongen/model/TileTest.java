@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.zombicide.missiongen.DTO.TileDTO;
+import com.zombicide.missiongen.model.board.BaseBoard;
 
 public class TileTest {
 
@@ -59,7 +60,7 @@ public class TileTest {
 
     @Test
     public void testGetBoard() {
-        Board board = tile.getBoard();
+        BaseBoard board = tile.getBoard();
         assertNotNull("Board should not be null", board);
         assertNotNull("Board image should not be null", board.getImage());
         assertEquals("Board width should match image width", 200, board.getWidth());

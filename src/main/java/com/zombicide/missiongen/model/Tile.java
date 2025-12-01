@@ -12,39 +12,46 @@ import org.slf4j.LoggerFactory;
 import com.zombicide.missiongen.DTO.BoardAreaConnectionDTO;
 import com.zombicide.missiongen.DTO.BoardAreaDTO;
 import com.zombicide.missiongen.DTO.TileDTO;
+import com.zombicide.missiongen.config.ConfigLoader;
+import com.zombicide.missiongen.model.areas.BoardArea;
+import com.zombicide.missiongen.model.areas.BoardAreaConnection;
+import com.zombicide.missiongen.model.board.TileBoard;
 
 public class Tile {
 
     String edition;
     String collection;
     String imagePath;
+    TileBoard tileBoard;
     String tileName;
-    Board tileBoard;
-
-    public static int TILE_SIZE = 250;
 
     private static final Logger logger = LoggerFactory.getLogger(Tile.class);
+    private ConfigLoader configLoader;
 
     public Tile(String edition, String collection, String imagePath, String tileName) {
         this.edition = edition;
-        this.collection = collection;
         this.imagePath = imagePath;
+        this.collection = collection;
         this.tileName = tileName;
+        this.configLoader = ConfigLoader.getInstance();
+
         this.initBoard();
     }
 
     private void initBoard() {
         Image backgroundImage;
+        String tileId = edition + "." + collection + "." + tileName;
         try {
             backgroundImage = ImageIO.read(new File(imagePath));
-            this.tileBoard = new Board(backgroundImage, TILE_SIZE, TILE_SIZE);
+            this.tileBoard = new TileBoard(tileId, backgroundImage,
+                    Integer.parseInt(configLoader.getProperty("tile.width")));
         } catch (IOException e) {
             logger.error("Error reading image: {}", imagePath, e);
             return;
         }
     }
 
-    public Board getBoard() {
+    public TileBoard getBoard() {
         return tileBoard;
     }
 

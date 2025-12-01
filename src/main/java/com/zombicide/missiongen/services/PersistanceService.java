@@ -1,5 +1,7 @@
 package com.zombicide.missiongen.services;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -7,6 +9,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import javax.imageio.ImageIO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -147,6 +151,29 @@ public class PersistanceService {
     }
 
     /**
+     * Lee los nombres de los ficheros de la carpeta
+     * edition + collection + property folder.missions
+     * devuelve una lista de strings con los nombres de los ficheros
+     * 
+     * @param edition    Nombre de la edición
+     * @param collection Nombre de la colección
+     * @return Lista de nombres de archivos de misiones
+     */
+    public List<String> getMissions(String edition, String collection) {
+        if (edition == null || edition.trim().isEmpty() ||
+                collection == null || collection.trim().isEmpty()) {
+            logger.warn("Edition or collection parameter is null or empty");
+            return Collections.emptyList();
+        }
+
+        String missionsPath = config.getEditionsFolder() + File.separator +
+                edition + File.separator +
+                collection + File.separator +
+                config.getMissionsFolder();
+        return getFilesInDirectory(missionsPath, "missions", edition, collection, true);
+    }
+
+    /**
      * Helper method to get files in a directory.
      * 
      * @param directoryPath Path to the directory
@@ -276,6 +303,64 @@ public class PersistanceService {
                 edition + File.separator +
                 collection + File.separator +
                 config.getTilesFolder() + File.separator +
+                fileName + ".json";
+    }
+
+    public void persistMission(com.zombicide.missiongen.model.Mission mission) {
+        com.zombicide.missiongen.DTO.MissionDTO missionDTO = com.zombicide.missiongen.DTO.MissionDTO
+                .fromMission(mission);
+        String missionJsonPath = getMissionJsonPath(missionDTO.edition, missionDTO.collection, missionDTO.missionName);
+        try {
+            File jsonFile = new File(missionJsonPath);
+            // Crear directorio si no existe
+            File parentDir = jsonFile.getParentFile();
+            if (parentDir != null && !parentDir.exists()) {
+                parentDir.mkdirs();
+            }
+            // Guardar JSON
+            objectMapper.writeValue(jsonFile, missionDTO);
+            logger.info("Mission {} saved to {}", missionDTO.missionName, missionJsonPath);
+            persistMissionBoardImage(mission.getMissionBoard().getImage(), mission.getImagePath());
+        } catch (IOException e) {
+            logger.error("Error writing mission json file: {}", missionJsonPath, e);
+        }
+    }
+
+    private void persistMissionBoardImage(Image image, String imagePath) throws IOException {
+        File imageFile = new File(imagePath);
+        // Crear directorio si no existe
+        File parentDir = imageFile.getParentFile();
+        if (parentDir != null && !parentDir.exists()) {
+            parentDir.mkdirs();
+        }
+        // Guardar imagen
+        ImageIO.write((BufferedImage) image, "png", imageFile);
+        logger.info("Mission board image saved to {}", imagePath);
+    }
+
+    public com.zombicide.missiongen.model.Mission getMission(String edition, String collection, String missionName) {
+        String json = getMissionJsonPath(edition, collection, missionName);
+        try {
+            File jsonFile = new File(json);
+            com.zombicide.missiongen.DTO.MissionDTO missionDTO = objectMapper.readValue(jsonFile,
+                    com.zombicide.missiongen.DTO.MissionDTO.class);
+            logger.info("Mission {} loaded from {}", missionDTO.missionName, json);
+            return com.zombicide.missiongen.model.Mission.fromMissionDTO(missionDTO);
+        } catch (JsonMappingException e) {
+            logger.error("Error mapping mission json file: {}", json, e);
+        } catch (JsonProcessingException e) {
+            logger.error("Error processing mission json file: {}", json, e);
+        } catch (IOException e) {
+            logger.error("Error reading mission json file: {}", json, e);
+        }
+        return null;
+    }
+
+    private String getMissionJsonPath(String edition, String collection, String fileName) {
+        return config.getEditionsFolder() + File.separator +
+                edition + File.separator +
+                collection + File.separator +
+                config.getMissionsFolder() + File.separator +
                 fileName + ".json";
     }
 }

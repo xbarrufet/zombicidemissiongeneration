@@ -1,106 +1,109 @@
 {
-    "edition": "2ndEdition",
-    "collection": "original",
-    "imagePath": "assets/editions/2ndEdition/0_original/tileImages/1V.jpeg",
-    "tileName": "1V",
-    "areas": [
-        {
-            "id": 1,
-            "x": 8,
-            "y": 7,
-            "width": 75,
-            "height": 76,
-            "areaType": "INDOOR"
-        },
-        {
-            "id": 2,
-            "x": 5,
-            "y": 91,
-            "width": 78,
-            "height": 75,
-            "areaType": "INDOOR"
-        },
-        {
-            "id": 3,
-            "x": 92,
-            "y": 5,
-            "width": 77,
-            "height": 162,
-            "areaType": "INDOOR"
-        },
-        {
-            "id": 5,
-            "x": 80,
-            "y": 179,
-            "width": 90,
-            "height": 67,
-            "areaType": "BASIC"
-        },
-        {
-            "id": 7,
-            "x": 178,
-            "y": 77,
-            "width": 69,
-            "height": 91,
-            "areaType": "BASIC"
-        },
-        {
-            "id": 8,
-            "x": 176,
-            "y": 4,
-            "width": 69,
-            "height": 68,
-            "areaType": "BASIC"
-        },
-        {
-            "id": 9,
-            "x": 177,
-            "y": 175,
-            "width": 70,
-            "height": 69,
-            "areaType": "BASIC"
-        },
-        {
-            "id": 10,
-            "x": 2,
-            "y": 177,
-            "width": 75,
-            "height": 68,
-            "areaType": "BASIC"
-        }
-    ],
-    "connections": [
-        {
-            "areaA": 1,
-            "areaB": 3
-        },
-        {
-            "areaA": 1,
-            "areaB": 2
-        },
-        {
-            "areaA": 2,
-            "areaB": 3
-        },
-        {
-            "areaA": 3,
-            "areaB": 5
-        },
-        {
-            "areaA": 8,
-            "areaB": 7
-        },
-        {
-            "areaA": 7,
-            "areaB": 9
-        },
-        {
-            "areaA": 9,
-            "areaB": 5
-        },
-        {
-            "areaA": 5,
-            "areaB": 10
-        }
-    ]
+  "edition" : "2ndEdition",
+  "collection" : "0_original",
+  "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/1V.jpeg",
+  "boardId" : "2ndEdition.0_original.1V",
+  "tileName" : "1V",
+  "areas" : [ {
+    "id" : "92f5efe3-7864-46f3-bbbe-61d52e1992c6",
+    "x" : 175,
+    "y" : 0,
+    "width" : 75,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "TOP_RIGHT_STREET",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "9fcee129-316e-4aee-89b7-fe2648bfc1b6",
+    "x" : 175,
+    "y" : 75,
+    "width" : 75,
+    "height" : 100,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "MIDDLE_RIGHT_STREET",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "771bd6c6-59d1-44a1-868f-8c8223ad21b2",
+    "x" : 175,
+    "y" : 175,
+    "width" : 75,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_RIGHT_STREET",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "9fc889bc-f503-4e52-82aa-cbe4fc4e3c41",
+    "x" : 75,
+    "y" : 175,
+    "width" : 100,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_MIDDLE_STREET",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f",
+    "x" : 0,
+    "y" : 175,
+    "width" : 75,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_LEFT_STREET",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "x" : 87,
+    "y" : 0,
+    "width" : 88,
+    "height" : 175,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : [ "PimpWeapon" ]
+  }, {
+    "id" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "x" : 0,
+    "y" : 0,
+    "width" : 87,
+    "height" : 87,
+    "areaType" : "INDOOR_LIGHT",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : [ ]
+  }, {
+    "id" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "x" : 0,
+    "y" : 87,
+    "width" : 87,
+    "height" : 88,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : [ "GoalMarker" ]
+  } ],
+  "connections" : [ {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "direction" : null
+  }, {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "direction" : null
+  }, {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : "9fc889bc-f503-4e52-82aa-cbe4fc4e3c41",
+    "direction" : null
+  }, {
+    "areaA" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "areaB" : null,
+    "direction" : "WEST"
+  }, {
+    "areaA" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "areaB" : null,
+    "direction" : "WEST"
+  }, {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : null,
+    "direction" : "NORTH"
+  }, {
+    "areaA" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "areaB" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "direction" : null
+  } ]
 }
