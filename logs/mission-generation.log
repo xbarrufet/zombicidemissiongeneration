@@ -25224,3 +25224,1374 @@ javax.imageio.IIOException: Can't read input file!
 2025-12-01 18:16:25.039 [AWT-EventQueue-0] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET, TOP_RIGHT_STREET]
 2025-12-01 18:16:25.048 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - After Rotate: Mission layout valid: true
 2025-12-01 18:16:38.077 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 18:43:20.978 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 18:43:21.708 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 18:43:21.836 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 18:43:21.912 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 18:43:22.282 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 18:43:22.286 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 18:43:22.287 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 18:43:22.337 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.339 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:43:22.340 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.342 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.343 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 18:43:22.344 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 18:43:22.345 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.346 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:43:22.346 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.347 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.348 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 18:43:22.348 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 18:43:22.349 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 18:43:22.352 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 18:43:22.354 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.354 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:43:22.355 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.357 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.358 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 18:43:22.358 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 18:43:22.358 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.359 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:43:22.360 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.362 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.404 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 18:43:22.406 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 18:43:22.407 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 18:43:22.408 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 18:43:22.409 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.412 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:43:22.412 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 18:43:22.412 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 18:43:22.413 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.413 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:43:22.414 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 18:43:22.414 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 18:43:22.414 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 18:43:22.415 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 18:43:22.415 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.415 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:43:22.415 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 18:43:22.416 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 18:43:22.416 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:22.417 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:43:23.052 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:43:23.054 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 18:43:23.083 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 18:43:23.083 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 18:43:23.204 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 18:43:23.222 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 18:43:23.225 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 18:43:39.872 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 18:43:39.906 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 18:43:43.104 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 18:43:44.266 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 0 0
+2025-12-01 18:43:44.284 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 18:43:47.453 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 18:43:48.034 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 1 0
+2025-12-01 18:43:48.035 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 18:44:03.373 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionMissions - Saving mission layout
+2025-12-01 18:45:58.377 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 18:45:59.064 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 18:45:59.181 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 18:45:59.255 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 18:45:59.632 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 18:45:59.635 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 18:45:59.637 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 18:45:59.664 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.665 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:45:59.665 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.666 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.667 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 18:45:59.668 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 18:45:59.668 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.669 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:45:59.669 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.670 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.671 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 18:45:59.671 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 18:45:59.672 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 18:45:59.674 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 18:45:59.675 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.675 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:45:59.677 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.677 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.681 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 18:45:59.682 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 18:45:59.685 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.686 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:45:59.687 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.689 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.728 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 18:45:59.729 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 18:45:59.730 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 18:45:59.731 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 18:45:59.731 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.732 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:45:59.732 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 18:45:59.732 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 18:45:59.732 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.732 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:45:59.733 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 18:45:59.735 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 18:45:59.735 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 18:45:59.736 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 18:45:59.736 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.736 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:45:59.736 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 18:45:59.737 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 18:45:59.737 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 18:45:59.737 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 18:46:00.347 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 18:46:00.349 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 18:46:00.380 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 18:46:00.381 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 18:46:00.493 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 18:46:00.512 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 18:46:00.513 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 18:47:59.055 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 18:47:59.163 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 18:47:59.261 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 18:47:59.632 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: cead3dac-c6ff-46f5-b089-d6d9dfa9f652, 73e81441-7c2f-4986-a98f-8d36e2457d9c, 17dcf673-948f-4365-b6d8-b70ff5acd327, 
+2025-12-01 18:47:59.632 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: 92f5efe3-7864-46f3-bbbe-61d52e1992c6, 9fcee129-316e-4aee-89b7-fe2648bfc1b6, 771bd6c6-59d1-44a1-868f-8c8223ad21b2, 
+2025-12-01 18:50:53.835 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 18:50:53.944 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 18:50:54.006 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 18:51:42.158 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 18:51:42.264 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 18:51:42.327 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 18:51:42.619 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: cead3dac-c6ff-46f5-b089-d6d9dfa9f652, 73e81441-7c2f-4986-a98f-8d36e2457d9c, 17dcf673-948f-4365-b6d8-b70ff5acd327, 
+2025-12-01 18:51:42.619 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: 92f5efe3-7864-46f3-bbbe-61d52e1992c6, 9fcee129-316e-4aee-89b7-fe2648bfc1b6, 771bd6c6-59d1-44a1-868f-8c8223ad21b2, 
+2025-12-01 18:54:04.502 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 18:54:04.610 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 18:54:04.670 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 18:54:04.958 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: cead3dac-c6ff-46f5-b089-d6d9dfa9f652, 92f5efe3-7864-46f3-bbbe-61d52e1992c6, 
+2025-12-01 18:54:04.958 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: 73e81441-7c2f-4986-a98f-8d36e2457d9c, 9fcee129-316e-4aee-89b7-fe2648bfc1b6, 
+2025-12-01 18:54:04.959 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: 17dcf673-948f-4365-b6d8-b70ff5acd327, 771bd6c6-59d1-44a1-868f-8c8223ad21b2, 
+2025-12-01 18:54:37.236 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 18:54:37.341 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 18:54:37.393 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 18:54:37.645 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: cead3dac-c6ff-46f5-b089-d6d9dfa9f652, 92f5efe3-7864-46f3-bbbe-61d52e1992c6, 
+2025-12-01 18:54:37.645 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: 73e81441-7c2f-4986-a98f-8d36e2457d9c, 9fcee129-316e-4aee-89b7-fe2648bfc1b6, 
+2025-12-01 18:54:37.645 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: 17dcf673-948f-4365-b6d8-b70ff5acd327, 771bd6c6-59d1-44a1-868f-8c8223ad21b2, 
+2025-12-01 18:57:45.740 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 18:57:45.852 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 18:57:45.919 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 18:57:46.214 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: cead3dac-c6ff-46f5-b089-d6d9dfa9f652, 92f5efe3-7864-46f3-bbbe-61d52e1992c6, 
+2025-12-01 18:57:46.214 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: 73e81441-7c2f-4986-a98f-8d36e2457d9c, 9fcee129-316e-4aee-89b7-fe2648bfc1b6, 
+2025-12-01 18:57:46.214 [main] INFO  c.z.m.m.board.MissionFactoryService - Areas to merge: 17dcf673-948f-4365-b6d8-b70ff5acd327, 771bd6c6-59d1-44a1-868f-8c8223ad21b2, 
+2025-12-01 19:04:38.498 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:04:38.612 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:04:38.674 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:05:23.644 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:05:23.751 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:05:23.801 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:05:24.052 [main] INFO  c.z.m.m.board.MissionFactoryService - Total connections after merge: 10
+2025-12-01 19:07:02.578 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 19:07:03.313 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 19:07:03.437 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:07:03.512 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 19:07:03.929 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 19:07:03.933 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 19:07:03.934 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 19:07:03.960 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.961 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:07:03.961 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.963 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.964 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 19:07:03.964 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 19:07:03.965 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.967 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:07:03.968 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.970 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.971 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 19:07:03.972 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 19:07:03.972 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 19:07:03.973 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 19:07:03.975 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.976 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:07:03.977 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.977 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.980 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 19:07:03.981 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 19:07:03.984 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.984 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:07:03.984 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:03.985 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:04.027 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 19:07:04.028 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 19:07:04.029 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 19:07:04.030 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 19:07:04.030 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:04.031 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:07:04.031 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 19:07:04.031 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 19:07:04.031 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:04.032 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:07:04.034 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 19:07:04.034 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 19:07:04.034 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 19:07:04.035 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 19:07:04.035 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:04.035 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:07:04.035 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 19:07:04.036 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 19:07:04.036 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:04.036 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:07:04.641 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:07:04.643 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 19:07:04.677 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 19:07:04.678 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 19:07:04.787 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 19:07:04.804 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 19:07:04.805 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 19:07:07.453 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 19:07:07.478 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 19:07:10.313 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 0 0
+2025-12-01 19:07:11.753 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:07:12.233 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 0 0
+2025-12-01 19:07:12.246 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 19:07:17.826 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:07:18.393 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 1 0
+2025-12-01 19:07:18.394 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 19:09:01.074 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:09:01.175 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:09:01.240 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:09:01.253 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:09:01.261 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:09:01.293 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:09:01.300 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:09:41.954 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Tiles workflow via menu
+2025-12-01 19:09:41.980 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 19:09:43.390 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 1V
+2025-12-01 19:09:43.400 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:09:43.421 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 1V
+2025-12-01 19:09:43.421 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:09:43.421 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:09:43.421 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 0.0
+2025-12-01 19:09:46.710 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 9c4f35e3-aa16-4015-9e40-9233e66207c1 (selected)
+2025-12-01 19:09:48.860 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 9fc889bc-f503-4e52-82aa-cbe4fc4e3c41 (selected)
+2025-12-01 19:09:50.263 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 9c4f35e3-aa16-4015-9e40-9233e66207c1 (selected)
+2025-12-01 19:09:52.158 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 3R
+2025-12-01 19:09:52.164 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3R loaded from assets/editions/2ndEdition/0_original/tiles/3R.json
+2025-12-01 19:09:52.184 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 3R
+2025-12-01 19:09:52.184 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:09:52.184 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:09:52.184 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:09:54.294 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 3V
+2025-12-01 19:09:54.308 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:09:54.328 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 3V
+2025-12-01 19:09:54.328 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:09:54.328 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:09:54.328 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:10:01.624 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 89f1201a-bd16-4c4e-abc8-24ed512f38bc (selected)
+2025-12-01 19:10:16.649 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneTileDraw - Key pressed: ⌘ (code: 157)
+2025-12-01 19:10:16.885 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneTileDraw - Key released: ⌘ (code: 157)
+2025-12-01 19:10:30.796 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneTileDraw - Key pressed: ⌘ (code: 157)
+2025-12-01 19:10:30.921 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneTileDraw - Key released: ⌘ (code: 157)
+2025-12-01 19:12:15.947 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:12:16.051 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:12:16.112 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:12:26.009 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:12:26.113 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:12:26.167 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:12:26.179 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:12:26.186 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:12:26.220 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:12:26.227 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:12:26.237 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:12:26.244 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:20:29.361 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:20:29.465 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:20:29.526 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:20:29.839 [main] INFO  c.z.m.m.board.MissionFactoryService - Total areas after merge and shift: 14
+2025-12-01 19:20:29.839 [main] INFO  c.z.m.m.board.MissionFactoryService - Total connections after merge: 10
+2025-12-01 19:26:42.497 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:26:42.605 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:26:42.950 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:26:42.959 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:26:42.967 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:26:42.973 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:26:42.981 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:26:42.987 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:26:42.998 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:26:43.002 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET, TOP_MIDDLE_STREET, TOP_RIGHT_STREET]
+2025-12-01 19:26:43.004 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_LEFT_STREET, TOP_MIDDLE_STREET, TOP_RIGHT_STREET, MIDDLE_RIGHT_STREET, BOTTOM_RIGHT_STREET]
+2025-12-01 19:26:43.008 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_RIGHT_STREET, MIDDLE_RIGHT_STREET, BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET]
+2025-12-01 19:26:43.013 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:26:43.021 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:26:43.026 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:26:43.035 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:17.495 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:29:17.642 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:17.983 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:17.993 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:17.999 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:18.007 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:18.013 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:18.023 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:18.027 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET, TOP_MIDDLE_STREET, TOP_RIGHT_STREET]
+2025-12-01 19:29:18.030 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_LEFT_STREET, TOP_MIDDLE_STREET, TOP_RIGHT_STREET, MIDDLE_RIGHT_STREET, BOTTOM_RIGHT_STREET]
+2025-12-01 19:29:18.033 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_RIGHT_STREET, MIDDLE_RIGHT_STREET, BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET]
+2025-12-01 19:29:18.038 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:18.047 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:18.052 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:18.060 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:28.000 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:29:28.142 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:28.435 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:28.442 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:28.449 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:28.455 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:28.463 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:28.468 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:28.478 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:28.481 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET, TOP_MIDDLE_STREET, TOP_RIGHT_STREET]
+2025-12-01 19:29:28.484 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_LEFT_STREET, TOP_MIDDLE_STREET, TOP_RIGHT_STREET, MIDDLE_RIGHT_STREET, BOTTOM_RIGHT_STREET]
+2025-12-01 19:29:28.487 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_RIGHT_STREET, MIDDLE_RIGHT_STREET, BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET]
+2025-12-01 19:29:28.492 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:28.501 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:29:28.506 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:29:28.514 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:43:18.119 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:43:18.228 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:43:18.570 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:43:18.577 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:43:18.585 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:43:18.591 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:43:18.599 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:43:18.605 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:43:18.615 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:43:18.618 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET, TOP_MIDDLE_STREET, TOP_RIGHT_STREET]
+2025-12-01 19:43:18.622 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_LEFT_STREET, TOP_MIDDLE_STREET, TOP_RIGHT_STREET, MIDDLE_RIGHT_STREET, BOTTOM_RIGHT_STREET]
+2025-12-01 19:43:18.624 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_RIGHT_STREET, MIDDLE_RIGHT_STREET, BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET]
+2025-12-01 19:43:18.629 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:43:18.637 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:43:18.642 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:43:18.650 [main] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [BOTTOM_RIGHT_STREET, BOTTOM_MIDDLE_STREET, BOTTOM_LEFT_STREET, MIDDLE_LEFT_STREET, TOP_LEFT_STREET]
+2025-12-01 19:50:55.168 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 19:50:56.151 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 19:50:56.270 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 19:50:56.355 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 19:50:56.757 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 19:50:56.761 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 19:50:56.763 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 19:50:56.789 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.789 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:50:56.790 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.792 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.793 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 19:50:56.793 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 19:50:56.793 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.795 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:50:56.795 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.796 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.797 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 19:50:56.797 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 19:50:56.798 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 19:50:56.798 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 19:50:56.799 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.801 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:50:56.804 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.805 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.806 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 19:50:56.806 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 19:50:56.806 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.807 [main] INFO  c.z.m.panels.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:50:56.808 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.809 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.850 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 19:50:56.852 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 19:50:56.854 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 19:50:56.855 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 19:50:56.855 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.856 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:50:56.856 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 19:50:56.856 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 19:50:56.857 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.857 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:50:56.857 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 19:50:56.857 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 19:50:56.857 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 19:50:56.857 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 19:50:56.857 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.857 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:50:56.858 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 19:50:56.858 [main] INFO  c.z.m.panels.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 19:50:56.858 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:56.858 [main] INFO  c.z.m.panels.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 19:50:57.472 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 19:50:57.475 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 19:50:57.508 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 19:50:57.509 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 19:50:57.633 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 19:50:57.650 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 19:50:57.653 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 19:50:59.682 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 1R
+2025-12-01 19:50:59.764 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1R loaded from assets/editions/2ndEdition/0_original/tiles/1R.json
+2025-12-01 19:50:59.803 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 1R
+2025-12-01 19:50:59.804 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:50:59.804 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:50:59.804 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 0.0
+2025-12-01 19:51:01.595 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 07ea7bbc-4f23-4bf0-a5c7-c527f36c3b53 (selected)
+2025-12-01 19:51:04.088 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 66a0dadc-d774-4ce9-a3ec-0213e9528af6 (selected)
+2025-12-01 19:51:11.827 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 66a0dadc-d774-4ce9-a3ec-0213e9528af6 (selected)
+2025-12-01 19:51:20.585 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 66a0dadc-d774-4ce9-a3ec-0213e9528af6 -> east_bottom
+2025-12-01 19:51:20.613 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:51:20.613 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 1R
+2025-12-01 19:51:20.641 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1R saved to assets/editions/2ndEdition/0_original/tiles/1R.json
+2025-12-01 19:51:20.641 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 1R
+2025-12-01 19:51:23.819 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 07ea7bbc-4f23-4bf0-a5c7-c527f36c3b53 (selected)
+2025-12-01 19:51:32.677 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 07ea7bbc-4f23-4bf0-a5c7-c527f36c3b53 -> north_center
+2025-12-01 19:51:32.685 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:51:32.685 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 1R
+2025-12-01 19:51:32.688 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1R saved to assets/editions/2ndEdition/0_original/tiles/1R.json
+2025-12-01 19:51:32.688 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 1R
+2025-12-01 19:51:33.786 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 6792b7cd-01d7-4bf7-95b4-d2876d5b4020 (selected)
+2025-12-01 19:51:39.098 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 07ea7bbc-4f23-4bf0-a5c7-c527f36c3b53 (selected)
+2025-12-01 19:51:43.986 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 1V
+2025-12-01 19:51:43.991 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:51:44.011 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 1V
+2025-12-01 19:51:44.011 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:51:44.011 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:51:44.011 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:51:52.490 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 34616e67-d541-4f0c-94f0-516279568c3b (selected)
+2025-12-01 19:51:55.843 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 34616e67-d541-4f0c-94f0-516279568c3b -> west_center
+2025-12-01 19:51:55.850 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:51:55.850 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 1V
+2025-12-01 19:51:55.852 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V saved to assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:51:55.852 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 1V
+2025-12-01 19:52:04.160 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 34616e67-d541-4f0c-94f0-516279568c3b -> west_top
+2025-12-01 19:52:04.174 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:52:04.174 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 1V
+2025-12-01 19:52:04.180 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V saved to assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 19:52:04.182 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 1V
+2025-12-01 19:52:05.912 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 9c4f35e3-aa16-4015-9e40-9233e66207c1 (selected)
+2025-12-01 19:52:10.209 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 2R
+2025-12-01 19:52:10.217 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 2R loaded from assets/editions/2ndEdition/0_original/tiles/2R.json
+2025-12-01 19:52:10.234 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 2R
+2025-12-01 19:52:10.234 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:52:10.234 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:52:10.234 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:52:16.248 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 2V
+2025-12-01 19:52:16.253 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 2V loaded from assets/editions/2ndEdition/0_original/tiles/2V.json
+2025-12-01 19:52:16.273 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 2V
+2025-12-01 19:52:16.274 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:52:16.274 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:52:16.274 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:52:18.456 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 97f0f448-cf49-43b8-8f99-f58d9f9911e0 (selected)
+2025-12-01 19:52:21.032 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 97f0f448-cf49-43b8-8f99-f58d9f9911e0 -> south_center
+2025-12-01 19:52:21.036 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:52:21.037 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 2V
+2025-12-01 19:52:21.043 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 2V saved to assets/editions/2ndEdition/0_original/tiles/2V.json
+2025-12-01 19:52:21.043 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 2V
+2025-12-01 19:52:21.672 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 97f0f448-cf49-43b8-8f99-f58d9f9911e0 -> west_center
+2025-12-01 19:52:21.685 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:52:21.685 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 2V
+2025-12-01 19:52:21.687 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 2V saved to assets/editions/2ndEdition/0_original/tiles/2V.json
+2025-12-01 19:52:21.687 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 2V
+2025-12-01 19:52:28.831 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 97f0f448-cf49-43b8-8f99-f58d9f9911e0 -> west_bottom
+2025-12-01 19:52:28.835 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:52:28.836 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 2V
+2025-12-01 19:52:28.840 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 2V saved to assets/editions/2ndEdition/0_original/tiles/2V.json
+2025-12-01 19:52:28.840 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 2V
+2025-12-01 19:52:37.821 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 97f0f448-cf49-43b8-8f99-f58d9f9911e0 -> south_left
+2025-12-01 19:52:37.830 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:52:37.834 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 2V
+2025-12-01 19:52:37.836 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 2V saved to assets/editions/2ndEdition/0_original/tiles/2V.json
+2025-12-01 19:52:37.839 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 2V
+2025-12-01 19:52:43.304 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 3R
+2025-12-01 19:52:43.314 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3R loaded from assets/editions/2ndEdition/0_original/tiles/3R.json
+2025-12-01 19:52:43.331 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 3R
+2025-12-01 19:52:43.331 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:52:43.332 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:52:43.332 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:52:47.387 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 209a8e4d-de90-4ab4-953a-adbfe3d77ad1 (selected)
+2025-12-01 19:52:49.482 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 1bb6716a-7952-49f3-baa4-46623c423758 (selected)
+2025-12-01 19:52:51.536 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 3V
+2025-12-01 19:52:51.538 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:52:51.581 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 3V
+2025-12-01 19:52:51.583 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:52:51.583 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:52:51.583 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:52:56.794 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 6f22c03d-56b7-40ba-93bc-a3818c32fc3f (selected)
+2025-12-01 19:53:00.930 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 6f22c03d-56b7-40ba-93bc-a3818c32fc3f -> north_center
+2025-12-01 19:53:00.935 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:53:00.935 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 3V
+2025-12-01 19:53:00.939 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V saved to assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:53:00.939 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 3V
+2025-12-01 19:53:01.650 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 6f22c03d-56b7-40ba-93bc-a3818c32fc3f -> east_center
+2025-12-01 19:53:01.654 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:53:01.654 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 3V
+2025-12-01 19:53:01.655 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V saved to assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:53:01.655 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 3V
+2025-12-01 19:53:06.465 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 6f22c03d-56b7-40ba-93bc-a3818c32fc3f -> north_right
+2025-12-01 19:53:06.471 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:53:06.472 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 3V
+2025-12-01 19:53:06.474 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V saved to assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:53:06.474 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 3V
+2025-12-01 19:53:12.883 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 6f22c03d-56b7-40ba-93bc-a3818c32fc3f -> east_top
+2025-12-01 19:53:12.885 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:53:12.885 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 3V
+2025-12-01 19:53:12.886 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V saved to assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 19:53:12.886 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 3V
+2025-12-01 19:53:15.457 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 4R
+2025-12-01 19:53:15.464 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 4R loaded from assets/editions/2ndEdition/0_original/tiles/4R.json
+2025-12-01 19:53:15.483 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 4R
+2025-12-01 19:53:15.483 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:53:15.483 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:53:15.484 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:53:19.442 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 4V
+2025-12-01 19:53:19.444 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 4V loaded from assets/editions/2ndEdition/0_original/tiles/4V.json
+2025-12-01 19:53:19.486 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 4V
+2025-12-01 19:53:19.488 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:53:19.488 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:53:19.489 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:53:23.794 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: f309fe00-59c9-467e-92f3-b6a3f99ac117 (selected)
+2025-12-01 19:53:26.233 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 5ca0b8c1-6fef-420c-8259-ce209af9170e (selected)
+2025-12-01 19:53:28.224 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 5ca0b8c1-6fef-420c-8259-ce209af9170e -> east_center
+2025-12-01 19:53:28.228 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:53:28.229 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 4V
+2025-12-01 19:53:28.232 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 4V saved to assets/editions/2ndEdition/0_original/tiles/4V.json
+2025-12-01 19:53:28.232 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 4V
+2025-12-01 19:53:29.185 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 5ca0b8c1-6fef-420c-8259-ce209af9170e -> north_center
+2025-12-01 19:53:29.191 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:53:29.191 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 4V
+2025-12-01 19:53:29.193 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 4V saved to assets/editions/2ndEdition/0_original/tiles/4V.json
+2025-12-01 19:53:29.193 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 4V
+2025-12-01 19:53:35.501 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 5ca0b8c1-6fef-420c-8259-ce209af9170e -> north_right
+2025-12-01 19:53:35.504 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:53:35.504 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 4V
+2025-12-01 19:53:35.505 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 4V saved to assets/editions/2ndEdition/0_original/tiles/4V.json
+2025-12-01 19:53:35.508 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 4V
+2025-12-01 19:53:41.420 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 5ca0b8c1-6fef-420c-8259-ce209af9170e -> east_top
+2025-12-01 19:53:41.425 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:53:41.425 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 4V
+2025-12-01 19:53:41.426 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 4V saved to assets/editions/2ndEdition/0_original/tiles/4V.json
+2025-12-01 19:53:41.427 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 4V
+2025-12-01 19:53:45.706 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 5R
+2025-12-01 19:53:45.710 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5R loaded from assets/editions/2ndEdition/0_original/tiles/5R.json
+2025-12-01 19:53:45.730 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 5R
+2025-12-01 19:53:45.731 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:53:45.731 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:53:45.731 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:53:48.226 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 5V
+2025-12-01 19:53:48.229 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5V loaded from assets/editions/2ndEdition/0_original/tiles/5V.json
+2025-12-01 19:53:48.246 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 5V
+2025-12-01 19:53:48.246 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:53:48.246 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:53:48.246 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:53:54.322 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: c6272a87-4b28-4d36-aa32-abb7fdcf6bfe (selected)
+2025-12-01 19:53:59.578 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area c6272a87-4b28-4d36-aa32-abb7fdcf6bfe -> north_center
+2025-12-01 19:53:59.581 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:53:59.582 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 5V
+2025-12-01 19:53:59.582 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5V saved to assets/editions/2ndEdition/0_original/tiles/5V.json
+2025-12-01 19:53:59.583 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 5V
+2025-12-01 19:54:00.601 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area c6272a87-4b28-4d36-aa32-abb7fdcf6bfe -> east_center
+2025-12-01 19:54:00.603 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:00.603 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 5V
+2025-12-01 19:54:00.606 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5V saved to assets/editions/2ndEdition/0_original/tiles/5V.json
+2025-12-01 19:54:00.607 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 5V
+2025-12-01 19:54:05.205 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area c6272a87-4b28-4d36-aa32-abb7fdcf6bfe -> north_right
+2025-12-01 19:54:05.211 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:05.211 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 5V
+2025-12-01 19:54:05.212 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5V saved to assets/editions/2ndEdition/0_original/tiles/5V.json
+2025-12-01 19:54:05.212 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 5V
+2025-12-01 19:54:11.356 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area c6272a87-4b28-4d36-aa32-abb7fdcf6bfe -> east_top
+2025-12-01 19:54:11.360 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:11.360 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 5V
+2025-12-01 19:54:11.361 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5V saved to assets/editions/2ndEdition/0_original/tiles/5V.json
+2025-12-01 19:54:11.361 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 5V
+2025-12-01 19:54:12.363 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: fd91fe6d-c792-48e9-bfb6-cce912824318 (selected)
+2025-12-01 19:54:14.738 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area fd91fe6d-c792-48e9-bfb6-cce912824318 -> south_center
+2025-12-01 19:54:14.742 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:14.742 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 5V
+2025-12-01 19:54:14.743 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5V saved to assets/editions/2ndEdition/0_original/tiles/5V.json
+2025-12-01 19:54:14.743 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 5V
+2025-12-01 19:54:15.378 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area fd91fe6d-c792-48e9-bfb6-cce912824318 -> east_center
+2025-12-01 19:54:15.381 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:15.381 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 5V
+2025-12-01 19:54:15.382 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5V saved to assets/editions/2ndEdition/0_original/tiles/5V.json
+2025-12-01 19:54:15.382 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 5V
+2025-12-01 19:54:21.644 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area fd91fe6d-c792-48e9-bfb6-cce912824318 -> east_bottom
+2025-12-01 19:54:21.649 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:21.649 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 5V
+2025-12-01 19:54:21.651 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5V saved to assets/editions/2ndEdition/0_original/tiles/5V.json
+2025-12-01 19:54:21.651 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 5V
+2025-12-01 19:54:22.402 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: fd91fe6d-c792-48e9-bfb6-cce912824318 (selected)
+2025-12-01 19:54:29.084 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area fd91fe6d-c792-48e9-bfb6-cce912824318 -> south_right
+2025-12-01 19:54:29.089 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:29.089 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 5V
+2025-12-01 19:54:29.090 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 5V saved to assets/editions/2ndEdition/0_original/tiles/5V.json
+2025-12-01 19:54:29.090 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 5V
+2025-12-01 19:54:32.737 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 6R
+2025-12-01 19:54:32.745 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6R loaded from assets/editions/2ndEdition/0_original/tiles/6R.json
+2025-12-01 19:54:32.767 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 6R
+2025-12-01 19:54:32.768 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:54:32.768 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:54:32.768 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:54:35.874 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 6V
+2025-12-01 19:54:35.878 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6V loaded from assets/editions/2ndEdition/0_original/tiles/6V.json
+2025-12-01 19:54:35.925 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 6V
+2025-12-01 19:54:35.931 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:54:35.931 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:54:35.931 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:54:40.154 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 07821821-c84c-434a-8a55-b359649a4d91 (selected)
+2025-12-01 19:54:42.770 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 07821821-c84c-434a-8a55-b359649a4d91 -> north_center
+2025-12-01 19:54:42.777 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:42.777 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 6V
+2025-12-01 19:54:42.781 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6V saved to assets/editions/2ndEdition/0_original/tiles/6V.json
+2025-12-01 19:54:42.781 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 6V
+2025-12-01 19:54:43.321 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 07821821-c84c-434a-8a55-b359649a4d91 -> east_center
+2025-12-01 19:54:43.326 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:43.327 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 6V
+2025-12-01 19:54:43.327 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6V saved to assets/editions/2ndEdition/0_original/tiles/6V.json
+2025-12-01 19:54:43.327 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 6V
+2025-12-01 19:54:48.734 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 07821821-c84c-434a-8a55-b359649a4d91 -> north_right
+2025-12-01 19:54:48.738 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:48.738 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 6V
+2025-12-01 19:54:48.740 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6V saved to assets/editions/2ndEdition/0_original/tiles/6V.json
+2025-12-01 19:54:48.741 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 6V
+2025-12-01 19:54:50.258 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 07821821-c84c-434a-8a55-b359649a4d91 (selected)
+2025-12-01 19:54:57.051 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 07821821-c84c-434a-8a55-b359649a4d91 -> east_top
+2025-12-01 19:54:57.060 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:54:57.060 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 6V
+2025-12-01 19:54:57.061 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6V saved to assets/editions/2ndEdition/0_original/tiles/6V.json
+2025-12-01 19:54:57.061 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 6V
+2025-12-01 19:54:58.344 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: c8441e36-2df8-47f4-946a-454ff18e9d45 (selected)
+2025-12-01 19:55:00.225 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area c8441e36-2df8-47f4-946a-454ff18e9d45 -> east_center
+2025-12-01 19:55:00.230 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:55:00.230 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 6V
+2025-12-01 19:55:00.231 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6V saved to assets/editions/2ndEdition/0_original/tiles/6V.json
+2025-12-01 19:55:00.231 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 6V
+2025-12-01 19:55:01.032 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area c8441e36-2df8-47f4-946a-454ff18e9d45 -> south_center
+2025-12-01 19:55:01.035 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:55:01.035 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 6V
+2025-12-01 19:55:01.039 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6V saved to assets/editions/2ndEdition/0_original/tiles/6V.json
+2025-12-01 19:55:01.039 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 6V
+2025-12-01 19:55:05.996 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area c8441e36-2df8-47f4-946a-454ff18e9d45 -> east_bottom
+2025-12-01 19:55:05.997 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:55:05.998 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 6V
+2025-12-01 19:55:05.999 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6V saved to assets/editions/2ndEdition/0_original/tiles/6V.json
+2025-12-01 19:55:05.999 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 6V
+2025-12-01 19:55:06.722 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: c8441e36-2df8-47f4-946a-454ff18e9d45 (selected)
+2025-12-01 19:55:12.132 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area c8441e36-2df8-47f4-946a-454ff18e9d45 -> south_right
+2025-12-01 19:55:12.133 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:55:12.133 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 6V
+2025-12-01 19:55:12.136 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 6V saved to assets/editions/2ndEdition/0_original/tiles/6V.json
+2025-12-01 19:55:12.136 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 6V
+2025-12-01 19:55:14.074 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 7R
+2025-12-01 19:55:14.080 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 7R loaded from assets/editions/2ndEdition/0_original/tiles/7R.json
+2025-12-01 19:55:14.098 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 7R
+2025-12-01 19:55:14.098 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:55:14.098 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:55:14.098 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:55:16.009 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 7V
+2025-12-01 19:55:16.010 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 7V loaded from assets/editions/2ndEdition/0_original/tiles/7V.json
+2025-12-01 19:55:16.029 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 7V
+2025-12-01 19:55:16.030 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:55:16.030 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:55:16.030 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:55:22.001 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: a3adbe75-3af9-4977-9a84-08f10f328391 (selected)
+2025-12-01 19:55:27.569 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area a3adbe75-3af9-4977-9a84-08f10f328391 -> west_center
+2025-12-01 19:55:27.573 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:55:27.573 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 7V
+2025-12-01 19:55:27.577 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 7V saved to assets/editions/2ndEdition/0_original/tiles/7V.json
+2025-12-01 19:55:27.577 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 7V
+2025-12-01 19:55:35.739 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area a3adbe75-3af9-4977-9a84-08f10f328391 -> south_left
+2025-12-01 19:55:35.740 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:55:35.740 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 7V
+2025-12-01 19:55:35.744 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 7V saved to assets/editions/2ndEdition/0_original/tiles/7V.json
+2025-12-01 19:55:35.744 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 7V
+2025-12-01 19:55:45.861 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area a3adbe75-3af9-4977-9a84-08f10f328391 -> west_bottom
+2025-12-01 19:55:45.866 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:55:45.866 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 7V
+2025-12-01 19:55:45.868 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 7V saved to assets/editions/2ndEdition/0_original/tiles/7V.json
+2025-12-01 19:55:45.868 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 7V
+2025-12-01 19:55:47.354 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 0df9d944-1600-4d57-9d56-47ef2bfb7b75 (selected)
+2025-12-01 19:55:48.658 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: f518ad72-df16-4228-a6b9-1a245c2988a5 (selected)
+2025-12-01 19:55:50.506 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 8R
+2025-12-01 19:55:50.510 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8R loaded from assets/editions/2ndEdition/0_original/tiles/8R.json
+2025-12-01 19:55:50.532 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 8R
+2025-12-01 19:55:50.532 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:55:50.532 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:55:50.533 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:55:52.394 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 8V
+2025-12-01 19:55:52.398 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8V loaded from assets/editions/2ndEdition/0_original/tiles/8V.json
+2025-12-01 19:55:52.423 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 8V
+2025-12-01 19:55:52.424 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:55:52.424 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:55:52.424 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:55:56.761 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 49a1de88-452b-4cb4-8821-a97ad2a889bc (selected)
+2025-12-01 19:55:58.937 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 49a1de88-452b-4cb4-8821-a97ad2a889bc -> west_center
+2025-12-01 19:55:58.938 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:55:58.938 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 8V
+2025-12-01 19:55:58.939 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8V saved to assets/editions/2ndEdition/0_original/tiles/8V.json
+2025-12-01 19:55:58.939 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 8V
+2025-12-01 19:55:59.842 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 49a1de88-452b-4cb4-8821-a97ad2a889bc -> north_center
+2025-12-01 19:55:59.843 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:55:59.843 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 8V
+2025-12-01 19:55:59.844 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8V saved to assets/editions/2ndEdition/0_original/tiles/8V.json
+2025-12-01 19:55:59.844 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 8V
+2025-12-01 19:56:03.173 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 49a1de88-452b-4cb4-8821-a97ad2a889bc -> north_left
+2025-12-01 19:56:03.176 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:56:03.176 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 8V
+2025-12-01 19:56:03.177 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8V saved to assets/editions/2ndEdition/0_original/tiles/8V.json
+2025-12-01 19:56:03.177 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 8V
+2025-12-01 19:56:08.061 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 49a1de88-452b-4cb4-8821-a97ad2a889bc -> west_top
+2025-12-01 19:56:08.062 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:56:08.063 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 8V
+2025-12-01 19:56:08.063 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8V saved to assets/editions/2ndEdition/0_original/tiles/8V.json
+2025-12-01 19:56:08.063 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 8V
+2025-12-01 19:56:09.155 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: 3f1264e2-d378-4fa4-83fe-b72c1775e490 (selected)
+2025-12-01 19:56:10.330 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 3f1264e2-d378-4fa4-83fe-b72c1775e490 -> south_center
+2025-12-01 19:56:10.355 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:56:10.355 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 8V
+2025-12-01 19:56:10.356 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8V saved to assets/editions/2ndEdition/0_original/tiles/8V.json
+2025-12-01 19:56:10.359 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 8V
+2025-12-01 19:56:10.985 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area 3f1264e2-d378-4fa4-83fe-b72c1775e490 -> west_center
+2025-12-01 19:56:10.987 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:56:10.987 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 8V
+2025-12-01 19:56:10.988 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8V saved to assets/editions/2ndEdition/0_original/tiles/8V.json
+2025-12-01 19:56:10.988 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 8V
+2025-12-01 19:56:16.876 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 3f1264e2-d378-4fa4-83fe-b72c1775e490 -> west_bottom
+2025-12-01 19:56:16.880 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:56:16.882 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 8V
+2025-12-01 19:56:16.882 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8V saved to assets/editions/2ndEdition/0_original/tiles/8V.json
+2025-12-01 19:56:16.882 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 8V
+2025-12-01 19:56:23.032 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area 3f1264e2-d378-4fa4-83fe-b72c1775e490 -> south_left
+2025-12-01 19:56:23.034 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:56:23.034 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 8V
+2025-12-01 19:56:23.036 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 8V saved to assets/editions/2ndEdition/0_original/tiles/8V.json
+2025-12-01 19:56:23.037 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 8V
+2025-12-01 19:56:27.434 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 9R
+2025-12-01 19:56:27.450 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 9R loaded from assets/editions/2ndEdition/0_original/tiles/9R.json
+2025-12-01 19:56:27.486 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 9R
+2025-12-01 19:56:27.494 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:56:27.494 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:56:27.494 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:56:28.978 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile selected: 9V
+2025-12-01 19:56:28.986 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 9V loaded from assets/editions/2ndEdition/0_original/tiles/9V.json
+2025-12-01 19:56:29.004 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 9V
+2025-12-01 19:56:29.005 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 19:56:29.005 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 19:56:29.005 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 19:56:33.411 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click on area ID: a8e2f53c-41bb-4d2e-bc7b-a48f8f014bd2 (selected)
+2025-12-01 19:56:42.413 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area a8e2f53c-41bb-4d2e-bc7b-a48f8f014bd2 -> south_center
+2025-12-01 19:56:42.416 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:56:42.417 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 9V
+2025-12-01 19:56:42.461 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 9V saved to assets/editions/2ndEdition/0_original/tiles/9V.json
+2025-12-01 19:56:42.462 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 9V
+2025-12-01 19:56:47.434 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Deleted edge connection: Area a8e2f53c-41bb-4d2e-bc7b-a48f8f014bd2 -> east_center
+2025-12-01 19:56:47.435 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:56:47.435 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 9V
+2025-12-01 19:56:47.436 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 9V saved to assets/editions/2ndEdition/0_original/tiles/9V.json
+2025-12-01 19:56:47.436 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 9V
+2025-12-01 19:57:00.759 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area a8e2f53c-41bb-4d2e-bc7b-a48f8f014bd2 -> east_bottom
+2025-12-01 19:57:00.765 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:57:00.765 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 9V
+2025-12-01 19:57:00.766 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 9V saved to assets/editions/2ndEdition/0_original/tiles/9V.json
+2025-12-01 19:57:00.766 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 9V
+2025-12-01 19:57:07.244 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area a8e2f53c-41bb-4d2e-bc7b-a48f8f014bd2 -> south_center
+2025-12-01 19:57:07.254 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:57:07.254 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 9V
+2025-12-01 19:57:07.256 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 9V saved to assets/editions/2ndEdition/0_original/tiles/9V.json
+2025-12-01 19:57:07.256 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 9V
+2025-12-01 19:57:13.756 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneProperties - Added edge connection: Area a8e2f53c-41bb-4d2e-bc7b-a48f8f014bd2 -> south_right
+2025-12-01 19:57:13.758 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Board connections changed
+2025-12-01 19:57:13.758 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Saving tile: 9V
+2025-12-01 19:57:13.760 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 9V saved to assets/editions/2ndEdition/0_original/tiles/9V.json
+2025-12-01 19:57:13.760 [AWT-EventQueue-0] INFO  c.z.m.panels.ZoneSelecionTiles - Tile saved successfully: 9V
+2025-12-01 20:12:58.899 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 20:13:22.666 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 21:00:04.049 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 21:00:04.833 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 21:00:04.936 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 21:00:05.020 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:00:05.412 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:00:05.416 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:00:05.417 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:00:05.437 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.438 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:05.439 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.440 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.441 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:00:05.441 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:00:05.442 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.442 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:05.442 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.443 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.444 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 21:00:05.444 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:00:05.445 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:00:05.445 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:00:05.449 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.450 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:05.451 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.452 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.453 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:00:05.453 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:00:05.454 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.456 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:05.457 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.458 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.498 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:00:05.499 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:00:05.500 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:00:05.500 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:00:05.501 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.501 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:05.501 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:00:05.502 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:00:05.502 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.502 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:05.502 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 21:00:05.502 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:00:05.503 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:00:05.503 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:00:05.503 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.503 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:05.503 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:00:05.503 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:00:05.503 [main] INFO  c.z.m.services.PersistanceService - No missions found for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:05.504 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - No missions found for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:06.091 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:06.093 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 21:00:06.127 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 21:00:06.127 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 21:00:06.253 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 21:00:06.273 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 21:00:06.274 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 21:00:09.688 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 21:00:09.719 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 21:00:13.529 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 21:00:14.171 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 0 0
+2025-12-01 21:00:14.179 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:00:15.718 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 21:00:16.361 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 1 0
+2025-12-01 21:00:16.362 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:00:17.846 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Right click on cell 1 0
+2025-12-01 21:00:17.849 [AWT-EventQueue-0] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_RIGHT_STREET, TOP_MIDDLE_STREET, TOP_LEFT_STREET, MIDDLE_LEFT_STREET, BOTTOM_LEFT_STREET]
+2025-12-01 21:00:17.857 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - After Rotate: Mission layout valid: true
+2025-12-01 21:00:23.445 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Saving mission layout
+2025-12-01 21:00:28.254 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total areas after merge and shift: 14
+2025-12-01 21:00:28.256 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total connections after merge: 10
+2025-12-01 21:00:28.310 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Mission mission1 saved to assets/editions/2ndEdition/0_original/missions/mission1.json
+2025-12-01 21:00:28.394 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Mission board image saved to assets/editions/2ndEdition/0_original/missionImages/mission_mission1.png
+2025-12-01 21:00:28.395 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:28.395 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:38.283 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Mission selected: mission1
+2025-12-01 21:00:38.284 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to mission viewer
+2025-12-01 21:00:38.290 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissions
+2025-12-01 21:00:38.299 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Mission mission1 loaded from assets/editions/2ndEdition/0_original/missions/mission1.json
+2025-12-01 21:00:38.318 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneWorkAreaMissions - Mission selected: mission1
+2025-12-01 21:00:38.330 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 500 and height 250
+2025-12-01 21:00:38.331 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 21:00:38.331 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 0.0
+2025-12-01 21:00:43.985 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Tiles workflow via menu
+2025-12-01 21:00:44.001 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 21:00:46.828 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Closing application
+2025-12-01 21:00:52.289 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 21:00:52.978 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 21:00:53.083 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 21:00:53.154 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:00:53.574 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:00:53.577 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:00:53.578 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:00:53.601 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.602 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:53.603 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.604 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.605 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:00:53.606 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:00:53.606 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.606 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:53.607 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.608 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.608 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 21:00:53.609 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:00:53.609 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:00:53.609 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:00:53.610 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.612 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:53.613 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.613 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.617 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:00:53.619 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:00:53.621 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.621 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:53.624 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.625 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.655 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:00:53.657 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:00:53.658 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:00:53.658 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:00:53.659 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.659 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:53.660 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:00:53.660 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:00:53.660 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.660 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:53.660 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 21:00:53.660 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:00:53.661 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:00:53.661 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:00:53.661 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.661 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:53.661 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:00:53.662 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:00:53.664 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:53.664 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:00:54.249 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:00:54.251 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 21:00:54.282 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 21:00:54.282 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 21:00:54.399 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 21:00:54.421 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 21:00:54.422 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 21:00:56.980 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 21:00:57.004 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 21:00:58.346 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Mission selected: mission1
+2025-12-01 21:00:58.347 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to mission viewer
+2025-12-01 21:00:58.352 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissions
+2025-12-01 21:00:58.427 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Mission mission1 loaded from assets/editions/2ndEdition/0_original/missions/mission1.json
+2025-12-01 21:00:58.445 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneWorkAreaMissions - Mission selected: mission1
+2025-12-01 21:00:58.466 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 500 and height 250
+2025-12-01 21:00:58.466 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 21:00:58.467 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 0.0
+2025-12-01 21:01:12.464 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Left click at: java.awt.Point[x=244,y=442] (selection cleared)
+2025-12-01 21:01:16.294 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Closing application
+2025-12-01 21:02:13.645 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 21:02:14.324 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 21:02:14.430 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 21:02:14.509 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:02:14.890 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:02:14.894 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:02:14.895 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:02:14.923 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.924 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:02:14.924 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.926 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.926 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:02:14.927 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:02:14.927 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.930 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:02:14.931 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.932 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.933 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 21:02:14.933 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:02:14.934 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:02:14.934 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:02:14.938 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.939 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:02:14.940 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.941 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.941 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:02:14.941 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:02:14.942 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.943 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:02:14.944 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.945 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.983 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:02:14.986 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:02:14.988 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:02:14.989 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:02:14.990 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.990 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:02:14.990 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:02:14.990 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:02:14.991 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.991 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:02:14.991 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 21:02:14.991 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:02:14.992 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:02:14.995 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:02:14.996 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.996 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:02:14.996 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:02:14.997 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:02:14.997 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:14.997 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:02:15.585 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:02:15.586 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 21:02:15.619 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 21:02:15.620 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 21:02:15.730 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 21:02:15.745 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 21:02:15.745 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 21:02:17.543 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Tile selected: 1R
+2025-12-01 21:02:17.626 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1R loaded from assets/editions/2ndEdition/0_original/tiles/1R.json
+2025-12-01 21:02:17.666 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 1R
+2025-12-01 21:02:17.667 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 21:02:17.667 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 21:02:17.668 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 0.0
+2025-12-01 21:02:20.938 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Tile selected: 1V
+2025-12-01 21:02:20.951 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 21:02:20.969 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 1V
+2025-12-01 21:02:20.969 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 21:02:20.969 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 21:02:20.970 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 21:02:22.029 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Tile selected: 3V
+2025-12-01 21:02:22.035 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 21:02:22.054 [AWT-EventQueue-0] INFO  c.z.m.panels.tiles.ZoneWorkAreaTiles - Tile selected: 3V
+2025-12-01 21:02:22.055 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Board with width 250 and height 250
+2025-12-01 21:02:22.055 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Panel with width 750 and height 750
+2025-12-01 21:02:22.055 [AWT-EventQueue-0] INFO  c.z.m.p.c.BoardBackgroundPanel - Scale tile to panel: 3.0
+2025-12-01 21:02:24.780 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 21:02:24.852 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 21:02:28.343 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 21:02:30.431 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 0 0
+2025-12-01 21:02:30.439 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:02:32.101 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 21:02:32.931 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 1 0
+2025-12-01 21:02:32.933 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:02:34.128 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Right click on cell 1 0
+2025-12-01 21:02:34.139 [AWT-EventQueue-0] INFO  c.z.missiongen.model.board.BaseBoard - New Locations are [TOP_RIGHT_STREET, TOP_MIDDLE_STREET, TOP_LEFT_STREET, MIDDLE_LEFT_STREET, BOTTOM_LEFT_STREET]
+2025-12-01 21:02:34.159 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - After Rotate: Mission layout valid: true
+2025-12-01 21:02:40.758 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Saving mission layout
+2025-12-01 21:02:40.769 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total areas after merge and shift: 14
+2025-12-01 21:02:40.769 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total connections after merge: 10
+2025-12-01 21:04:27.539 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 21:04:28.222 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 21:04:28.331 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 21:04:28.410 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:04:28.780 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:04:28.783 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:04:28.785 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:04:28.809 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.810 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:04:28.810 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.812 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.813 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:04:28.813 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:04:28.814 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.814 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:04:28.816 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.817 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.818 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 21:04:28.818 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:04:28.820 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:04:28.823 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:04:28.824 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.825 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:04:28.826 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.827 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.829 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:04:28.830 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:04:28.832 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.834 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:04:28.835 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.836 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.875 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:04:28.876 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:04:28.877 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:04:28.878 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:04:28.880 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.881 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:04:28.881 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:04:28.881 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:04:28.882 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.882 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:04:28.882 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 21:04:28.882 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:04:28.883 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:04:28.883 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:04:28.883 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.884 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:04:28.887 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:04:28.887 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:04:28.888 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:28.888 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:04:29.467 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:04:29.469 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 21:04:29.500 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 21:04:29.500 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 21:04:29.647 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 21:04:29.664 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 21:04:29.664 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 21:04:32.545 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 21:04:32.577 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 21:04:41.341 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 21:04:43.187 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 0 0
+2025-12-01 21:04:43.196 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:04:44.420 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 21:04:45.189 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 1 0
+2025-12-01 21:04:45.190 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:04:52.826 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Saving mission layout
+2025-12-01 21:04:52.832 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total areas after merge and shift: 14
+2025-12-01 21:04:52.833 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total connections after merge: 10
+2025-12-01 21:05:39.916 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 21:05:40.605 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 21:05:40.715 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 21:05:40.790 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:05:41.162 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:05:41.165 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:05:41.166 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:05:41.190 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.191 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:05:41.192 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.193 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.194 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:05:41.194 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:05:41.195 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.195 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:05:41.196 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.197 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.198 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 21:05:41.198 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:05:41.199 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:05:41.199 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:05:41.202 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.203 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:05:41.206 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.206 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.208 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:05:41.208 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:05:41.210 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.211 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:05:41.214 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.215 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.253 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:05:41.255 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:05:41.256 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:05:41.256 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:05:41.257 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.257 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:05:41.258 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:05:41.258 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:05:41.259 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.261 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:05:41.261 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 21:05:41.261 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:05:41.262 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:05:41.263 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:05:41.263 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.263 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:05:41.263 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:05:41.263 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:05:41.263 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.263 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:05:41.846 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:05:41.848 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 21:05:41.880 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 21:05:41.881 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 21:05:41.993 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 21:05:42.018 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 21:05:42.018 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 21:05:48.187 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 21:05:48.210 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 21:05:53.379 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 21:05:54.395 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 0 0
+2025-12-01 21:05:54.407 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:05:56.576 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 21:05:57.511 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 1 0
+2025-12-01 21:05:57.512 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:06:02.739 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Saving mission layout
+2025-12-01 21:06:09.145 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total areas after merge and shift: 14
+2025-12-01 21:06:09.146 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total connections after merge: 10
+2025-12-01 21:06:39.210 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 21:06:39.899 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 21:06:40.003 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 21:06:40.076 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:06:40.485 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:06:40.490 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:06:40.491 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:06:40.513 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.514 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:06:40.515 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.516 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.517 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:06:40.518 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:06:40.518 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.519 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:06:40.519 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.520 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.521 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 21:06:40.522 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:06:40.523 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:06:40.525 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:06:40.526 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.527 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:06:40.528 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.530 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.531 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:06:40.534 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:06:40.535 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.535 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:06:40.535 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.536 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.579 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:06:40.580 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:06:40.582 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:06:40.583 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:06:40.585 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.586 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:06:40.587 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:06:40.587 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:06:40.588 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.588 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:06:40.588 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 21:06:40.589 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:06:40.590 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:06:40.590 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:06:40.591 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.591 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:06:40.593 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:06:40.594 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:06:40.594 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:40.594 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:06:41.176 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:06:41.178 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 21:06:41.210 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 21:06:41.211 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 21:06:41.329 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 21:06:41.347 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 21:06:41.350 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 21:06:44.158 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 21:06:44.188 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 21:06:47.894 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 21:06:48.662 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 0 0
+2025-12-01 21:06:48.675 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:06:49.968 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 21:06:50.657 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 1 0
+2025-12-01 21:06:50.658 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:07:08.573 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Saving mission layout
+2025-12-01 21:07:16.254 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total areas after merge and shift: 14
+2025-12-01 21:07:16.260 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total connections after merge: 10
+2025-12-01 21:08:21.634 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 21:08:22.370 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 21:08:22.475 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 21:08:22.552 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:08:22.925 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:08:22.928 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:08:22.929 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:08:22.956 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.957 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:08:22.958 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.959 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.960 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:08:22.960 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:08:22.960 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.960 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:08:22.961 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.962 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.963 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 21:08:22.963 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:08:22.963 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:08:22.964 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:08:22.964 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.967 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:08:22.968 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.969 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.971 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:08:22.974 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:08:22.976 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.978 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:08:22.979 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:22.981 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:23.021 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:08:23.022 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:08:23.023 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:08:23.024 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:08:23.025 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:23.025 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:08:23.026 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:08:23.027 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:08:23.028 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:23.028 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:08:23.029 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 21:08:23.029 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:08:23.029 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:08:23.030 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:08:23.030 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:23.030 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:08:23.031 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:08:23.031 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:08:23.032 [main] INFO  c.z.m.services.PersistanceService - Found 1 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:23.032 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 1 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:08:23.620 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:08:23.622 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 21:08:23.655 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 21:08:23.656 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 21:08:23.772 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 21:08:23.795 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 21:08:23.797 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 21:08:26.190 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 21:08:26.226 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 21:08:31.407 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+2025-12-01 21:08:32.148 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 0 0
+2025-12-01 21:08:32.158 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:08:33.398 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+2025-12-01 21:08:34.082 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Left click on cell 1 0
+2025-12-01 21:08:34.085 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneMissionGrid - Mission layout valid: true
+2025-12-01 21:08:38.449 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Saving mission layout
+2025-12-01 21:08:40.438 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total areas after merge and shift: 14
+2025-12-01 21:08:40.440 [AWT-EventQueue-0] INFO  c.z.m.m.board.MissionFactoryService - Total connections after merge: 10
+2025-12-01 21:09:02.358 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Mission mission2 saved to assets/editions/2ndEdition/0_original/missions/mission2.json
+2025-12-01 21:09:02.410 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Mission board image saved to assets/editions/2ndEdition/0_original/missionImages/mission_mission2.png
+2025-12-01 21:09:02.411 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Found 2 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:09:02.411 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:10:41.426 [main] INFO  com.zombicide.missiongen.App - Starting Mission Generation App...
+2025-12-01 21:10:42.109 [main] INFO  com.zombicide.missiongen.App - JSON Configuration: {"app":"MissionGeneration","version":1.0,"status":"active"}
+2025-12-01 21:10:42.213 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
+2025-12-01 21:10:42.284 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:10:42.650 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:10:42.654 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:10:42.655 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:10:42.681 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.682 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:10:42.682 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.683 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.684 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:10:42.685 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:10:42.685 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.686 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:10:42.686 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.687 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.688 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 2 editions
+2025-12-01 21:10:42.688 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Edition selected: 2ndEdition
+2025-12-01 21:10:42.688 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:10:42.688 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:10:42.689 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.692 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:10:42.694 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.694 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.698 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:10:42.699 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Collection selected: 0_original
+2025-12-01 21:10:42.701 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.702 [main] INFO  c.z.m.panels.tiles.ZoneSelecionTiles - Loaded 18 tiles for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:10:42.704 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.704 [main] INFO  c.z.m.services.PersistanceService - Found 18 tile images for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.746 [main] INFO  c.z.m.services.PersistanceService - Found 2 editions
+2025-12-01 21:10:42.748 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:10:42.749 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:10:42.750 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:10:42.751 [main] INFO  c.z.m.services.PersistanceService - Found 2 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.752 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:10:42.752 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:10:42.752 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:10:42.752 [main] INFO  c.z.m.services.PersistanceService - Found 2 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.752 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:10:42.752 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 editions
+2025-12-01 21:10:42.752 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Edition selected: 2ndEdition
+2025-12-01 21:10:42.752 [main] INFO  c.z.m.services.PersistanceService - Found 3 collections for edition '2ndEdition'
+2025-12-01 21:10:42.753 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:10:42.753 [main] INFO  c.z.m.services.PersistanceService - Found 2 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.753 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:10:42.753 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 3 collections for edition: 2ndEdition
+2025-12-01 21:10:42.753 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Collection selected: 0_original
+2025-12-01 21:10:42.753 [main] INFO  c.z.m.services.PersistanceService - Found 2 missions for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:42.753 [main] INFO  c.z.m.p.m.ZoneSelecionMissions - Loaded 2 missions for edition: 2ndEdition, collection: 0_original
+2025-12-01 21:10:43.342 [main] INFO  c.z.m.services.PersistanceService - Found 18 tiles for edition '2ndEdition', collection '0_original'
+2025-12-01 21:10:43.345 [main] INFO  com.zombicide.missiongen.MainWindow - Components initialized
+2025-12-01 21:10:43.420 [main] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaTiles
+2025-12-01 21:10:43.421 [main] INFO  com.zombicide.missiongen.MainWindow - Layout configured
+2025-12-01 21:10:43.536 [main] INFO  com.zombicide.missiongen.MainWindow - Window setup complete
+2025-12-01 21:10:43.560 [main] INFO  com.zombicide.missiongen.MainWindow - Window displayed
+2025-12-01 21:10:43.563 [main] INFO  com.zombicide.missiongen.App - Main window opened.
+2025-12-01 21:10:46.257 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to Missions workflow via menu
+2025-12-01 21:10:46.283 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissionLayout
+2025-12-01 21:10:48.273 [AWT-EventQueue-0] INFO  c.z.m.p.m.ZoneSelecionMissions - Mission selected: mission2
+2025-12-01 21:10:48.273 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Switching to mission viewer
+2025-12-01 21:10:48.279 [AWT-EventQueue-0] INFO  com.zombicide.missiongen.MainWindow - Work area panel replaced: ZoneWorkAreaMissions
+2025-12-01 21:10:48.365 [AWT-EventQueue-0] INFO  c.z.m.services.PersistanceService - Mission mission2 loaded from assets/editions/2ndEdition/0_original/missions/mission2.json

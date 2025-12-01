@@ -3,13 +3,26 @@ package com.zombicide.missiongen.model.board;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.zombicide.missiongen.config.ConfigLoader;
 import com.zombicide.missiongen.model.Mission;
+import com.zombicide.missiongen.model.areas.BoardArea;
+import com.zombicide.missiongen.model.areas.BoardAreaConnection;
 import com.zombicide.missiongen.panels.missionLayout.ZoneMissionGridCell;
 
 public class MissionFactoryService {
+
+    private static final Logger logger = LoggerFactory.getLogger(MissionFactoryService.class);
 
     public static Mission createMission(String missionId, String edition, String collection, String missionName,
             MissionGrid grid) {
@@ -41,273 +54,317 @@ public class MissionFactoryService {
         int missionBoardHeight = grid.getGridHeight() * tileHeight;
         String missionBoardId = UUID.randomUUID().toString();
         MissionBoard missionBoard = new MissionBoard(missionBoardId, image, missionBoardWidth, missionBoardHeight);
-        missionBoard = addAreasAndConnections(missionBoard, grid,
+        missionBoard = addAreas(missionBoard, grid,
                 tileWidth,
                 tileHeight);
 
         return missionBoard;
     }
 
-    // public Mission createMission(String missionId, String edition, String
-    // collection, String missionName,
-    // TileBoard[][] gridCells) {
-    // MissionGrid grid = new MissionGrid(gridCells);
-    // MissionBoard missionBoard = createMissionBoard(grid);
-
-    // String imagePath = ConfigLoader.getInstance().getProperty("folders.editions")
-    // + "/"
-    // + edition + "/" + collection + "/"
-    // + ConfigLoader.getInstance().getProperty("folders.missionImages") + "/" +
-    // "mission_" + missionName
-    // + ".png";
-
-    // return new Mission(grid.getGridWidth(), grid.getGridHeight(),
-    // missionBoard.getWidth(),
-    // missionBoard.getHeight(), edition, collection,
-    // imagePath,
-    // missionName, missionBoard);
-    // }
-
-    private static MissionBoard addAreasAndConnections(MissionBoard missionBoard, MissionGrid grid, int tileWidth,
+    private static MissionBoard addAreas(MissionBoard missionBoard, MissionGrid grid, int tileWidth,
             int tileHeight) {
 
-        grid = renewAreaIds(grid, tileWidth, tileHeight);
-        missionBoard = copyAllAreasAndConnections(missionBoard, grid, tileWidth, tileHeight);
+        List<Set<UUID>> areasToMerge = grid.getAreasToMerge();
+
+        // Create merge map: assign a new UUID to each set of areas to merge
+        Map<UUID, Set<UUID>> mergeMap = new HashMap<>();
+        for (Set<UUID> areasId : areasToMerge) {
+            mergeMap.put(UUID.randomUUID(), areasId);
+        }
+
+        // Get all areas (merged and shifted)
+        List<BoardArea> allAreas = getAllAreasMergedAndShifted(grid, mergeMap, tileWidth, tileHeight);
+
+        // Get all connections with remapped UUIDs
+        List<BoardAreaConnection> connections = getMergedConnections(grid, mergeMap);
+
+        logger.info("Total areas after merge and shift: " + allAreas.size());
+        logger.info("Total connections after merge: " + connections.size());
+
+        // Add all areas to the mission board
+        for (BoardArea area : allAreas) {
+            missionBoard.addArea(area);
+        }
+
+        // Add all connections to the mission board
+        for (BoardAreaConnection connection : connections) {
+            missionBoard.addConnection(connection);
+        }
 
         return missionBoard;
     }
 
-    private static MissionBoard copyAllAreasAndConnections(MissionBoard missionBoard, MissionGrid grid,
+    /**
+     * Devuelve todas las conexiones entre areas modificando los uuid de las areas
+     * que van a mergear por el nuevo uuid que tendran.
+     * De momento no tratamos las open connections, lo haremos mas adelante.
+     * 
+     * @param grid     The mission grid containing all tiles
+     * @param mergeMap Map of new UUID -> Set of old UUIDs to be merged
+     * @return List of connections with remapped UUIDs
+     */
+    private static List<BoardAreaConnection> getMergedConnections(MissionGrid grid,
+            Map<UUID, Set<UUID>> mergeMap) {
+
+        List<BoardAreaConnection> allConnections = new ArrayList<>();
+
+        // Create reverse map: old UUID -> new UUID for quick lookup
+        Map<UUID, UUID> oldToNewMap = new HashMap<>();
+        for (Map.Entry<UUID, Set<UUID>> entry : mergeMap.entrySet()) {
+            UUID newUuid = entry.getKey();
+            for (UUID oldUuid : entry.getValue()) {
+                oldToNewMap.put(oldUuid, newUuid);
+            }
+        }
+
+        // Collect all connections from all boards in the grid
+        for (int row = 0; row < grid.getGridHeight(); row++) {
+            for (int col = 0; col < grid.getGridWidth(); col++) {
+                TileBoard board = grid.getBoard(col, row);
+                if (board != null) {
+                    for (BoardAreaConnection connection : board.getConnections()) {
+                        // Remap the connection UUIDs if they are being merged
+                        UUID areaAId = connection.getAreaAId();
+                        UUID areaBId = connection.getAreaBId();
+
+                        // Skip open connections (where areaB is null)
+                        if (areaBId == null) {
+                            processEdgeConnections(connection, col, row, grid, oldToNewMap, allConnections);
+                            continue;
+                        }
+
+                        // Remap to new UUIDs if they are being merged
+                        UUID newAreaAId = oldToNewMap.getOrDefault(areaAId, areaAId);
+                        UUID newAreaBId = oldToNewMap.getOrDefault(areaBId, areaBId);
+
+                        // Skip self-connections (areas merged together)
+                        if (newAreaAId.equals(newAreaBId)) {
+                            continue;
+                        }
+
+                        // Create new connection with remapped UUIDs
+                        // Note: We only handle normal area-to-area connections here
+                        // Edge connections (with direction) are skipped above
+                        BoardAreaConnection remappedConnection = new BoardAreaConnection(
+                                newAreaAId,
+                                newAreaBId);
+
+                        allConnections.add(remappedConnection);
+                    }
+                }
+            }
+        }
+
+        return allConnections;
+    }
+
+    private static void processEdgeConnections(BoardAreaConnection connection, int col, int row, MissionGrid grid,
+            Map<UUID, UUID> oldToNewMap, List<BoardAreaConnection> allConnections) {
+
+        com.zombicide.missiongen.model.areas.DoorDirection direction = connection.getDirection();
+        if (direction == null) {
+            return;
+        }
+
+        // Calculate target tile coordinates
+        int targetCol = col;
+        int targetRow = row;
+
+        if (direction.name().contains("NORTH")) {
+            targetRow--;
+        } else if (direction.name().contains("SOUTH")) {
+            targetRow++;
+        } else if (direction.name().contains("EAST")) {
+            targetCol++;
+        } else if (direction.name().contains("WEST")) {
+            targetCol--;
+        }
+
+        // Check bounds
+        if (targetCol < 0 || targetCol >= grid.getGridWidth() || targetRow < 0 || targetRow >= grid.getGridHeight()) {
+            return;
+        }
+
+        TileBoard targetBoard = grid.getBoard(targetCol, targetRow);
+        if (targetBoard == null) {
+            return;
+        }
+
+        UUID areaAId = connection.getAreaAId();
+        UUID newAreaAId = oldToNewMap.getOrDefault(areaAId, areaAId);
+
+        // Case 1: Target is a Street Location
+        com.zombicide.missiongen.model.areas.AreaLocation targetStreetLocation = direction.toStreetLocation();
+        if (targetStreetLocation != null && targetBoard.hasAreaLocation(targetStreetLocation)) {
+            BoardArea targetArea = targetBoard.getAreaByAreaLocation(targetStreetLocation);
+            UUID targetAreaId = targetArea.getAreaId();
+            UUID newTargetAreaId = oldToNewMap.getOrDefault(targetAreaId, targetAreaId);
+
+            // Create connection
+            allConnections.add(new BoardAreaConnection(newAreaAId, newTargetAreaId));
+            return;
+        }
+
+        // Case 2: Target is an Indoor Area with matching edge connection
+        com.zombicide.missiongen.model.areas.DoorDirection oppositeDirection = direction.getOpposite();
+        if (oppositeDirection != null) {
+            for (BoardAreaConnection targetConn : targetBoard.getConnections()) {
+                if (targetConn.isEdgeConnection() && targetConn.getDirection() == oppositeDirection) {
+                    UUID targetAreaId = targetConn.getAreaAId();
+                    UUID newTargetAreaId = oldToNewMap.getOrDefault(targetAreaId, targetAreaId);
+
+                    // Create connection
+                    allConnections.add(new BoardAreaConnection(newAreaAId, newTargetAreaId));
+                    // We found the matching connection, we can stop searching in this board
+                    // Note: This assumes only one connection per direction per board edge, which is
+                    // generally true
+                    return;
+                }
+            }
+        }
+    }
+
+    /**
+     * Devuelve todas las areas de la mision, hace un shift de las coordenadas de
+     * las areas dependiendo de en que zona de la grid esta.
+     * Crea las areas de merge creando un top-left y un bottom-right que seran los
+     * limites de la area nueva.
+     * 
+     * @param grid     The mission grid containing all tiles
+     * @param mergeMap Map of new UUID -> Set of old UUIDs to be merged
+     * @return List of all areas with shifted coordinates and merged areas
+     */
+    private static List<BoardArea> getAllAreasMergedAndShifted(MissionGrid grid,
+            Map<UUID, Set<UUID>> mergeMap,
             int tileWidth,
             int tileHeight) {
-        // add all areas and connections to the mission board
-        for (int i = 0; i < grid.getGridWidth(); i++) {
-            for (int j = 0; j < grid.getGridHeight(); j++) {
-                TileBoard board = grid.getBoard(i, j);
+        List<BoardArea> allAreas = new ArrayList<>();
+
+        // Create reverse map: old UUID -> new UUID for quick lookup
+        Map<UUID, UUID> oldToNewMap = new HashMap<>();
+        for (Map.Entry<UUID, Set<UUID>> entry : mergeMap.entrySet()) {
+            UUID newUuid = entry.getKey();
+            for (UUID oldUuid : entry.getValue()) {
+                oldToNewMap.put(oldUuid, newUuid);
+            }
+        }
+
+        // Track which areas have been processed (to avoid duplicates for merged areas)
+        Set<UUID> processedMergedAreas = new HashSet<>();
+
+        // Collect all areas from the grid
+        for (int row = 0; row < grid.getGridHeight(); row++) {
+            for (int col = 0; col < grid.getGridWidth(); col++) {
+                TileBoard board = grid.getBoard(col, row);
                 if (board != null) {
-                    missionBoard.addAreas(board.getAreas());
-                    missionBoard.addConnections(board.getConnections());
+                    // Calculate shift offset for this tile position
+                    int shiftX = col * tileWidth;
+                    int shiftY = row * tileHeight;
+
+                    for (BoardArea area : board.getAreas()) {
+                        UUID areaId = area.getAreaId();
+
+                        // Check if this area is part of a merge
+                        if (oldToNewMap.containsKey(areaId)) {
+                            UUID newMergedId = oldToNewMap.get(areaId);
+
+                            // Only process each merged area once
+                            if (!processedMergedAreas.contains(newMergedId)) {
+                                processedMergedAreas.add(newMergedId);
+
+                                // Create merged area by finding bounding box of all areas to merge
+                                BoardArea mergedArea = createMergedArea(grid, mergeMap.get(newMergedId),
+                                        newMergedId, tileWidth, tileHeight);
+                                allAreas.add(mergedArea);
+                            }
+                        } else {
+                            // Not a merged area - just shift coordinates and add
+                            BoardArea shiftedArea = createShiftedArea(area, shiftX, shiftY);
+                            allAreas.add(shiftedArea);
+                        }
+                    }
                 }
             }
         }
-        return missionBoard;
+
+        return allAreas;
     }
 
-    private static MissionGrid renewAreaIds(MissionGrid grid, int tileWidth, int tileHeight) {
-        // MissionGridCell[][] newGrid = new
-        // MissionGridCell[grid.length][grid[0].length];
+    /**
+     * Creates a merged area by calculating the bounding box of all areas to merge.
+     */
+    private static BoardArea createMergedArea(MissionGrid grid, Set<UUID> areasToMerge,
+            UUID newMergedId, int tileWidth, int tileHeight) {
+        int minX = Integer.MAX_VALUE;
+        int minY = Integer.MAX_VALUE;
+        int maxX = Integer.MIN_VALUE;
+        int maxY = Integer.MIN_VALUE;
 
-        for (int i = 0; i < grid.getGridWidth(); i++) {
-            for (int j = 0; j < grid.getGridHeight(); j++) {
-                TileBoard board = grid.getBoard(i, j);
+        BoardArea firstArea = null;
+
+        // Find bounding box across all tiles
+        for (int row = 0; row < grid.getGridHeight(); row++) {
+            for (int col = 0; col < grid.getGridWidth(); col++) {
+                TileBoard board = grid.getBoard(col, row);
                 if (board != null) {
-                    // Shift areas to the correct position in the mission board
-                    board.shiftAreas(i * tileWidth, j * tileHeight);
+                    int shiftX = col * tileWidth;
+                    int shiftY = row * tileHeight;
+
+                    for (BoardArea area : board.getAreas()) {
+                        if (areasToMerge.contains(area.getAreaId())) {
+                            if (firstArea == null) {
+                                firstArea = area;
+                            }
+
+                            // Calculate shifted coordinates
+                            int areaX = area.getTopLeft().x + shiftX;
+                            int areaY = area.getTopLeft().y + shiftY;
+
+                            minX = Math.min(minX, areaX);
+                            minY = Math.min(minY, areaY);
+                            maxX = Math.max(maxX, areaX + area.getWidth());
+                            maxY = Math.max(maxY, areaY + area.getHeight());
+                        }
+                    }
                 }
             }
         }
-        return grid;
+
+        // Create new merged area with bounding box
+        int width = maxX - minX;
+        int height = maxY - minY;
+
+        BoardArea mergedArea = new BoardArea(newMergedId, new java.awt.Point(minX, minY), width, height);
+
+        // Copy properties from first area (type, location if not street, assets)
+        if (firstArea != null) {
+            mergedArea.setAreaType(firstArea.getAreaType());
+            // For merged street areas, we might want to set location to OTHER or keep it
+            // For now, keep the location from first area
+            mergedArea.setAreaLocation(firstArea.getAreaLocation());
+            // Merge assets from all areas (if needed)
+            mergedArea.setBoardGameAssets(new ArrayList<>(firstArea.getBoardGameAssets()));
+        }
+
+        return mergedArea;
     }
 
-    // private Map<Integer, List<Integer>>
-    // getAllAreasToMerge(ZoneMissionGridCell[][] grid) {
-    // Map<Integer, List<Integer>> areasToMerge = new HashMap<>();
-    // for (int i = 0; i < grid.length; i++) {
-    // for (int j = 0; j < grid[i].length; j++) {
-    // ZoneMissionGridCell cell = grid[i][j];
-    // if (cell != null && cell.getBoard() != null) {
-    // getAreasToMerge(grid, i, j, areasToMerge);
-    // }
-    // }
-    // }
-    // return areasToMerge;
-    // }
+    /**
+     * Creates a shifted copy of an area.
+     */
+    private static BoardArea createShiftedArea(BoardArea original, int shiftX, int shiftY) {
+        BoardArea shifted = new BoardArea(
+                original.getAreaId(),
+                new java.awt.Point(original.getTopLeft().x + shiftX, original.getTopLeft().y + shiftY),
+                original.getWidth(),
+                original.getHeight());
 
-    // private Map<Integer, List<Integer>> getAreasToMerge(ZoneMissionGridCell[][]
-    // grid, int x, int y,
-    // Map<Integer, List<Integer>> areasToMerge) {
-    // // read TOP_RIGHT, MIDDLE_RIGHT, BOTTOM_RIGHT, BOTTOM_MIDDLE and BOTTOM_LEFT
-    // and
-    // // check if the adjacent areas exits
-    // // if the adjacent area exists, add it to the list
+        shifted.setAreaType(original.getAreaType());
+        shifted.setAreaLocation(original.getAreaLocation());
+        shifted.setBoardGameAssets(new ArrayList<>(original.getBoardGameAssets()));
 
-    // //
-    // // BOTTOM_LEFT[x,y] adjacents are TOP_LEFT[x,y+1]
-    // // prior to visit a corner we must check it has not been visited
-    // List<Integer> visitedAreas = new ArrayList<>();
-    // for (int i = 0; i < grid.length; i++) {
-    // for (int j = 0; j < grid[i].length; j++) {
-    // ZoneMissionGridCell cell = grid[i][j];
-    // if (cell != null && cell.getBoard() != null) {
-    // if (cell.getBoard().hasAreaLocation(AreaLocation.TOP_RIGHT_STREET)
-    // && !visitedAreas.contains(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.TOP_RIGHT_STREET).getAreaId()))
-    // {
-    // List<Integer> adjacents = getTopRightAdjacents(grid, i, j);
-    // visitedAreas
-    // .add(cell.getBoard().getAreaByAreaLocation(AreaLocation.TOP_RIGHT_STREET).getAreaId());
-    // visitedAreas.addAll(adjacents);
-    // areasToMerge.put(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.TOP_RIGHT_STREET).getAreaId(),
-    // adjacents);
-
-    // }
-    // if (cell.getBoard().hasAreaLocation(AreaLocation.MIDDLE_RIGHT_STREET) &&
-    // !visitedAreas.contains(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.MIDDLE_RIGHT_STREET).getAreaId()))
-    // {
-    // List<Integer> adjacents = getMiddleRightAdjacents(grid, i, j);
-    // areasToMerge.put(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.MIDDLE_RIGHT_STREET).getAreaId(),
-    // adjacents);
-    // visitedAreas.add(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.MIDDLE_RIGHT_STREET).getAreaId());
-    // visitedAreas.addAll(adjacents);
-    // }
-    // if (cell.getBoard().hasAreaLocation(AreaLocation.BOTTOM_RIGHT_STREET) &&
-    // !visitedAreas.contains(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_RIGHT_STREET).getAreaId()))
-    // {
-    // List<Integer> adjacents = getBottomRightAdjacents(grid, i, j);
-    // visitedAreas.add(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_RIGHT_STREET).getAreaId());
-    // visitedAreas.addAll(adjacents);
-    // areasToMerge.put(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_RIGHT_STREET).getAreaId(),
-    // adjacents);
-    // }
-    // if (cell.getBoard().hasAreaLocation(AreaLocation.BOTTOM_MIDDLE_STREET) &&
-    // !visitedAreas.contains(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_MIDDLE_STREET).getAreaId()))
-    // {
-    // List<Integer> adjacents = getBottomMiddleAdjacents(grid, i, j);
-    // visitedAreas.add(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_MIDDLE_STREET).getAreaId());
-    // visitedAreas.addAll(adjacents);
-    // areasToMerge.put(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_MIDDLE_STREET).getAreaId(),
-    // adjacents);
-    // }
-    // if (cell.getBoard().hasAreaLocation(AreaLocation.BOTTOM_LEFT_STREET) &&
-    // !visitedAreas.contains(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_LEFT_STREET).getAreaId()))
-    // {
-    // List<Integer> adjacents = getBottomLeftAdjacents(grid, i, j);
-    // visitedAreas.add(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_LEFT_STREET).getAreaId());
-    // visitedAreas.addAll(adjacents);
-    // areasToMerge.put(
-    // cell.getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_LEFT_STREET).getAreaId(),
-    // adjacents);
-    // }
-
-    // }
-    // }
-    // }
-    // return areasToMerge;
-    // }
-
-    // private List<Integer> getBottomLeftAdjacents(ZoneMissionGridCell[][] grid,
-    // int i, int j) {
-    // // BOTTOM_LEFT[x+1,y],TOP_LEFT[x+1,y+1],TOP_RIGHT[x,y+1]
-    // List<Integer> adjacents = new ArrayList<>();
-    // if (i + 1 < grid.length && grid[i +
-    // 1][j].getBoard().hasAreaLocation(AreaLocation.BOTTOM_LEFT_STREET)) {
-    // adjacents.add(grid[i +
-    // 1][j].getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_LEFT_STREET).getAreaId());
-    // }
-    // if (j + 1 < grid[0].length && grid[i][j +
-    // 1].getBoard().hasAreaLocation(AreaLocation.TOP_LEFT_STREET)) {
-    // adjacents.add(grid[i][j +
-    // 1].getBoard().getAreaByAreaLocation(AreaLocation.TOP_LEFT_STREET).getAreaId());
-    // }
-    // if (i + 1 < grid.length && j + 1 < grid[0].length
-    // && grid[i + 1][j +
-    // 1].getBoard().hasAreaLocation(AreaLocation.TOP_RIGHT_STREET)) {
-    // adjacents.add(
-    // grid[i + 1][j +
-    // 1].getBoard().getAreaByAreaLocation(AreaLocation.TOP_RIGHT_STREET).getAreaId());
-    // }
-    // return adjacents;
-    // }
-
-    // private List<Integer> getBottomMiddleAdjacents(ZoneMissionGridCell[][] grid,
-    // int i, int j) {
-    // // BOTTOM_MIDDLE[x,y] adjacents are TOP_MIDDLE[x,y+1]
-    // List<Integer> adjacents = new ArrayList<>();
-    // if (j + 1 < grid[0].length && grid[i][j +
-    // 1].getBoard().hasAreaLocation(AreaLocation.TOP_MIDDLE_STREET)) {
-    // adjacents.add(grid[i][j +
-    // 1].getBoard().getAreaByAreaLocation(AreaLocation.TOP_MIDDLE_STREET).getAreaId());
-    // }
-    // return adjacents;
-    // }
-
-    // private List<Integer> getBottomRightAdjacents(ZoneMissionGridCell[][] grid,
-    // int i, int j) {
-    // // BOTTOM_RIGHT[x,y] adjacents are
-    // // BOTTOM_LEFT[x+1,y],TOP_LEFT[x+1,y+1],TOP_RIGHT[x,y+1]
-    // List<Integer> adjacents = new ArrayList<>();
-    // if (i + 1 < grid.length && grid[i +
-    // 1][j].getBoard().hasAreaLocation(AreaLocation.BOTTOM_LEFT_STREET)) {
-    // adjacents.add(grid[i +
-    // 1][j].getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_LEFT_STREET).getAreaId());
-    // }
-    // if (j + 1 < grid[0].length && grid[i][j +
-    // 1].getBoard().hasAreaLocation(AreaLocation.TOP_LEFT_STREET)) {
-    // adjacents.add(grid[i][j +
-    // 1].getBoard().getAreaByAreaLocation(AreaLocation.TOP_LEFT_STREET).getAreaId());
-    // }
-    // if (i + 1 < grid.length && j + 1 < grid[0].length
-    // && grid[i + 1][j +
-    // 1].getBoard().hasAreaLocation(AreaLocation.TOP_RIGHT_STREET)) {
-    // adjacents.add(
-    // grid[i + 1][j +
-    // 1].getBoard().getAreaByAreaLocation(AreaLocation.TOP_RIGHT_STREET).getAreaId());
-    // }
-    // return adjacents;
-    // }
-
-    // private List<Integer> getMiddleRightAdjacents(ZoneMissionGridCell[][] grid,
-    // int i, int j) {
-    // // MIDDLE_RIGHT[x,y] adjacents are MIDDLE_LETF[x+1,y]
-    // List<Integer> adjacents = new ArrayList<>();
-    // if (i + 1 < grid.length && grid[i +
-    // 1][j].getBoard().hasAreaLocation(AreaLocation.MIDDLE_LEFT_STREET)) {
-    // adjacents.add(grid[i +
-    // 1][j].getBoard().getAreaByAreaLocation(AreaLocation.MIDDLE_LEFT_STREET).getAreaId());
-    // }
-    // return adjacents;
-    // }
-
-    // private List<Integer> getTopRightAdjacents(ZoneMissionGridCell[][] grid, int
-    // x, int y) {
-    // // TOP_RIGHT[x,y] adjacents are BOTOM_RIGHT[x,y-1], BOTTOM_LEFT[x+1,y-1],
-    // List<Integer> adjacents = new ArrayList<>();
-    // if (y - 1 > 0 && grid[x][y -
-    // 1].getBoard().hasAreaLocation(AreaLocation.BOTTOM_RIGHT_STREET)) {
-    // adjacents
-    // .add(grid[x][y -
-    // 1].getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_RIGHT_STREET).getAreaId());
-    // }
-    // if (x + 1 < grid.length && grid[x +
-    // 1][y].getBoard().hasAreaLocation(AreaLocation.BOTTOM_LEFT_STREET)) {
-    // adjacents
-    // .add(grid[x +
-    // 1][y].getBoard().getAreaByAreaLocation(AreaLocation.BOTTOM_LEFT_STREET).getAreaId());
-    // }
-    // return adjacents;
-    // }
-
-    // public String buildMissionBoardImagePath(String edition, String collection,
-    // String missionName) {
-    // String missionImagesPath = configLoader.getProperty("folders.editions") + "/"
-    // + edition + "/" + collection + "/"
-    // + configLoader.getProperty("folders.missionImages");
-    // String missionImagePath = missionImagesPath + "/" + "mission_" + missionName
-    // + ".png";
-    // return missionImagePath;
-    // }
+        return shifted;
+    }
 
     // // ***** Private Methods ***** */
 
@@ -336,7 +393,7 @@ public class MissionFactoryService {
 
         for (int i = 0; i < grid.getGridHeight(); i++) { // i = row index
             for (int j = 0; j < grid.getGridWidth(); j++) { // j = col index
-                TileBoard board = grid.getBoard(i, j);
+                TileBoard board = grid.getBoard(j, i);
                 if (board != null) {
                     Image img = board.getImage();
 

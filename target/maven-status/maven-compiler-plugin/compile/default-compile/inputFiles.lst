@@ -49,5 +49,6 @@
 /Users/barrufex/Development/zombicide/MissionGeneration/src/main/java/com/zombicide/missiongen/panels/missions/ZoneMissionDraw.java
 /Users/barrufex/Development/zombicide/MissionGeneration/src/main/java/com/zombicide/missiongen/panels/interfaces/BoardChangeListener.java
 /Users/barrufex/Development/zombicide/MissionGeneration/src/main/java/com/zombicide/missiongen/DTO/BoardAreaDTO.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/main/java/com/zombicide/missiongen/model/areas/DoorDirection.java
 /Users/barrufex/Development/zombicide/MissionGeneration/src/main/java/com/zombicide/missiongen/panels/missions/ZoneWorkAreaMissions.java
 /Users/barrufex/Development/zombicide/MissionGeneration/src/main/java/com/zombicide/missiongen/panels/interfaces/MissionSelectionListener.java

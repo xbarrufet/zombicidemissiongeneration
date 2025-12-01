@@ -101,6 +101,6 @@
   }, {
     "areaA" : "26deed19-5572-4dc4-96a2-a93f2c4374e5",
     "areaB" : null,
-    "direction" : "SOUTH"
+    "direction" : "SOUTH_CENTER"
   } ]
 }

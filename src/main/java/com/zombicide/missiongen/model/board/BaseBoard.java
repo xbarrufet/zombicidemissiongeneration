@@ -101,7 +101,7 @@ public abstract class BaseBoard {
         connections.add(connection);
     }
 
-    public void removeEdgeConnection(UUID areaA, com.zombicide.missiongen.model.areas.Direction direction) {
+    public void removeEdgeConnection(UUID areaA, com.zombicide.missiongen.model.areas.DoorDirection direction) {
         connections.removeIf(
                 connection -> connection.getAreaAId().equals(areaA) && connection.getDirection() == direction);
     }
@@ -211,6 +211,7 @@ public abstract class BaseBoard {
         rotateBoardAreas();
         rotateStreetAreas();
         rotateImage();
+        rotateConnections();
     }
 
     private void rotateStreetAreas() {
@@ -277,6 +278,14 @@ public abstract class BaseBoard {
         g2d.dispose();
 
         this.backgroundImage = newImage;
+    }
+
+    private void rotateConnections() {
+        for (BoardAreaConnection connection : connections) {
+            if (connection.isEdgeConnection()) {
+                connection.setDirection(connection.getDirection().rotate());
+            }
+        }
     }
 
     public void setAreas(List<BoardArea> areas) {

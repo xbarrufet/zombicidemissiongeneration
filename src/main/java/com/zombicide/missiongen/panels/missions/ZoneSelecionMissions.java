@@ -1,4 +1,4 @@
-package com.zombicide.missiongen.panels;
+package com.zombicide.missiongen.panels.missions;
 
 import java.awt.Color;
 import java.awt.Dimension;

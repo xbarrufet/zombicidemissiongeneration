@@ -87,21 +87,13 @@
     "boardGameAssets" : [ ]
   } ],
   "connections" : [ {
-    "areaA" : "5ca0b8c1-6fef-420c-8259-ce209af9170e",
-    "areaB" : null,
-    "direction" : "EAST"
-  }, {
     "areaA" : "e5025379-b7e6-45d2-b224-8b9792dfdc75",
     "areaB" : null,
-    "direction" : "EAST"
+    "direction" : "EAST_CENTER"
   }, {
     "areaA" : "f309fe00-59c9-467e-92f3-b6a3f99ac117",
     "areaB" : null,
-    "direction" : "NORTH"
-  }, {
-    "areaA" : "5ca0b8c1-6fef-420c-8259-ce209af9170e",
-    "areaB" : null,
-    "direction" : "NORTH"
+    "direction" : "NORTH_CENTER"
   }, {
     "areaA" : "5ca0b8c1-6fef-420c-8259-ce209af9170e",
     "areaB" : "e5025379-b7e6-45d2-b224-8b9792dfdc75",
@@ -126,5 +118,13 @@
     "areaA" : "f309fe00-59c9-467e-92f3-b6a3f99ac117",
     "areaB" : "f675de34-ac20-4c5b-9b8d-5cf1839914c7",
     "direction" : null
+  }, {
+    "areaA" : "5ca0b8c1-6fef-420c-8259-ce209af9170e",
+    "areaB" : null,
+    "direction" : "NORTH_RIGHT"
+  }, {
+    "areaA" : "5ca0b8c1-6fef-420c-8259-ce209af9170e",
+    "areaB" : null,
+    "direction" : "EAST_TOP"
   } ]
 }

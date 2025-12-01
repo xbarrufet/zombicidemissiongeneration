@@ -16,13 +16,13 @@ import org.slf4j.LoggerFactory;
 
 import com.zombicide.missiongen.model.Tile;
 import com.zombicide.missiongen.model.board.MissionFactoryService;
-import com.zombicide.missiongen.panels.ZoneSelecionMissions;
-import com.zombicide.missiongen.panels.ZoneSelecionTiles;
 import com.zombicide.missiongen.panels.components.ZoneWorkAreaPanel;
 import com.zombicide.missiongen.panels.interfaces.LayoutChangeListener;
 import com.zombicide.missiongen.panels.interfaces.PanelSelectionListener;
 import com.zombicide.missiongen.panels.missionLayout.ZoneWorkAreaMissionLayout;
+import com.zombicide.missiongen.panels.missions.ZoneSelecionMissions;
 import com.zombicide.missiongen.panels.missions.ZoneWorkAreaMissions;
+import com.zombicide.missiongen.panels.tiles.ZoneSelecionTiles;
 import com.zombicide.missiongen.panels.tiles.ZoneWorkAreaTiles;
 
 public class MainWindow extends JFrame implements LayoutChangeListener {

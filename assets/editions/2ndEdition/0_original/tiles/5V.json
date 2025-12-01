@@ -89,28 +89,28 @@
     "areaB" : "8c9c4f30-daf2-49ae-9ae9-9564b5b690ea",
     "direction" : null
   }, {
-    "areaA" : "fd91fe6d-c792-48e9-bfb6-cce912824318",
-    "areaB" : null,
-    "direction" : "SOUTH"
-  }, {
-    "areaA" : "fd91fe6d-c792-48e9-bfb6-cce912824318",
-    "areaB" : null,
-    "direction" : "EAST"
-  }, {
-    "areaA" : "c6272a87-4b28-4d36-aa32-abb7fdcf6bfe",
-    "areaB" : null,
-    "direction" : "NORTH"
-  }, {
-    "areaA" : "c6272a87-4b28-4d36-aa32-abb7fdcf6bfe",
-    "areaB" : null,
-    "direction" : "EAST"
-  }, {
     "areaA" : "1767b1d5-5bf4-4c97-8bbe-638da4ff56ca",
     "areaB" : null,
-    "direction" : "NORTH"
+    "direction" : "NORTH_CENTER"
   }, {
     "areaA" : "af0db6d7-e526-4697-9686-00072a30adfb",
     "areaB" : null,
-    "direction" : "SOUTH"
+    "direction" : "SOUTH_CENTER"
+  }, {
+    "areaA" : "c6272a87-4b28-4d36-aa32-abb7fdcf6bfe",
+    "areaB" : null,
+    "direction" : "NORTH_RIGHT"
+  }, {
+    "areaA" : "c6272a87-4b28-4d36-aa32-abb7fdcf6bfe",
+    "areaB" : null,
+    "direction" : "EAST_TOP"
+  }, {
+    "areaA" : "fd91fe6d-c792-48e9-bfb6-cce912824318",
+    "areaB" : null,
+    "direction" : "EAST_BOTTOM"
+  }, {
+    "areaA" : "fd91fe6d-c792-48e9-bfb6-cce912824318",
+    "areaB" : null,
+    "direction" : "SOUTH_RIGHT"
   } ]
 }

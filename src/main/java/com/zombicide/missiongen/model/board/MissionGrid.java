@@ -1,7 +1,10 @@
 package com.zombicide.missiongen.model.board;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 import javax.swing.event.MenuKeyEvent;
 
@@ -9,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.zombicide.missiongen.model.areas.AreaLocation;
+import com.zombicide.missiongen.model.areas.BoardArea;
 import com.zombicide.missiongen.model.helpers.TileOperations;
 import com.zombicide.missiongen.model.helpers.TileOperations.MirrorStreetLocation;
 
@@ -69,6 +73,8 @@ public class MissionGrid {
         return gridHeight;
     }
 
+    // **********************. VALIDATE SECTION
+
     public boolean validate() {
         // check that all boards are valid due to restrictions on STREET_LOCATIONS
         // across the board
@@ -116,6 +122,127 @@ public class MissionGrid {
             return board.hasAreaLocation(mirrorStreetLocation.location);
         }
     }
+
+    // *****************************************************
+    // MERGE AREAS SECTION
+    // *****************************************************
+
+    /**
+     * Gets all pairs of areas that should be merged across adjacent tiles.
+     * Each set contains exactly 2 UUIDs representing areas that share a street
+     * connection.
+     * 
+     * @return List of merge groups, each containing 2 area UUIDs
+     */
+    public List<Set<UUID>> getAreasToMerge() {
+        List<Set<UUID>> areasToMerge = new ArrayList<>();
+        Set<UUID> alreadyMerged = new HashSet<>();
+
+        for (int row = 0; row < gridHeight; row++) {
+            for (int col = 0; col < gridWidth; col++) {
+                TileBoard board = grid[row][col];
+                if (board != null) {
+                    findMergePairsForBoard(board, row, col, areasToMerge, alreadyMerged);
+                }
+            }
+        }
+        return areasToMerge;
+    }
+
+    /**
+     * Finds all merge pairs for a specific board at the given position.
+     */
+    private void findMergePairsForBoard(TileBoard board, int row, int col,
+            List<Set<UUID>> areasToMerge,
+            Set<UUID> alreadyMerged) {
+        for (AreaLocation streetLocation : AreaLocation.getStreetLocations()) {
+            if (board.hasAreaLocation(streetLocation)) {
+                BoardArea currentArea = board.getAreaByAreaLocation(streetLocation);
+
+                if (shouldProcessArea(currentArea, alreadyMerged)) {
+                    processMergePair(currentArea, streetLocation, row, col,
+                            areasToMerge, alreadyMerged);
+                }
+            }
+        }
+    }
+
+    /**
+     * Checks if an area should be processed for merging.
+     */
+    private boolean shouldProcessArea(BoardArea area, Set<UUID> alreadyMerged) {
+        return area != null && !alreadyMerged.contains(area.getAreaId());
+    }
+
+    /**
+     * Processes a potential merge pair for the current area.
+     */
+    private void processMergePair(BoardArea currentArea, AreaLocation streetLocation,
+            int row, int col,
+            List<Set<UUID>> areasToMerge,
+            Set<UUID> alreadyMerged) {
+        MirrorStreetLocation[] mirrorStreetLocations = TileOperations
+                .getNeighbouringStreetLocation(streetLocation);
+
+        for (MirrorStreetLocation mirrorStreetLocation : mirrorStreetLocations) {
+            BoardArea neighbourArea = findNeighbourArea(row, col, mirrorStreetLocation);
+
+            if (neighbourArea != null && !alreadyMerged.contains(neighbourArea.getAreaId())) {
+                createMergeGroup(currentArea, neighbourArea, areasToMerge, alreadyMerged);
+            }
+        }
+    }
+
+    /**
+     * Finds the neighboring area at the given mirror location.
+     * 
+     * @return The neighboring area, or null if not found or out of bounds
+     */
+    private BoardArea findNeighbourArea(int row, int col,
+            MirrorStreetLocation mirrorStreetLocation) {
+        int[] offset = TileOperations.getDirectionOffset(col, row,
+                mirrorStreetLocation.direction);
+
+        // Check bounds
+        if (!isValidPosition(offset[0], offset[1])) {
+            return null;
+        }
+
+        TileBoard neighbourBoard = grid[offset[1]][offset[0]];
+        if (neighbourBoard == null) {
+            return null;
+        }
+
+        return neighbourBoard.getAreaByAreaLocation(mirrorStreetLocation.location);
+    }
+
+    /**
+     * Checks if a position is within grid bounds.
+     */
+    private boolean isValidPosition(int x, int y) {
+        return x >= 0 && y >= 0 && x < gridWidth && y < gridHeight;
+    }
+
+    /**
+     * Creates a merge group with both areas and marks them as merged.
+     */
+    private void createMergeGroup(BoardArea currentArea, BoardArea neighbourArea,
+            List<Set<UUID>> areasToMerge,
+            Set<UUID> alreadyMerged) {
+        Set<UUID> mergeGroup = new HashSet<>();
+        mergeGroup.add(currentArea.getAreaId());
+        mergeGroup.add(neighbourArea.getAreaId());
+
+        areasToMerge.add(mergeGroup);
+
+        // Mark both as merged
+        alreadyMerged.add(currentArea.getAreaId());
+        alreadyMerged.add(neighbourArea.getAreaId());
+    }
+
+    // *****************************************************
+    // COMPLETE AND VALID SECTION
+    // *****************************************************
 
     public boolean isCompleteAndValid() {
         boolean complete = true;

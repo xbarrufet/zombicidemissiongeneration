@@ -17,6 +17,7 @@ import com.zombicide.missiongen.DTO.TileDTO;
 import com.zombicide.missiongen.model.Tile;
 import com.zombicide.missiongen.model.areas.BoardAreaConnection;
 import com.zombicide.missiongen.model.areas.Direction;
+import com.zombicide.missiongen.model.areas.DoorDirection;
 
 public class EdgeConnectionPersistenceTest {
 
@@ -74,7 +75,7 @@ public class EdgeConnectionPersistenceTest {
 
         // 2. Add an edge connection (Area UUID -> NORTH)
         java.util.UUID areaId = java.util.UUID.randomUUID();
-        BoardAreaConnection edgeConnection = new BoardAreaConnection(areaId, Direction.NORTH);
+        BoardAreaConnection edgeConnection = new BoardAreaConnection(areaId, DoorDirection.NORTH_LEFT);
         tile.getBoard().addConnection(edgeConnection);
 
         // 3. Persist the tile

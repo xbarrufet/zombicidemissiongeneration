@@ -88,10 +88,10 @@
   }, {
     "areaA" : "1bb6716a-7952-49f3-baa4-46623c423758",
     "areaB" : null,
-    "direction" : "WEST"
+    "direction" : "WEST_CENTER"
   }, {
     "areaA" : "209a8e4d-de90-4ab4-953a-adbfe3d77ad1",
     "areaB" : null,
-    "direction" : "EAST"
+    "direction" : "EAST_CENTER"
   } ]
 }

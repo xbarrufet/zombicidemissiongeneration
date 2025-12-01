@@ -41,7 +41,7 @@ public class Mission {
         this.imagePath = imagePath;
         this.missionName = missionName;
         this.missionBoard = missionBoard;
-        initBoard();
+        // initBoard();
     }
 
     private void initBoard() {

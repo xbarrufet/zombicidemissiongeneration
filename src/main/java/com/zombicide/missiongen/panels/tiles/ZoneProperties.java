@@ -21,6 +21,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JOptionPane;
 
 import com.zombicide.missiongen.model.areas.Direction;
+import com.zombicide.missiongen.model.areas.DoorDirection;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -465,8 +466,8 @@ public class ZoneProperties extends ZonePropertiesPanel implements BoardSelectio
             return;
         }
         BoardArea area = selectedAreas.get(0);
-        Direction[] directions = Direction.values();
-        Direction selectedDirection = (Direction) JOptionPane.showInputDialog(this,
+        DoorDirection[] directions = DoorDirection.values();
+        DoorDirection selectedDirection = (DoorDirection) JOptionPane.showInputDialog(this,
                 "Select Direction", "Add Edge Connection",
                 JOptionPane.QUESTION_MESSAGE, null, directions, directions[0]);
 

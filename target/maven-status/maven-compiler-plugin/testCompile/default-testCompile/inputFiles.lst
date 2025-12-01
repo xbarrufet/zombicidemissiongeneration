@@ -6,5 +6,7 @@
 /Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/model/board/MissionGridTest.java
 /Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/AppTest.java
 /Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/DTO/TileDTOTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/model/board/MissionGridMergeTest.java
 /Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/services/PersistanceServiceTest.java
+/Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/model/board/MissionGridEdgeConnectionTest.java
 /Users/barrufex/Development/zombicide/MissionGeneration/src/test/java/com/zombicide/missiongen/model/TileTest.java

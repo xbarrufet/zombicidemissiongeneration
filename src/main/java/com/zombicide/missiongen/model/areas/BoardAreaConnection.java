@@ -19,7 +19,7 @@ public class BoardAreaConnection {
     /**
      * Direction for edge connections. Null for normal area-to-area connections.
      */
-    private Direction direction;
+    private DoorDirection direction;
 
     /** Normal connection constructor */
     public BoardAreaConnection(UUID areaA, UUID areaB) {
@@ -29,7 +29,7 @@ public class BoardAreaConnection {
     }
 
     /** Edge connection constructor */
-    public BoardAreaConnection(UUID areaA, Direction direction) {
+    public BoardAreaConnection(UUID areaA, DoorDirection direction) {
         this.areaA = areaA;
         this.areaB = null; // null for edge connections
         this.direction = direction;
@@ -49,7 +49,7 @@ public class BoardAreaConnection {
         return areaB;
     }
 
-    public Direction getDirection() {
+    public DoorDirection getDirection() {
         return direction;
     }
 
@@ -61,7 +61,7 @@ public class BoardAreaConnection {
         this.areaB = areaB;
     }
 
-    public void setDirection(Direction direction) {
+    public void setDirection(DoorDirection direction) {
         this.direction = direction;
     }
 
@@ -71,7 +71,7 @@ public class BoardAreaConnection {
 
     public static BoardAreaConnection fromAreaConnectionDTO(BoardAreaConnectionDTO dto) {
         if (dto.direction != null && !dto.direction.isEmpty()) {
-            return new BoardAreaConnection(UUID.fromString(dto.areaA), Direction.valueOf(dto.direction));
+            return new BoardAreaConnection(UUID.fromString(dto.areaA), DoorDirection.fromString(dto.direction));
         }
         return new BoardAreaConnection(UUID.fromString(dto.areaA), UUID.fromString(dto.areaB));
     }

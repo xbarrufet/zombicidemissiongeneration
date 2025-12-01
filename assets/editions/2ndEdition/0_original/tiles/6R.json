@@ -101,6 +101,6 @@
   }, {
     "areaA" : "3e52f8aa-6011-44fc-b9a6-69734d9b2b2a",
     "areaB" : null,
-    "direction" : "NORTH"
+    "direction" : "NORTH_CENTER"
   } ]
 }

@@ -21,4 +21,19 @@ public enum Direction {
     public static Direction fromString(String direction) {
         return Direction.valueOf(direction.toUpperCase());
     }
+
+    public Direction rotate() {
+        switch (this) {
+            case NORTH:
+                return Direction.EAST;
+            case EAST:
+                return Direction.SOUTH;
+            case SOUTH:
+                return Direction.WEST;
+            case WEST:
+                return Direction.NORTH;
+            default:
+                return this;
+        }
+    }
 }

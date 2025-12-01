@@ -89,19 +89,11 @@
   "connections" : [ {
     "areaA" : "fede8726-3d1b-40ba-9a98-03c8a31aee57",
     "areaB" : null,
-    "direction" : "NORTH"
-  }, {
-    "areaA" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
-    "areaB" : null,
-    "direction" : "NORTH"
-  }, {
-    "areaA" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
-    "areaB" : null,
-    "direction" : "EAST"
+    "direction" : "NORTH_CENTER"
   }, {
     "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
     "areaB" : null,
-    "direction" : "EAST"
+    "direction" : "EAST_CENTER"
   }, {
     "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
     "areaB" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
@@ -126,5 +118,13 @@
     "areaA" : "fede8726-3d1b-40ba-9a98-03c8a31aee57",
     "areaB" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
     "direction" : null
+  }, {
+    "areaA" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+    "areaB" : null,
+    "direction" : "NORTH_RIGHT"
+  }, {
+    "areaA" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+    "areaB" : null,
+    "direction" : "EAST_TOP"
   } ]
 }

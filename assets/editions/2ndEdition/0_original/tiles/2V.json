@@ -80,15 +80,7 @@
   "connections" : [ {
     "areaA" : "879041a4-2e8f-43cb-a53d-ab06ded024fd",
     "areaB" : null,
-    "direction" : "SOUTH"
-  }, {
-    "areaA" : "97f0f448-cf49-43b8-8f99-f58d9f9911e0",
-    "areaB" : null,
-    "direction" : "SOUTH"
-  }, {
-    "areaA" : "97f0f448-cf49-43b8-8f99-f58d9f9911e0",
-    "areaB" : null,
-    "direction" : "WEST"
+    "direction" : "SOUTH_CENTER"
   }, {
     "areaA" : "c48f1758-ade9-4e77-818b-f7549db69b91",
     "areaB" : "97f0f448-cf49-43b8-8f99-f58d9f9911e0",
@@ -109,5 +101,13 @@
     "areaA" : "879041a4-2e8f-43cb-a53d-ab06ded024fd",
     "areaB" : "97f0f448-cf49-43b8-8f99-f58d9f9911e0",
     "direction" : null
+  }, {
+    "areaA" : "97f0f448-cf49-43b8-8f99-f58d9f9911e0",
+    "areaB" : null,
+    "direction" : "WEST_BOTTOM"
+  }, {
+    "areaA" : "97f0f448-cf49-43b8-8f99-f58d9f9911e0",
+    "areaB" : null,
+    "direction" : "SOUTH_LEFT"
   } ]
 }

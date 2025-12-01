@@ -87,11 +87,11 @@
   }, {
     "areaA" : "939c0226-af6a-4998-9739-413175b19842",
     "areaB" : null,
-    "direction" : "SOUTH"
+    "direction" : "SOUTH_CENTER"
   }, {
     "areaA" : "60d05d71-b08c-47b1-a8e6-5089ca47d73a",
     "areaB" : null,
-    "direction" : "NORTH"
+    "direction" : "NORTH_CENTER"
   }, {
     "areaA" : "49a1de88-452b-4cb4-8821-a97ad2a889bc",
     "areaB" : "3f1264e2-d378-4fa4-83fe-b72c1775e490",
@@ -99,18 +99,18 @@
   }, {
     "areaA" : "49a1de88-452b-4cb4-8821-a97ad2a889bc",
     "areaB" : null,
-    "direction" : "WEST"
+    "direction" : "NORTH_LEFT"
   }, {
     "areaA" : "49a1de88-452b-4cb4-8821-a97ad2a889bc",
     "areaB" : null,
-    "direction" : "NORTH"
+    "direction" : "WEST_TOP"
   }, {
     "areaA" : "3f1264e2-d378-4fa4-83fe-b72c1775e490",
     "areaB" : null,
-    "direction" : "SOUTH"
+    "direction" : "WEST_BOTTOM"
   }, {
     "areaA" : "3f1264e2-d378-4fa4-83fe-b72c1775e490",
     "areaB" : null,
-    "direction" : "WEST"
+    "direction" : "SOUTH_LEFT"
   } ]
 }

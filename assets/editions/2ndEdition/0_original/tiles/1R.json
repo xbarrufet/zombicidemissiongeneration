@@ -105,10 +105,18 @@
   }, {
     "areaA" : "66a0dadc-d774-4ce9-a3ec-0213e9528af6",
     "areaB" : null,
-    "direction" : "SOUTH"
+    "direction" : "SOUTH_CENTER"
   }, {
     "areaA" : "6792b7cd-01d7-4bf7-95b4-d2876d5b4020",
     "areaB" : null,
-    "direction" : "WEST"
+    "direction" : "WEST_CENTER"
+  }, {
+    "areaA" : "66a0dadc-d774-4ce9-a3ec-0213e9528af6",
+    "areaB" : null,
+    "direction" : "EAST_BOTTOM"
+  }, {
+    "areaA" : "07ea7bbc-4f23-4bf0-a5c7-c527f36c3b53",
+    "areaB" : null,
+    "direction" : "NORTH_CENTER"
   } ]
 }

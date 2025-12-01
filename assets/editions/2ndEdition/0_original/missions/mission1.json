@@ -1,0 +1,12 @@
+{
+  "rows" : 2,
+  "cols" : 1,
+  "width" : 500,
+  "height" : 250,
+  "edition" : "2ndEdition",
+  "collection" : "0_original",
+  "imagePath" : "assets/editions/2ndEdition/0_original/missionImages/mission_mission1.png",
+  "missionName" : "mission1",
+  "areas" : [ ],
+  "connections" : [ ]
+}
