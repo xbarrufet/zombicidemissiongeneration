@@ -188,20 +188,20 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
         // --- 1. Get Dimensions ---
         int panelWidth = getWidth();
         int panelHeight = getHeight();
-        int imageWidth = image.getWidth(this);
-        int imageHeight = image.getHeight(this);
+        int boardWidth = this.getBoard().getWidth();
+        int boardHeight = this.getBoard().getHeight();
 
         // --- 2. Calculate the Scaling Factor ---
         // Find the ratio for both dimensions
-        double widthRatio = (double) panelWidth / imageWidth;
-        double heightRatio = (double) panelHeight / imageHeight;
+        double widthRatio = (double) panelWidth / boardWidth;
+        double heightRatio = (double) panelHeight / boardHeight;
 
         // Use the smaller ratio to ensure the entire image fits within the panel
         double scale = Math.min(widthRatio, heightRatio);
 
         // --- 3. Calculate New Dimensions ---
-        int scaledWidth = (int) (imageWidth * scale);
-        int scaledHeight = (int) (imageHeight * scale);
+        int scaledWidth = (int) (boardWidth * scale);
+        int scaledHeight = (int) (boardHeight * scale);
 
         // --- 4. Center the Image (Optional) ---
         // Calculate the offsets to center the image
