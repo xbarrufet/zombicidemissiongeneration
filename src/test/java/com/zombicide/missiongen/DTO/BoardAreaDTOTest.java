@@ -3,79 +3,69 @@ package com.zombicide.missiongen.DTO;
 import static org.junit.Assert.*;
 
 import java.awt.Point;
+import java.util.UUID;
 
 import org.junit.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.zombicide.missiongen.model.areas.BoardArea;
-import com.zombicide.missiongen.model.elements.BoardGameAsset;
+import com.zombicide.missiongen.model.areas.BoardArea.AreaType;
+import com.zombicide.missiongen.model.areas.AreaLocation;
 
 public class BoardAreaDTOTest {
 
     @Test
-    public void testBoardGameAssetsSerialization() throws Exception {
-        // Create a BoardArea with boardGameAssets
-        BoardArea area = new BoardArea(java.util.UUID.randomUUID(), new Point(10, 20), 100, 100, "INDOOR");
-        area.addBoardGameAsset(BoardGameAsset.GoalMarker);
-        area.addBoardGameAsset(BoardGameAsset.PimpWeapon);
+    public void testBoardAreaSerialization() throws Exception {
+        // Create a BoardArea
+        UUID id = UUID.randomUUID();
+        BoardArea area = new BoardArea(id, new Point(10, 20), 100, 100, AreaType.INDOOR_LIGHT.toString(),
+                AreaLocation.TOP_LEFT_STREET);
 
         // Convert to DTO
         BoardAreaDTO dto = BoardAreaDTO.fromBoardArea(area);
 
-        // Verify DTO has the assets
-        assertNotNull(dto.boardGameAssets);
-        assertEquals(2, dto.boardGameAssets.size());
-        assertTrue(dto.boardGameAssets.contains("GoalMarker"));
-        assertTrue(dto.boardGameAssets.contains("PimpWeapon"));
+        // Verify DTO fields
+        assertEquals(id.toString(), dto.id);
+        assertEquals(10, dto.x);
+        assertEquals(20, dto.y);
+        assertEquals(100, dto.width);
+        assertEquals(100, dto.height);
+        assertEquals("INDOOR_LIGHT", dto.areaType);
+        assertEquals("TOP_LEFT_STREET", dto.areaLocation);
 
         // Serialize to JSON
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         String json = mapper.writeValueAsString(dto);
 
-        // Verify JSON contains boardGameAssets
-        assertTrue(json.contains("boardGameAssets"));
-        assertTrue(json.contains("GoalMarker"));
-        assertTrue(json.contains("PimpWeapon"));
-
-        System.out.println("Serialized JSON:");
-        System.out.println(json);
+        // Verify JSON contains fields
+        assertTrue(json.contains("\"id\" : \"" + id.toString() + "\""));
+        assertTrue(json.contains("\"x\" : 10"));
+        assertTrue(json.contains("\"y\" : 20"));
+        assertTrue(json.contains("\"width\" : 100"));
+        assertTrue(json.contains("\"height\" : 100"));
+        assertTrue(json.contains("\"areaType\" : \"INDOOR_LIGHT\""));
+        assertTrue(json.contains("\"areaLocation\" : \"TOP_LEFT_STREET\""));
 
         // Deserialize back
         BoardAreaDTO deserializedDto = mapper.readValue(json, BoardAreaDTO.class);
-        assertNotNull(deserializedDto.boardGameAssets);
-        assertEquals(2, deserializedDto.boardGameAssets.size());
+        assertEquals(id.toString(), deserializedDto.id);
+        assertEquals(10, deserializedDto.x);
+        assertEquals(20, deserializedDto.y);
+        assertEquals(100, deserializedDto.width);
+        assertEquals(100, deserializedDto.height);
+        assertEquals("INDOOR_LIGHT", deserializedDto.areaType);
+        assertEquals("TOP_LEFT_STREET", deserializedDto.areaLocation);
 
         // Convert back to BoardArea
         BoardArea deserializedArea = BoardArea.fromBoardAreaDTO(deserializedDto);
-        assertNotNull(deserializedArea.getBoardGameAssets());
-        assertEquals(2, deserializedArea.getBoardGameAssets().size());
-        assertTrue(deserializedArea.getBoardGameAssets().contains(BoardGameAsset.GoalMarker));
-        assertTrue(deserializedArea.getBoardGameAssets().contains(BoardGameAsset.PimpWeapon));
-    }
-
-    @Test
-    public void testBoardGameAssetsDeserializationWithMissingField() throws Exception {
-        // Simulate old JSON without boardGameAssets field
-        String oldJson = "{"
-                + "\"id\": \"550e8400-e29b-41d4-a716-446655440000\","
-                + "\"x\": 10,"
-                + "\"y\": 20,"
-                + "\"width\": 100,"
-                + "\"height\": 100,"
-                + "\"areaType\": \"INDOOR\""
-                + "}";
-
-        ObjectMapper mapper = new ObjectMapper();
-        BoardAreaDTO dto = mapper.readValue(oldJson, BoardAreaDTO.class);
-
-        // boardGameAssets should be null when not present in JSON
-        assertNull(dto.boardGameAssets);
-
-        // Convert to BoardArea - should handle null gracefully
-        BoardArea area = BoardArea.fromBoardAreaDTO(dto);
-        assertNotNull(area.getBoardGameAssets());
-        assertEquals(0, area.getBoardGameAssets().size());
+        assertEquals(id, deserializedArea.getAreaId());
+        assertEquals(10, deserializedArea.getTopLeft().x);
+        assertEquals(20, deserializedArea.getTopLeft().y);
+        assertEquals(100, deserializedArea.getWidth());
+        assertEquals(100, deserializedArea.getHeight());
+        assertEquals(AreaType.INDOOR_LIGHT, deserializedArea.getAreaType());
+        assertEquals(AreaLocation.TOP_LEFT_STREET, deserializedArea.getAreaLocation());
     }
 }

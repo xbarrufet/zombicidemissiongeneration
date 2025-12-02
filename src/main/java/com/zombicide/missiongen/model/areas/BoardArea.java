@@ -8,7 +8,6 @@ import java.awt.Point;
 
 import com.zombicide.missiongen.DTO.BoardAreaDTO;
 import com.zombicide.missiongen.config.ConfigLoader;
-import com.zombicide.missiongen.model.elements.BoardGameAsset;
 
 public class BoardArea {
 
@@ -19,7 +18,6 @@ public class BoardArea {
     private Point topLeft;
     private int width;
     private int height;
-    private List<BoardGameAsset> boardGameAssets;
     private AreaLocation areaLocation;
     private ConfigLoader configLoader;
 
@@ -29,7 +27,6 @@ public class BoardArea {
         this.height = height;
         this.areaType = AreaType.OUTDOOR;
         this.topLeft = origin;
-        this.boardGameAssets = new ArrayList<>();
         this.areaLocation = areaLocation;
         this.configLoader = ConfigLoader.getInstance();
     }
@@ -40,7 +37,6 @@ public class BoardArea {
         this.height = height;
         this.areaType = AreaType.INDOOR_LIGHT;
         this.topLeft = origin;
-        this.boardGameAssets = new ArrayList<>();
         this.areaLocation = AreaLocation.OTHER;
     }
 
@@ -50,7 +46,6 @@ public class BoardArea {
         this.height = height;
         this.areaType = areaType;
         this.topLeft = origin;
-        this.boardGameAssets = new ArrayList<>();
         this.areaLocation = AreaLocation.OTHER;
     }
 
@@ -60,18 +55,16 @@ public class BoardArea {
         this.height = height;
         this.areaType = AreaType.fromString(areaType);
         this.topLeft = origin;
-        this.boardGameAssets = new ArrayList<>();
         this.areaLocation = AreaLocation.OTHER;
     }
 
     public BoardArea(UUID id, Point origin, int width, int height, String areaType,
-            List<BoardGameAsset> boardGameAssets, AreaLocation areaLocation) {
+            AreaLocation areaLocation) {
         this.areaId = id;
         this.width = width;
         this.height = height;
         this.areaType = AreaType.fromString(areaType);
         this.topLeft = origin;
-        this.boardGameAssets = boardGameAssets;
         this.areaLocation = areaLocation;
     }
 
@@ -81,7 +74,6 @@ public class BoardArea {
         this.height = areaToCopy.height;
         this.areaType = areaToCopy.areaType;
         this.topLeft = areaToCopy.topLeft;
-        this.boardGameAssets = areaToCopy.boardGameAssets;
         this.areaLocation = areaToCopy.areaLocation;
     }
 
@@ -117,15 +109,9 @@ public class BoardArea {
     }
 
     public static BoardArea fromBoardAreaDTO(BoardAreaDTO boardAreaDTO) {
-        // convert asset list in BoardGameAsset enum
-        if (boardAreaDTO.boardGameAssets == null) {
-            boardAreaDTO.boardGameAssets = new ArrayList<>();
-        }
-        List<BoardGameAsset> assets = boardAreaDTO.boardGameAssets.stream().map(BoardGameAsset::fromString)
-                .collect(Collectors.toList());
         return new BoardArea(UUID.fromString(boardAreaDTO.id), new Point(boardAreaDTO.x, boardAreaDTO.y),
                 boardAreaDTO.width,
-                boardAreaDTO.height, boardAreaDTO.areaType, assets, AreaLocation.fromString(boardAreaDTO.areaLocation));
+                boardAreaDTO.height, boardAreaDTO.areaType, AreaLocation.fromString(boardAreaDTO.areaLocation));
     }
 
     public UUID getAreaId() {
@@ -162,22 +148,6 @@ public class BoardArea {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public List<BoardGameAsset> getBoardGameAssets() {
-        return boardGameAssets;
-    }
-
-    public void setBoardGameAssets(List<BoardGameAsset> boardGameAssets) {
-        // copy the unique elements from the list
-        this.boardGameAssets = boardGameAssets.stream().distinct().collect(Collectors.toList());
-    }
-
-    public void addBoardGameAsset(BoardGameAsset boardGameAsset) {
-        // copy the unique elements from the list
-        if (!this.boardGameAssets.contains(boardGameAsset)) {
-            this.boardGameAssets.add(boardGameAsset);
-        }
     }
 
     public void shiftArea(int x, int y) {

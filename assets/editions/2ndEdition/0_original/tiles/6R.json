@@ -1,106 +1,112 @@
 {
-  "edition" : "2ndEdition",
-  "collection" : "0_original",
-  "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/6R.png",
-  "boardId" : "2ndEdition.0_original.6R",
-  "tileName" : "6R",
-  "areas" : [ {
-    "id" : "87e0334b-f1bc-428e-91a5-4fcab67d5865",
-    "x" : 0,
-    "y" : 0,
-    "width" : 75,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "TOP_LEFT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "32e0b27a-46a8-4e0f-be48-f7e6e75b04e0",
-    "x" : 0,
-    "y" : 75,
-    "width" : 75,
-    "height" : 100,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "MIDDLE_LEFT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "d5456c81-6e3c-4834-a79e-bd5ef0fc932b",
-    "x" : 0,
-    "y" : 175,
-    "width" : 75,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "BOTTOM_LEFT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "a0bff062-f9cd-4935-a8b3-9379b67509a7",
-    "x" : 75,
-    "y" : 175,
-    "width" : 100,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "BOTTOM_MIDDLE_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "b92846fe-84a5-43a1-9fc4-e99f5137b401",
-    "x" : 175,
-    "y" : 175,
-    "width" : 75,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "BOTTOM_RIGHT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "776c1227-d251-483d-8384-3e983490153f",
-    "x" : 175,
-    "y" : 75,
-    "width" : 75,
-    "height" : 100,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "MIDDLE_RIGHT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "8bf77bdb-c6f2-4169-829a-724d1bef03d9",
-    "x" : 175,
-    "y" : 0,
-    "width" : 75,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "TOP_RIGHT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "3e52f8aa-6011-44fc-b9a6-69734d9b2b2a",
-    "x" : 75,
-    "y" : 0,
-    "width" : 100,
-    "height" : 84,
-    "areaType" : "INDOOR_DARK",
-    "areaLocation" : "OTHER",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "269dfff9-3253-4151-858e-2873915a61a8",
-    "x" : 75,
-    "y" : 84,
-    "width" : 100,
-    "height" : 91,
-    "areaType" : "INDOOR_LIGHT",
-    "areaLocation" : "OTHER",
-    "boardGameAssets" : [ "GoalMarker", "PimpWeapon" ]
-  } ],
-  "connections" : [ {
-    "areaA" : "269dfff9-3253-4151-858e-2873915a61a8",
-    "areaB" : "3e52f8aa-6011-44fc-b9a6-69734d9b2b2a",
-    "direction" : null
-  }, {
-    "areaA" : "269dfff9-3253-4151-858e-2873915a61a8",
-    "areaB" : "a0bff062-f9cd-4935-a8b3-9379b67509a7",
-    "direction" : null
-  }, {
-    "areaA" : "8bf77bdb-c6f2-4169-829a-724d1bef03d9",
-    "areaB" : "3e52f8aa-6011-44fc-b9a6-69734d9b2b2a",
-    "direction" : null
-  }, {
-    "areaA" : "3e52f8aa-6011-44fc-b9a6-69734d9b2b2a",
-    "areaB" : null,
-    "direction" : "NORTH_CENTER"
-  } ]
+  "edition": "2ndEdition",
+  "collection": "0_original",
+  "imagePath": "assets/editions/2ndEdition/0_original/tileImages/6R.png",
+  "boardId": "2ndEdition.0_original.6R",
+  "tileName": "6R",
+  "areas": [
+    {
+      "id": "87e0334b-f1bc-428e-91a5-4fcab67d5865",
+      "x": 0,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_LEFT_STREET"
+    },
+    {
+      "id": "32e0b27a-46a8-4e0f-be48-f7e6e75b04e0",
+      "x": 0,
+      "y": 75,
+      "width": 75,
+      "height": 100,
+      "areaType": "OUTDOOR",
+      "areaLocation": "MIDDLE_LEFT_STREET"
+    },
+    {
+      "id": "d5456c81-6e3c-4834-a79e-bd5ef0fc932b",
+      "x": 0,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_LEFT_STREET"
+    },
+    {
+      "id": "a0bff062-f9cd-4935-a8b3-9379b67509a7",
+      "x": 75,
+      "y": 175,
+      "width": 100,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_MIDDLE_STREET"
+    },
+    {
+      "id": "b92846fe-84a5-43a1-9fc4-e99f5137b401",
+      "x": 175,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_RIGHT_STREET"
+    },
+    {
+      "id": "776c1227-d251-483d-8384-3e983490153f",
+      "x": 175,
+      "y": 75,
+      "width": 75,
+      "height": 100,
+      "areaType": "OUTDOOR",
+      "areaLocation": "MIDDLE_RIGHT_STREET"
+    },
+    {
+      "id": "8bf77bdb-c6f2-4169-829a-724d1bef03d9",
+      "x": 175,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_RIGHT_STREET"
+    },
+    {
+      "id": "3e52f8aa-6011-44fc-b9a6-69734d9b2b2a",
+      "x": 75,
+      "y": 0,
+      "width": 100,
+      "height": 84,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "269dfff9-3253-4151-858e-2873915a61a8",
+      "x": 75,
+      "y": 84,
+      "width": 100,
+      "height": 91,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    }
+  ],
+  "connections": [
+    {
+      "areaA": "269dfff9-3253-4151-858e-2873915a61a8",
+      "areaB": "3e52f8aa-6011-44fc-b9a6-69734d9b2b2a",
+      "direction": null
+    },
+    {
+      "areaA": "269dfff9-3253-4151-858e-2873915a61a8",
+      "areaB": "a0bff062-f9cd-4935-a8b3-9379b67509a7",
+      "direction": null
+    },
+    {
+      "areaA": "8bf77bdb-c6f2-4169-829a-724d1bef03d9",
+      "areaB": "3e52f8aa-6011-44fc-b9a6-69734d9b2b2a",
+      "direction": null
+    },
+    {
+      "areaA": "3e52f8aa-6011-44fc-b9a6-69734d9b2b2a",
+      "areaB": null,
+      "direction": "NORTH_CENTER"
+    }
+  ]
 }

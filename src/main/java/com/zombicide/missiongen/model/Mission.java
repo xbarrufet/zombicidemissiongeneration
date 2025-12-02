@@ -96,8 +96,25 @@ public class Mission {
 
     public static Mission fromMissionDTO(MissionDTO missionDTO) {
         // Create an empty MissionBoard (no image will be loaded from DTO)
+        // We need to initialize the MissionBoard so we can add areas and connections to
+        // it
+        Image backgroundImage = null;
+        try {
+            if (missionDTO.imagePath != null) {
+                backgroundImage = ImageIO.read(new File(missionDTO.imagePath));
+            }
+        } catch (IOException e) {
+            logger.error("Error reading mission image: {}", missionDTO.imagePath, e);
+        }
+
+        MissionBoard missionBoard = new MissionBoard(
+                missionDTO.edition + "." + missionDTO.collection + "." + missionDTO.missionName,
+                backgroundImage,
+                missionDTO.width,
+                missionDTO.height);
+
         Mission mission = new Mission(missionDTO.rows, missionDTO.cols, missionDTO.width, missionDTO.height,
-                missionDTO.edition, missionDTO.collection, missionDTO.imagePath, missionDTO.missionName, null);
+                missionDTO.edition, missionDTO.collection, missionDTO.imagePath, missionDTO.missionName, missionBoard);
 
         // Add areas from DTO
         if (missionDTO.areas != null) {

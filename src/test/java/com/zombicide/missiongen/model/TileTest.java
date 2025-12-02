@@ -63,8 +63,8 @@ public class TileTest {
         BaseBoard board = tile.getBoard();
         assertNotNull("Board should not be null", board);
         assertNotNull("Board image should not be null", board.getImage());
-        assertEquals("Board width should match image width", 200, board.getWidth());
-        assertEquals("Board height should match image height", 300, board.getHeight());
+        assertEquals("Board width should match configured width", 250, board.getWidth());
+        assertEquals("Board height should match configured height", 250, board.getHeight());
     }
 
     @Test

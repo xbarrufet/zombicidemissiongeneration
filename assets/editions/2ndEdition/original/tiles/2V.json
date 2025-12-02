@@ -1,96 +1,106 @@
 {
-  "edition" : "2ndEdition",
-  "collection" : "original",
-  "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/2V.png",
-  "tileName" : "2V",
-  "areas" : [ {
-    "id" : 6,
-    "x" : 6,
-    "y" : 82,
-    "width" : 161,
-    "height" : 77,
-    "areaType" : "INDOOR_LIGHT",
-    "boardGameAssets" : [ "PimpWeapon" ]
-  }, {
-    "id" : 7,
-    "x" : 5,
-    "y" : 166,
-    "width" : 78,
-    "height" : 77,
-    "areaType" : "INDOOR_LIGHT",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : 8,
-    "x" : 91,
-    "y" : 167,
-    "width" : 76,
-    "height" : 75,
-    "areaType" : "INDOOR_LIGHT",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : 9,
-    "x" : 2,
-    "y" : 2,
-    "width" : 72,
-    "height" : 67,
-    "areaType" : "STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : 10,
-    "x" : 77,
-    "y" : 3,
-    "width" : 96,
-    "height" : 68,
-    "areaType" : "STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : 11,
-    "x" : 176,
-    "y" : 4,
-    "width" : 71,
-    "height" : 70,
-    "areaType" : "STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : 12,
-    "x" : 177,
-    "y" : 78,
-    "width" : 71,
-    "height" : 93,
-    "areaType" : "STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : 13,
-    "x" : 179,
-    "y" : 174,
-    "width" : 68,
-    "height" : 72,
-    "areaType" : "STREET",
-    "boardGameAssets" : [ ]
-  } ],
-  "connections" : [ {
-    "areaA" : 6,
-    "areaB" : 8
-  }, {
-    "areaA" : 6,
-    "areaB" : 7
-  }, {
-    "areaA" : 13,
-    "areaB" : 8
-  }, {
-    "areaA" : 6,
-    "areaB" : 10
-  }, {
-    "areaA" : 10,
-    "areaB" : 9
-  }, {
-    "areaA" : 10,
-    "areaB" : 11
-  }, {
-    "areaA" : 11,
-    "areaB" : 12
-  }, {
-    "areaA" : 12,
-    "areaB" : 13
-  } ]
+  "edition": "2ndEdition",
+  "collection": "original",
+  "imagePath": "assets/editions/2ndEdition/0_original/tileImages/2V.png",
+  "tileName": "2V",
+  "areas": [
+    {
+      "id": 6,
+      "x": 6,
+      "y": 82,
+      "width": 161,
+      "height": 77,
+      "areaType": "INDOOR_LIGHT"
+    },
+    {
+      "id": 7,
+      "x": 5,
+      "y": 166,
+      "width": 78,
+      "height": 77,
+      "areaType": "INDOOR_LIGHT"
+    },
+    {
+      "id": 8,
+      "x": 91,
+      "y": 167,
+      "width": 76,
+      "height": 75,
+      "areaType": "INDOOR_LIGHT"
+    },
+    {
+      "id": 9,
+      "x": 2,
+      "y": 2,
+      "width": 72,
+      "height": 67,
+      "areaType": "STREET"
+    },
+    {
+      "id": 10,
+      "x": 77,
+      "y": 3,
+      "width": 96,
+      "height": 68,
+      "areaType": "STREET"
+    },
+    {
+      "id": 11,
+      "x": 176,
+      "y": 4,
+      "width": 71,
+      "height": 70,
+      "areaType": "STREET"
+    },
+    {
+      "id": 12,
+      "x": 177,
+      "y": 78,
+      "width": 71,
+      "height": 93,
+      "areaType": "STREET"
+    },
+    {
+      "id": 13,
+      "x": 179,
+      "y": 174,
+      "width": 68,
+      "height": 72,
+      "areaType": "STREET"
+    }
+  ],
+  "connections": [
+    {
+      "areaA": 6,
+      "areaB": 8
+    },
+    {
+      "areaA": 6,
+      "areaB": 7
+    },
+    {
+      "areaA": 13,
+      "areaB": 8
+    },
+    {
+      "areaA": 6,
+      "areaB": 10
+    },
+    {
+      "areaA": 10,
+      "areaB": 9
+    },
+    {
+      "areaA": 10,
+      "areaB": 11
+    },
+    {
+      "areaA": 11,
+      "areaB": 12
+    },
+    {
+      "areaA": 12,
+      "areaB": 13
+    }
+  ]
 }

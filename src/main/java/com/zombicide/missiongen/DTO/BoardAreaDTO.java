@@ -23,7 +23,6 @@ public class BoardAreaDTO {
         dto.width = area.getWidth();
         dto.height = area.getHeight();
         dto.areaType = area.getAreaType().toString();
-        dto.boardGameAssets = area.getBoardGameAssets().stream().map(Enum::name).collect(Collectors.toList());
         return dto;
     }
 }

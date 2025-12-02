@@ -18,7 +18,7 @@ import com.zombicide.missiongen.config.ConfigLoader;
 import com.zombicide.missiongen.model.Mission;
 import com.zombicide.missiongen.model.areas.BoardArea;
 import com.zombicide.missiongen.model.areas.BoardAreaConnection;
-import com.zombicide.missiongen.panels.missionLayout.ZoneMissionGridCell;
+import com.zombicide.missiongen.ui.missionLayout.ZoneMissionGridCell;
 
 public class MissionFactoryService {
 
@@ -342,8 +342,6 @@ public class MissionFactoryService {
             // For merged street areas, we might want to set location to OTHER or keep it
             // For now, keep the location from first area
             mergedArea.setAreaLocation(firstArea.getAreaLocation());
-            // Merge assets from all areas (if needed)
-            mergedArea.setBoardGameAssets(new ArrayList<>(firstArea.getBoardGameAssets()));
         }
 
         return mergedArea;
@@ -361,7 +359,6 @@ public class MissionFactoryService {
 
         shifted.setAreaType(original.getAreaType());
         shifted.setAreaLocation(original.getAreaLocation());
-        shifted.setBoardGameAssets(new ArrayList<>(original.getBoardGameAssets()));
 
         return shifted;
     }
@@ -382,8 +379,8 @@ public class MissionFactoryService {
             return null;
         }
 
-        int tileWidth = grid.getBoard(0, 0).getWidth();
-        int tileHeight = grid.getBoard(0, 0).getHeight();
+        int tileWidth = Integer.parseInt(ConfigLoader.getInstance().getProperty("tile.width"));
+        int tileHeight = Integer.parseInt(ConfigLoader.getInstance().getProperty("tile.height"));
         int totalWidth = grid.getGridWidth() * tileWidth;
         int totalHeight = grid.getGridHeight() * tileHeight;
 

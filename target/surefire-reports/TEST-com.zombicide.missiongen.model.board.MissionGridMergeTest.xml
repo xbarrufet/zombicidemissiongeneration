@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.383" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.125" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -7,14 +7,14 @@
     <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value="Europe/Madrid"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="java.vm.specification.version" value="23"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/barrufex/Development/zombicide/MissionGeneration/target/surefire/surefirebooter-20251201191225672_3.jar /Users/barrufex/Development/zombicide/MissionGeneration/target/surefire 2025-12-01T19-12-25_626-jvmRun1 surefire-20251201191225672_1tmp surefire_0-20251201191225672_2tmp"/>
+    <property name="sun.java.command" value="/Users/barrufex/Development/zombicide/MissionGeneration/target/surefire/surefirebooter-20251202045503609_3.jar /Users/barrufex/Development/zombicide/MissionGeneration/target/surefire 2025-12-02T04-55-03_560-jvmRun1 surefire-20251202045503609_1tmp surefire_0-20251202045503609_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="MissionGridMergeTest"/>
     <property name="surefire.test.class.path" value="/Users/barrufex/Development/zombicide/MissionGeneration/target/test-classes:/Users/barrufex/Development/zombicide/MissionGeneration/target/classes:/Users/barrufex/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar:/Users/barrufex/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/barrufex/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/barrufex/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar:/Users/barrufex/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar:/Users/barrufex/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar:/Users/barrufex/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/barrufex/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/barrufex/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/Users/barrufex/.m2/repository/net/bytebuddy/byte-buddy/1.15.4/byte-buddy-1.15.4.jar:/Users/barrufex/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.4/byte-buddy-agent-1.15.4.jar:/Users/barrufex/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/barrufex"/>
@@ -26,10 +26,10 @@
     <property name="basedir" value="/Users/barrufex/Development/zombicide/MissionGeneration"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/barrufex/Development/zombicide/MissionGeneration/target/surefire/surefirebooter-20251201191225672_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/barrufex/Development/zombicide/MissionGeneration/target/surefire/surefirebooter-20251202045503609_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2"/>
     <property name="user.name" value="barrufex"/>
@@ -56,26 +56,25 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testGetAreasToMerge" classname="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.282">
-    <system-out><![CDATA[19:12:26.009 [main] INFO  c.z.missiongen.config.ConfigLoader - Properties loaded successfully from application.properties
-19:12:26.113 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
-19:12:26.167 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+  <testcase name="testGetAreasToMerge" classname="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.036">
+    <system-out><![CDATA[04:55:04.238 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+04:55:04.261 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
 ]]></system-out>
   </testcase>
-  <testcase name="testSpecificConnectionRemapping" classname="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.039">
-    <system-out><![CDATA[19:12:26.179 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
-19:12:26.186 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
-Found remapped connection: 89f1201a-bd16-4c4e-abc8-24ed512f38bc -> 09680f42-079e-4406-a793-449f81ae6a58
+  <testcase name="testSpecificConnectionRemapping" classname="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.042">
+    <system-out><![CDATA[04:55:04.277 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+04:55:04.299 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+Found remapped connection: 89f1201a-bd16-4c4e-abc8-24ed512f38bc -> 53ec2f32-4f90-4857-834a-fbbbb809a2bc
 ]]></system-out>
   </testcase>
-  <testcase name="testMergedConnectionsRemapping" classname="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.016">
-    <system-out><![CDATA[19:12:26.220 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
-19:12:26.227 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+  <testcase name="testMergedConnectionsRemapping" classname="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.028">
+    <system-out><![CDATA[04:55:04.315 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+04:55:04.329 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
 ]]></system-out>
   </testcase>
-  <testcase name="testMergedConnectionsCount" classname="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.02">
-    <system-out><![CDATA[19:12:26.237 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
-19:12:26.244 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
+  <testcase name="testMergedConnectionsCount" classname="com.zombicide.missiongen.model.board.MissionGridMergeTest" time="0.018">
+    <system-out><![CDATA[04:55:04.345 [main] INFO  c.z.m.services.PersistanceService - Tile 1V loaded from assets/editions/2ndEdition/0_original/tiles/1V.json
+04:55:04.352 [main] INFO  c.z.m.services.PersistanceService - Tile 3V loaded from assets/editions/2ndEdition/0_original/tiles/3V.json
 Original connections (non-open): 10
 Merged connections: 10
 ]]></system-out>

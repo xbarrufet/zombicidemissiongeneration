@@ -1,97 +1,103 @@
 {
-  "edition" : "2ndEdition",
-  "collection" : "0_original",
-  "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/3R.jpeg",
-  "boardId" : "2ndEdition.0_original.3R",
-  "tileName" : "3R",
-  "areas" : [ {
-    "id" : "edc030e4-ffe9-4d4f-8564-a8a409f7477b",
-    "x" : 0,
-    "y" : 0,
-    "width" : 75,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "TOP_LEFT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "b708161a-a83e-4874-b1cd-38d3239b165a",
-    "x" : 75,
-    "y" : 0,
-    "width" : 100,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "TOP_MIDDLE_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "0392bc6c-390e-49fb-9a24-378294a10486",
-    "x" : 175,
-    "y" : 0,
-    "width" : 75,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "TOP_RIGHT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "1024aea8-149e-4b92-a7be-b58834e48c9e",
-    "x" : 0,
-    "y" : 175,
-    "width" : 75,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "BOTTOM_LEFT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "6570f14a-1a12-4a7e-a401-ab4150dfd4a5",
-    "x" : 75,
-    "y" : 175,
-    "width" : 100,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "BOTTOM_MIDDLE_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "6231e7d3-ffb7-4e97-8797-900498410b38",
-    "x" : 175,
-    "y" : 175,
-    "width" : 75,
-    "height" : 75,
-    "areaType" : "OUTDOOR",
-    "areaLocation" : "BOTTOM_RIGHT_STREET",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "1bb6716a-7952-49f3-baa4-46623c423758",
-    "x" : 0,
-    "y" : 75,
-    "width" : 80,
-    "height" : 100,
-    "areaType" : "INDOOR_DARK",
-    "areaLocation" : "OTHER",
-    "boardGameAssets" : [ ]
-  }, {
-    "id" : "209a8e4d-de90-4ab4-953a-adbfe3d77ad1",
-    "x" : 80,
-    "y" : 75,
-    "width" : 170,
-    "height" : 100,
-    "areaType" : "INDOOR_LIGHT",
-    "areaLocation" : "OTHER",
-    "boardGameAssets" : [ "PimpWeapon", "GoalMarker" ]
-  } ],
-  "connections" : [ {
-    "areaA" : "209a8e4d-de90-4ab4-953a-adbfe3d77ad1",
-    "areaB" : "6570f14a-1a12-4a7e-a401-ab4150dfd4a5",
-    "direction" : null
-  }, {
-    "areaA" : "209a8e4d-de90-4ab4-953a-adbfe3d77ad1",
-    "areaB" : "1bb6716a-7952-49f3-baa4-46623c423758",
-    "direction" : null
-  }, {
-    "areaA" : "1bb6716a-7952-49f3-baa4-46623c423758",
-    "areaB" : null,
-    "direction" : "WEST_CENTER"
-  }, {
-    "areaA" : "209a8e4d-de90-4ab4-953a-adbfe3d77ad1",
-    "areaB" : null,
-    "direction" : "EAST_CENTER"
-  } ]
+  "edition": "2ndEdition",
+  "collection": "0_original",
+  "imagePath": "assets/editions/2ndEdition/0_original/tileImages/3R.jpeg",
+  "boardId": "2ndEdition.0_original.3R",
+  "tileName": "3R",
+  "areas": [
+    {
+      "id": "edc030e4-ffe9-4d4f-8564-a8a409f7477b",
+      "x": 0,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_LEFT_STREET"
+    },
+    {
+      "id": "b708161a-a83e-4874-b1cd-38d3239b165a",
+      "x": 75,
+      "y": 0,
+      "width": 100,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_MIDDLE_STREET"
+    },
+    {
+      "id": "0392bc6c-390e-49fb-9a24-378294a10486",
+      "x": 175,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_RIGHT_STREET"
+    },
+    {
+      "id": "1024aea8-149e-4b92-a7be-b58834e48c9e",
+      "x": 0,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_LEFT_STREET"
+    },
+    {
+      "id": "6570f14a-1a12-4a7e-a401-ab4150dfd4a5",
+      "x": 75,
+      "y": 175,
+      "width": 100,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_MIDDLE_STREET"
+    },
+    {
+      "id": "6231e7d3-ffb7-4e97-8797-900498410b38",
+      "x": 175,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_RIGHT_STREET"
+    },
+    {
+      "id": "1bb6716a-7952-49f3-baa4-46623c423758",
+      "x": 0,
+      "y": 75,
+      "width": 80,
+      "height": 100,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "209a8e4d-de90-4ab4-953a-adbfe3d77ad1",
+      "x": 80,
+      "y": 75,
+      "width": 170,
+      "height": 100,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    }
+  ],
+  "connections": [
+    {
+      "areaA": "209a8e4d-de90-4ab4-953a-adbfe3d77ad1",
+      "areaB": "6570f14a-1a12-4a7e-a401-ab4150dfd4a5",
+      "direction": null
+    },
+    {
+      "areaA": "209a8e4d-de90-4ab4-953a-adbfe3d77ad1",
+      "areaB": "1bb6716a-7952-49f3-baa4-46623c423758",
+      "direction": null
+    },
+    {
+      "areaA": "1bb6716a-7952-49f3-baa4-46623c423758",
+      "areaB": null,
+      "direction": "WEST_CENTER"
+    },
+    {
+      "areaA": "209a8e4d-de90-4ab4-953a-adbfe3d77ad1",
+      "areaB": null,
+      "direction": "EAST_CENTER"
+    }
+  ]
 }

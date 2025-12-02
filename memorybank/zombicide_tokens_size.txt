@@ -1,0 +1,5 @@
+car = 100x50
+exit, spawn,  50x25
+goals, pimpweaponbox 28x25
+doors = 30x25
+noise = 25x25x25

@@ -16,14 +16,14 @@ import org.slf4j.LoggerFactory;
 
 import com.zombicide.missiongen.model.Tile;
 import com.zombicide.missiongen.model.board.MissionFactoryService;
-import com.zombicide.missiongen.panels.components.ZoneWorkAreaPanel;
-import com.zombicide.missiongen.panels.interfaces.LayoutChangeListener;
-import com.zombicide.missiongen.panels.interfaces.PanelSelectionListener;
-import com.zombicide.missiongen.panels.missionLayout.ZoneWorkAreaMissionLayout;
-import com.zombicide.missiongen.panels.missions.ZoneSelecionMissions;
-import com.zombicide.missiongen.panels.missions.ZoneWorkAreaMissions;
-import com.zombicide.missiongen.panels.tiles.ZoneSelecionTiles;
-import com.zombicide.missiongen.panels.tiles.ZoneWorkAreaTiles;
+import com.zombicide.missiongen.ui.components.ZoneWorkAreaPanel;
+import com.zombicide.missiongen.ui.interfaces.LayoutChangeListener;
+import com.zombicide.missiongen.ui.interfaces.PanelSelectionListener;
+import com.zombicide.missiongen.ui.missionLayout.ZoneWorkAreaMissionLayout;
+import com.zombicide.missiongen.ui.missions.ZoneSelecionMissions;
+import com.zombicide.missiongen.ui.missions.ZoneWorkAreaMissions;
+import com.zombicide.missiongen.ui.tiles.ZoneSelecionTiles;
+import com.zombicide.missiongen.ui.tiles.ZoneWorkAreaTiles;
 
 public class MainWindow extends JFrame implements LayoutChangeListener {
     private static final Logger logger = LoggerFactory.getLogger(MainWindow.class);
@@ -98,8 +98,8 @@ public class MainWindow extends JFrame implements LayoutChangeListener {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
 
-        // Start with Tiles selection
-        currentSelectionPanel = zoneSelecionTiles;
+        // Start with Missions selection
+        currentSelectionPanel = zoneSelecionMissions;
         add(currentSelectionPanel, gbc);
 
         // // Work Area (contains ZoneDraw + ZoneProperties) - Right side (1000x750)
@@ -109,7 +109,7 @@ public class MainWindow extends JFrame implements LayoutChangeListener {
         // gbc.weighty = 1.0;
         // gbc.fill = GridBagConstraints.BOTH;
         // add(tileWorkAreaPanel, gbc);
-        this.replaceWorkArea(tileWorkAreaPanel);
+        this.replaceWorkArea(missionWorkAreaPanel);
 
         logger.info("Layout configured");
     }

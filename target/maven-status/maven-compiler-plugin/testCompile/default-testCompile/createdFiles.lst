@@ -1,6 +1,12 @@
-com/zombicide/missiongen/DTO/BoardAreaDTOTest.class
+com/zombicide/missiongen/services/MissionLoadTest.class
 com/zombicide/missiongen/AppTest.class
+com/zombicide/missiongen/model/board/MissionGridEdgeConnectionTest.class
+com/zombicide/missiongen/services/EdgeConnectionPersistenceTest.class
+com/zombicide/missiongen/services/MissionFactoryServiceTest.class
+com/zombicide/missiongen/model/board/MissionGridTest.class
+com/zombicide/missiongen/model/board/MissionGridMergeTest.class
+com/zombicide/missiongen/model/BaseBoardRotationTest.class
 com/zombicide/missiongen/model/TileTest.class
 com/zombicide/missiongen/DTO/TileDTOTest.class
-com/zombicide/missiongen/services/EdgeConnectionPersistenceTest.class
+com/zombicide/missiongen/services/PersistanceServiceTest.class
 com/zombicide/missiongen/config/ConfigLoaderTest.class

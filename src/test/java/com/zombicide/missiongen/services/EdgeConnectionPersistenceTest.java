@@ -96,6 +96,6 @@ public class EdgeConnectionPersistenceTest {
         BoardAreaConnectionDTO connDTO = loadedDTO.connections.get(0);
         assertEquals("AreaA should match", areaId.toString(), connDTO.areaA);
         assertEquals("AreaB should be null", null, connDTO.areaB);
-        assertEquals("Direction should be NORTH", "NORTH", connDTO.direction);
+        assertEquals("Direction should be NORTH_LEFT", "NORTH_LEFT", connDTO.direction);
     }
 }

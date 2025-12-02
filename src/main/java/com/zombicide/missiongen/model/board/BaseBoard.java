@@ -144,12 +144,10 @@ public abstract class BaseBoard {
         // Create new areas with new UUIDs and clear assets
         BoardArea topArea = BoardAreaFactiory.createBoardIndoorArea(area.getTopLeft(),
                 new Point(area.getBottomRight().x, splitPoint));
-        topArea.setBoardGameAssets(new ArrayList<>()); // Clear assets
         areas.add(topArea);
 
         BoardArea bottomArea = BoardAreaFactiory.createBoardIndoorArea(new Point(area.getTopLeft().x,
                 splitPoint), area.getBottomRight());
-        bottomArea.setBoardGameAssets(new ArrayList<>()); // Clear assets
         areas.add(bottomArea);
 
         logger.info("Split area {} horizontally into {} (top) and {} (bottom)", areaId, topArea.getAreaId(),
@@ -168,12 +166,10 @@ public abstract class BaseBoard {
         // Create new areas with new UUIDs and clear assets
         BoardArea leftArea = BoardAreaFactiory.createBoardIndoorArea(area.getTopLeft(),
                 new Point(splitPoint, area.getBottomRight().y));
-        leftArea.setBoardGameAssets(new ArrayList<>()); // Clear assets
         areas.add(leftArea);
 
         BoardArea rightArea = BoardAreaFactiory.createBoardIndoorArea(new Point(splitPoint,
                 area.getTopLeft().y), area.getBottomRight());
-        rightArea.setBoardGameAssets(new ArrayList<>()); // Clear assets
         areas.add(rightArea);
 
         logger.info("Split area {} vertically into {} (left) and {} (right)", areaId, leftArea.getAreaId(),
