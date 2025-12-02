@@ -1,13 +1,16 @@
 package com.zombicide.missiongen.model.areas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.awt.Point;
 
 import com.zombicide.missiongen.DTO.BoardAreaDTO;
 import com.zombicide.missiongen.config.ConfigLoader;
+import com.zombicide.missiongen.model.helpers.Rect;
 
 public class BoardArea {
 
@@ -134,6 +137,18 @@ public class BoardArea {
         return new Point(topLeft.x + width, topLeft.y + height);
     }
 
+    public Point getCenter() {
+        return new Point(topLeft.x + width / 2, topLeft.y + height / 2);
+    }
+
+    public Point getTopRight() {
+        return new Point(topLeft.x + width, topLeft.y);
+    }
+
+    public Point getBottomLeft() {
+        return new Point(topLeft.x, topLeft.y + height);
+    }
+
     public int getWidth() {
         return width;
     }
@@ -184,5 +199,14 @@ public class BoardArea {
             default:
                 return null;
         }
+    }
+
+    public Map<Direction,Rect> getBorderLines() {
+        Map<Direction,Rect> borderLines = new HashMap<>();
+        borderLines.put(Direction.NORTH, new Rect(getTopLeft(), new Point(getTopLeft().x + getWidth(), getTopLeft().y)));
+        borderLines.put(Direction.SOUTH, new Rect(new Point(getTopLeft().x, getTopLeft().y + getHeight()), getBottomRight()));
+        borderLines.put(Direction.EAST, new Rect(new Point(getTopLeft().x + getWidth(), getTopLeft().y), getBottomRight()));
+        borderLines.put(Direction.WEST, new Rect(getTopLeft(), new Point(getTopLeft().x, getTopLeft().y + getHeight())));
+        return borderLines;
     }
 }

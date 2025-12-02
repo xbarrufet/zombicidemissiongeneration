@@ -20,11 +20,13 @@ import com.zombicide.missiongen.model.areas.BoardArea;
 import com.zombicide.missiongen.model.areas.BoardAreaConnection;
 import com.zombicide.missiongen.model.areas.BoardAreaFactiory;
 import com.zombicide.missiongen.model.areas.Direction;
+import com.zombicide.missiongen.model.tokens.Token;
 
 public abstract class BaseBoard {
 
     private List<BoardArea> areas;
     private List<BoardAreaConnection> connections;
+    private List<Token> tokens;
     private Image backgroundImage;
     private int width;
     private int height;
@@ -42,6 +44,7 @@ public abstract class BaseBoard {
         this.config = ConfigLoader.getInstance();
         this.areas = new ArrayList<>();
         this.connections = new ArrayList<>();
+        this.tokens = new ArrayList<>();
     }
 
     public BaseBoard(BaseBoard boardToCopy) {
@@ -58,6 +61,8 @@ public abstract class BaseBoard {
         for (BoardAreaConnection connection : boardToCopy.connections) {
             this.connections.add(new BoardAreaConnection(connection));
         }
+        this.tokens = new ArrayList<>();
+        // TODO: Copy tokens if needed in the future
     }
 
     public void addArea(BoardArea area) {
@@ -121,6 +126,24 @@ public abstract class BaseBoard {
     public void removeConnection(UUID idA, UUID idB) {
         connections
                 .removeIf(connection -> connection.getAreaAId().equals(idA) && connection.getAreaBId().equals(idB));
+    }
+
+    public void addToken(Token token) {
+        this.tokens.add(token);
+    }
+
+    public void removeToken(UUID tokenId) {
+        this.tokens.removeIf(token -> token.getId().equals(tokenId));
+    }
+
+    public List<Token> getTokens() {
+        return this.tokens;
+    }
+
+    public List<Token> getTokensInArea(UUID areaId) {
+        return this.tokens.stream()
+                .filter(token -> areaId.equals(token.getAreaId()))
+                .collect(Collectors.toList());
     }
 
     public boolean isOverlap(BoardArea newArea) {

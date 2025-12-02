@@ -28,12 +28,25 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
     private double currentRenderScale = 1.0;
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(BoardBackgroundPanel.class);
 
+    public int getImgXOffset() {
+        return imgXOffset;
+    }
+
+    public int getImgYOffset() {
+        return imgYOffset;
+    }
+
+    public double getCurrentRenderScale() {
+        return currentRenderScale;
+    }
+
     private final ConfigLoader config;
     private final List<BoardArea> selectedAreas;
     private final List<BoardSelectionListener> selectionListeners;
     private final List<com.zombicide.missiongen.ui.interfaces.BoardChangeListener> boardChangeListeners;
 
     private boolean areaDrawingVisible = true;
+    private boolean areaIdsVisible = true;
 
     public BoardBackgroundPanel() {
         this.config = ConfigLoader.getInstance();
@@ -98,7 +111,7 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
         repaint(); // Repaint to show selection changes
     }
 
-    private BoardArea getBoardAreaAtPoint(Point panelPoint) {
+    protected BoardArea getBoardAreaAtPoint(Point panelPoint) {
         if (this.getBoard() == null) {
             return null;
         }
@@ -109,10 +122,23 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
 
         int tileX = (int) ((panelPoint.x - imgXOffset) / currentRenderScale);
         int tileY = (int) ((panelPoint.y - imgYOffset) / currentRenderScale);
-
         Point tilePoint = new Point(tileX, tileY);
 
+        //Point tilePoint = convertPanelToTileCoordinates(panelPoint);
+
         return this.getBoard().getAreaAtPoint(tilePoint);
+    }
+
+
+    public Point convertPanelMouseToBaordCoordinates(Point panelPoint) {
+        // Convert panel coordinates to board coordinates
+        // panelX = boardX * scale + offsetX
+        // boardX = (panelX - offsetX) / scale
+        
+        int boardX = (int) ((panelPoint.x - imgXOffset) / currentRenderScale);
+        int boardY = (int) ((panelPoint.y - imgYOffset) / currentRenderScale);
+        
+        return new Point(boardX, boardY);
     }
 
     public boolean isAreaDrawingVisible() {
@@ -122,6 +148,15 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
     protected void setAreaDrawingVisible(boolean visible) {
         this.areaDrawingVisible = visible;
         this.repaint();
+    }
+
+    protected void setAreaIdsVisible(boolean visible) {
+        this.areaIdsVisible = visible;
+        this.repaint();
+    }
+
+    public boolean isAreaIdsVisible() {
+        return areaIdsVisible;
     }
 
     @Override
@@ -254,6 +289,9 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
                 (int) (boardArea.getHeight() * currentRenderScale));
 
         // Draw ID, the last 3 characters
+        if (!isAreaIdsVisible()) {
+            return;
+        }
         String areaId = boardArea.getAreaId().toString();
         String idText = areaId.substring(areaId.length() - 3);
         g.setFont(new Font("Arial", Font.BOLD, 56));
@@ -275,4 +313,6 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
         this.repaint();
         this.notifyAreasChanged();
     }
+
+   
 }

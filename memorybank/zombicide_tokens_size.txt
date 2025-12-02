@@ -1,5 +1,5 @@
-car = 100x50
-exit, spawn,  50x25
-goals, pimpweaponbox 28x25
-doors = 30x25
-noise = 25x25x25
+PoliceCarToken, PimpCarToken  = 100x50
+ExitToken, SpawnToken,FirstSpawnToken,  50x25
+GoalRedToken,GoalBlueToken,GoalGreenToken, PimpWeaponBoxToken, 28x25
+DoorClosedRedToken,DoorClosedBlueToken,DoorClosedGreenToken,DoorOpenRedToken,DoorOpenBlueToken,DoorOpenGreenToken = 30x25
+NoiseToken = 25x25
