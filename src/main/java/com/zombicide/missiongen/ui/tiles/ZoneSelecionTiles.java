@@ -1,6 +1,5 @@
 package com.zombicide.missiongen.ui.tiles;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -9,9 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -25,19 +21,25 @@ import org.slf4j.LoggerFactory;
 import com.zombicide.missiongen.model.Tile;
 import com.zombicide.missiongen.services.PersistanceService;
 import com.zombicide.missiongen.ui.interfaces.PanelSelectionListener;
+import com.zombicide.missiongen.ui.components.styled.StyledButton;
+import com.zombicide.missiongen.ui.components.styled.StyledComboBox;
+import com.zombicide.missiongen.ui.components.styled.StyledLabel;
+import com.zombicide.missiongen.ui.components.styled.TileListCellRenderer;
+import com.zombicide.missiongen.ui.theme.UIConstants;
+import com.zombicide.missiongen.ui.components.notification.ToastManager;
 
 public class ZoneSelecionTiles extends JPanel {
     private static final Logger logger = LoggerFactory.getLogger(ZoneSelecionTiles.class);
 
     private PersistanceService persistanceService;
 
-    private JComboBox<String> editionsChoice;
-    private JComboBox<String> collectionsChoice;
-    private JButton generateButton;
+    private StyledComboBox<String> editionsChoice;
+    private StyledComboBox<String> collectionsChoice;
+    private StyledButton generateButton;
 
     private JList<String> tilesList;
     private DefaultListModel<String> tilesListModel;
-    private JButton saveTileButton;
+    private StyledButton saveTileButton;
 
     private String selectedEdition;
     private String selectedCollection;
@@ -48,16 +50,21 @@ public class ZoneSelecionTiles extends JPanel {
         persistanceService = new PersistanceService();
         tileSelectionListeners = new java.util.ArrayList<>();
 
-        setBackground(new Color(230, 230, 250));
-        Dimension fixedSize = new Dimension(250, 750);
+        setBackground(UIConstants.BACKGROUND);
+        Dimension fixedSize = new Dimension(UIConstants.SELECTION_PANEL_WIDTH, UIConstants.DRAW_PANEL_SIZE);
         setPreferredSize(fixedSize);
         setMinimumSize(fixedSize);
         setMaximumSize(fixedSize);
 
-        // Add border
+        // Add modern border
         setBorder(javax.swing.BorderFactory.createCompoundBorder(
-                javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, Color.GRAY),
-                javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+                javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, UIConstants.BORDER),
+                javax.swing.BorderFactory.createEmptyBorder(
+                    UIConstants.SPACING_MD,
+                    UIConstants.SPACING_MD,
+                    UIConstants.SPACING_MD,
+                    UIConstants.SPACING_MD
+                )));
 
         initComponents();
         setupLayout();
@@ -66,7 +73,7 @@ public class ZoneSelecionTiles extends JPanel {
 
     private void initComponents() {
         // Editions dropdown
-        editionsChoice = new JComboBox<>();
+        editionsChoice = new StyledComboBox<>();
         editionsChoice.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -75,7 +82,7 @@ public class ZoneSelecionTiles extends JPanel {
         });
 
         // Collections dropdown
-        collectionsChoice = new JComboBox<>();
+        collectionsChoice = new StyledComboBox<>();
         collectionsChoice.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,16 +90,18 @@ public class ZoneSelecionTiles extends JPanel {
             }
         });
 
-        // Generate button
-        generateButton = new JButton("Generar Tiles");
+        // Generate button (Primary style)
+        generateButton = new StyledButton("Generar Tiles", StyledButton.ButtonStyle.PRIMARY);
         generateButton.setEnabled(false);
         generateButton.addActionListener(e -> onGenerateTiles());
 
-        // Tiles list
+        // Tiles list with custom renderer
         tilesListModel = new DefaultListModel<>();
         tilesList = new JList<>(tilesListModel);
         tilesList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tilesList.setVisibleRowCount(20);
+        tilesList.setCellRenderer(new TileListCellRenderer());
+        tilesList.setBackground(UIConstants.PANEL_BACKGROUND);
         tilesList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -102,8 +111,8 @@ public class ZoneSelecionTiles extends JPanel {
             }
         });
 
-        // Save Tile button
-        saveTileButton = new JButton("Save Tile");
+        // Save Tile button (Success style)
+        saveTileButton = new StyledButton("Save Tile", StyledButton.ButtonStyle.SUCCESS);
         saveTileButton.setEnabled(false);
         saveTileButton.addActionListener(e -> onSaveTile());
     }
@@ -118,7 +127,7 @@ public class ZoneSelecionTiles extends JPanel {
         // Editions label
         gbc.gridx = 0;
         gbc.gridy = 0;
-        add(new JLabel("Ediciones:"), gbc);
+        add(new StyledLabel("Ediciones:", StyledLabel.LabelStyle.LABEL), gbc);
 
         // Editions dropdown
         gbc.gridy = 1;
@@ -126,7 +135,7 @@ public class ZoneSelecionTiles extends JPanel {
 
         // Collections label
         gbc.gridy = 2;
-        add(new JLabel("Colecciones:"), gbc);
+        add(new StyledLabel("Colecciones:", StyledLabel.LabelStyle.LABEL), gbc);
 
         // Collections dropdown
         gbc.gridy = 3;
@@ -140,7 +149,7 @@ public class ZoneSelecionTiles extends JPanel {
         // Tiles label
         gbc.gridy = 5;
         gbc.insets = new Insets(15, 5, 5, 5);
-        add(new JLabel("Tiles:"), gbc);
+        add(new StyledLabel("Tiles:", StyledLabel.LabelStyle.LABEL), gbc);
 
         // Tiles list (wrapped in scroll pane)
         gbc.gridy = 6;
@@ -260,9 +269,15 @@ public class ZoneSelecionTiles extends JPanel {
 
     private void onGenerateTiles() {
         logger.info("Generate Tiles button clicked");
-        persistanceService.generateTiles(selectedEdition, selectedCollection);
-        loadTiles();
-        updateGenerateButton();
+        try {
+            persistanceService.generateTiles(selectedEdition, selectedCollection);
+            loadTiles();
+            updateGenerateButton();
+            ToastManager.getInstance().showSuccess("Tiles generated successfully!");
+        } catch (Exception e) {
+            logger.error("Failed to generate tiles", e);
+            ToastManager.getInstance().showError("Failed to generate tiles: " + e.getMessage());
+        }
     }
 
     private void onTileSelected() {
@@ -305,12 +320,19 @@ public class ZoneSelecionTiles extends JPanel {
     public void saveCurrentTile() {
         if (currentTile == null) {
             logger.warn("No tile to save");
+            ToastManager.getInstance().showWarning("No tile selected to save");
             return;
         }
 
         logger.info("Saving tile: {}", currentTile.getTileName());
-        persistanceService.persistTile(currentTile);
-        logger.info("Tile saved successfully: {}", currentTile.getTileName());
+        try {
+            persistanceService.persistTile(currentTile);
+            logger.info("Tile saved successfully: {}", currentTile.getTileName());
+            ToastManager.getInstance().showSuccess("Tile '" + currentTile.getTileName() + "' saved successfully!");
+        } catch (Exception e) {
+            logger.error("Failed to save tile", e);
+            ToastManager.getInstance().showError("Failed to save tile: " + e.getMessage());
+        }
     }
 
     // Getters for external access

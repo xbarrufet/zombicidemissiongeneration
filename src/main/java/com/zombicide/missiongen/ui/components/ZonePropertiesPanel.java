@@ -1,14 +1,15 @@
 package com.zombicide.missiongen.ui.components;
 
-import java.awt.Color;
 import java.awt.Dimension;
+
+import com.zombicide.missiongen.ui.theme.UIConstants;
 
 public class ZonePropertiesPanel extends BoardPanel {
 
     public ZonePropertiesPanel() {
         super();
-        this.setBackground(new Color(255, 250, 205));
-        Dimension fixedSize = new Dimension(250, 750);
+        this.setBackground(UIConstants.BACKGROUND);
+        Dimension fixedSize = new Dimension(UIConstants.PROPERTIES_PANEL_WIDTH, UIConstants.DRAW_PANEL_SIZE);
         this.setPreferredSize(fixedSize);
         this.setMinimumSize(fixedSize);
         this.setMaximumSize(fixedSize);
