@@ -67,4 +67,13 @@ public class ZoneWorkAreaMissions extends ZoneWorkAreaPanel implements MissionSe
             zoneProperties.setMissionBoard(mission.getMissionBoard());
         });
     }
+
+    /**
+     * Clears the work area display
+     */
+    public void clear() {
+        logger.info("Clearing work area");
+        zoneDraw.setMissionBoard(null);
+        zoneProperties.clearMissionInfo();
+    }
 }
