@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.zombicide.missiongen.model.Mission;
 import com.zombicide.missiongen.model.board.MissionBoard;
+import com.zombicide.missiongen.model.board.MissionTileEntry;
+import com.zombicide.missiongen.model.board.TileEntry;
 
 public class MissionDTO {
     public int rows;
@@ -19,6 +21,9 @@ public class MissionDTO {
     public List<BoardAreaDTO> areas;
     public List<BoardAreaConnectionDTO> connections;
     public List<TokenDTO> tokens;
+
+    public MissionTileEntry [][] gridTiles;
+
 
     public MissionDTO() {
         this.areas = new ArrayList<>();
@@ -36,6 +41,7 @@ public class MissionDTO {
         dto.collection = mission.getCollection();
         dto.imagePath = mission.getImagePath();
         dto.missionName = mission.getMissionName();
+        dto.gridTiles = mission.getGridTiles();
 
         MissionBoard board = mission.getMissionBoard();
         if (board != null) {

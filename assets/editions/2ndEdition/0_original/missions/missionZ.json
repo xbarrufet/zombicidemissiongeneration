@@ -1,0 +1,227 @@
+{
+  "rows" : 2,
+  "cols" : 1,
+  "width" : 500,
+  "height" : 250,
+  "edition" : "2ndEdition",
+  "collection" : "0_original",
+  "imagePath" : "assets/editions/2ndEdition/0_original/missionImages/mission_missionZ.png",
+  "missionName" : "missionZ",
+  "areas" : [ {
+    "id" : "0c187629-67a5-41b4-85ee-653af46b4431",
+    "x" : 175,
+    "y" : 0,
+    "width" : 150,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "TOP_RIGHT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "07ff11c9-0a0d-4b07-bf29-3109432aca7e",
+    "x" : 175,
+    "y" : 75,
+    "width" : 150,
+    "height" : 100,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "MIDDLE_RIGHT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "96299233-86c1-4902-b94c-ce94cf1924ed",
+    "x" : 175,
+    "y" : 175,
+    "width" : 150,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_RIGHT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "9fc889bc-f503-4e52-82aa-cbe4fc4e3c41",
+    "x" : 75,
+    "y" : 175,
+    "width" : 100,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_MIDDLE_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f",
+    "x" : 0,
+    "y" : 175,
+    "width" : 75,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_LEFT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "x" : 87,
+    "y" : 0,
+    "width" : 88,
+    "height" : 175,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "x" : 0,
+    "y" : 0,
+    "width" : 87,
+    "height" : 87,
+    "areaType" : "INDOOR_LIGHT",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "x" : 0,
+    "y" : 87,
+    "width" : 87,
+    "height" : 88,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "cead3dac-c6ff-46f5-b089-d6d9dfa9f652",
+    "x" : 425,
+    "y" : 0,
+    "width" : 75,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "TOP_RIGHT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "73e81441-7c2f-4986-a98f-8d36e2457d9c",
+    "x" : 325,
+    "y" : 0,
+    "width" : 100,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "TOP_MIDDLE_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+    "x" : 325,
+    "y" : 75,
+    "width" : 88,
+    "height" : 87,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "90e08c4a-a57f-4078-88ea-0b007889468a",
+    "x" : 325,
+    "y" : 162,
+    "width" : 88,
+    "height" : 88,
+    "areaType" : "INDOOR_LIGHT",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+    "x" : 413,
+    "y" : 75,
+    "width" : 87,
+    "height" : 87,
+    "areaType" : "INDOOR_LIGHT",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+    "x" : 413,
+    "y" : 162,
+    "width" : 87,
+    "height" : 88,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  } ],
+  "connections" : [ {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "direction" : null
+  }, {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "direction" : null
+  }, {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : "9fc889bc-f503-4e52-82aa-cbe4fc4e3c41",
+    "direction" : null
+  }, {
+    "areaA" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "areaB" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "direction" : null
+  }, {
+    "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
+    "areaB" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+    "direction" : null
+  }, {
+    "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
+    "areaB" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+    "direction" : null
+  }, {
+    "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
+    "areaB" : "96299233-86c1-4902-b94c-ce94cf1924ed",
+    "direction" : null
+  }, {
+    "areaA" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+    "areaB" : "73e81441-7c2f-4986-a98f-8d36e2457d9c",
+    "direction" : null
+  }, {
+    "areaA" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+    "areaB" : "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+    "direction" : null
+  }, {
+    "areaA" : "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+    "areaB" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+    "direction" : null
+  } ],
+  "tokens" : [ {
+    "type" : "START",
+    "id" : "bc350515-6afe-4e02-a9fc-f2eaf749f869",
+    "location" : {
+      "x" : 488.0,
+      "y" : 206.0
+    },
+    "type" : "START",
+    "subtype" : "StartToken",
+    "rotation" : 90,
+    "areaId" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f"
+  }, {
+    "type" : "EXIT",
+    "id" : "96f74262-f72d-440b-a0b3-83b6ae0c8f25",
+    "location" : {
+      "x" : 12.0,
+      "y" : 212.0
+    },
+    "type" : "EXIT",
+    "subtype" : "ExitToken",
+    "rotation" : 270,
+    "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f"
+  }, {
+    "type" : "SPAWN",
+    "id" : "fbf17cad-23a3-447d-a807-1fd2529f7b12",
+    "location" : {
+      "x" : 256.0,
+      "y" : 12.0
+    },
+    "type" : "SPAWN",
+    "subtype" : "SpawnTokenPink",
+    "rotation" : 0,
+    "areaId" : "0c187629-67a5-41b4-85ee-653af46b4431"
+  } ],
+  "gridTiles" : [ [ {
+    "tileName" : "2ndEdition.0_original.1V",
+    "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/1V.jpeg",
+    "rotation" : 0,
+    "row" : 0,
+    "col" : 0,
+    "null" : false
+  }, {
+    "tileName" : "2ndEdition.0_original.3V",
+    "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/3V.jpeg",
+    "rotation" : 90,
+    "row" : 0,
+    "col" : 1,
+    "null" : false
+  } ] ]
+}

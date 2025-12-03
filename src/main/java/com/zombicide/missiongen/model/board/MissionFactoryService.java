@@ -3,6 +3,8 @@ package com.zombicide.missiongen.model.board;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,6 +13,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import javax.imageio.ImageIO;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +22,7 @@ import com.zombicide.missiongen.config.ConfigLoader;
 import com.zombicide.missiongen.model.Mission;
 import com.zombicide.missiongen.model.areas.BoardArea;
 import com.zombicide.missiongen.model.areas.BoardAreaConnection;
+import com.zombicide.missiongen.model.helpers.ImageOperations;
 import com.zombicide.missiongen.ui.missionLayout.ZoneMissionGridCell;
 
 public class MissionFactoryService {
@@ -27,12 +32,13 @@ public class MissionFactoryService {
     public static Mission createMission(String missionId, String edition, String collection, String missionName,
             MissionGrid grid) {
 
-        MissionBoard missionBoard = createMissionBoard(grid);
+            String imagePath = ConfigLoader.getInstance().getProperty("folders.editions") + "/"
+        + edition + "/" + collection + "/"
+        + ConfigLoader.getInstance().getProperty("folders.missionImages") + "/" + "mission_" + missionName
+        + ".png";
+        MissionBoard missionBoard = createMissionBoard(grid,  imagePath);
 
-        String imagePath = ConfigLoader.getInstance().getProperty("folders.editions") + "/"
-                + edition + "/" + collection + "/"
-                + ConfigLoader.getInstance().getProperty("folders.missionImages") + "/" + "mission_" + missionName
-                + ".png";
+      
 
         return new Mission(grid.getGridWidth(), grid.getGridHeight(),
                 missionBoard.getWidth(),
@@ -41,19 +47,20 @@ public class MissionFactoryService {
                 missionName, missionBoard);
     }
 
-    public static MissionBoard createMissionBoard(int width, int height) {
-        MissionGrid grid = new MissionGrid(width, height);
-        return createMissionBoard(grid);
-    }
+    // public static MissionBoard createMissionBoard(int width, int height) {
+    //     MissionGrid grid = new MissionGrid(width, height);
+    //     return createMissionBoard(grid,null);
+    // }
 
-    public static MissionBoard createMissionBoard(MissionGrid grid) {
-        Image image = createMissionBoardImage(grid);
+    public static MissionBoard createMissionBoard(MissionGrid grid,String imagePath) {
+        //Image image = createMissionBoardImage(grid);
+        Image image = createMissionBoardImageComplete(grid);
         int tileWidth = Integer.parseInt(ConfigLoader.getInstance().getProperty("tile.width"));
         int tileHeight = Integer.parseInt(ConfigLoader.getInstance().getProperty("tile.height"));
         int missionBoardWidth = grid.getGridWidth() * tileWidth;
         int missionBoardHeight = grid.getGridHeight() * tileHeight;
         String missionBoardId = UUID.randomUUID().toString();
-        MissionBoard missionBoard = new MissionBoard(missionBoardId, image, missionBoardWidth, missionBoardHeight);
+        MissionBoard missionBoard = new MissionBoard(missionBoardId, image,imagePath, missionBoardWidth, missionBoardHeight,grid.toMissionTileEntries());
         missionBoard = addAreas(missionBoard, grid,
                 tileWidth,
                 tileHeight);
@@ -405,4 +412,55 @@ public class MissionFactoryService {
         return missionImage;
     }
 
+     private static Image createMissionBoardImageComplete(MissionGrid grid) {
+        if (grid == null || grid.getGridWidth() == 0 || grid.getGridHeight() == 0) {
+            return null;
+        }
+        //load all iamges in a grid
+        Image[][] images = new Image[grid.getGridHeight()][grid.getGridWidth()];
+        MissionTileEntry[][] entries = grid.toMissionTileEntries();
+        for(int i=0;i<grid.getGridHeight();i++){
+            for(int j=0;j<grid.getGridWidth();j++){
+                MissionTileEntry entry = entries[i][j];
+                if(entry!=null){
+                    try {
+                        images[i][j] = ImageIO.read(new File(entry.getImagePath()));
+                    } catch (IOException e) {
+                       logger.error("Error loading tile image for tile: {}", entry.getTileName(), e);
+                        return null;
+                    }
+                }
+            }
+        }
+        //calculate total width and height
+        int totalWidth = 0;
+        for(int j=0;j<grid.getGridWidth();j++){
+            if(images[0][j]!=null){
+                totalWidth += images[0][j].getWidth(null);
+            }
+        }
+        //calculate total height
+        int totalHeight = 0;
+        for(int i=0;i<grid.getGridHeight();i++){
+            if(images[i][0]!=null){
+                totalHeight+= images[i][0].getHeight(null);
+            }
+        }
+
+
+        BufferedImage missionImage = new BufferedImage(totalWidth, totalHeight,
+                BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2d = missionImage.createGraphics();
+        for(int i=0;i<grid.getGridHeight();i++){
+            for(int j=0;j<grid.getGridWidth();j++){
+                int tileWidth = images[i][j].getWidth(null);
+                int tileHeight = images[i][j].getHeight(null);
+                g2d.drawImage(images[i][j], j * tileWidth, i * tileHeight, tileWidth, tileHeight, null);
+                }
+            }
+        g2d.dispose();
+        return missionImage;
+    }
+
+    
 }

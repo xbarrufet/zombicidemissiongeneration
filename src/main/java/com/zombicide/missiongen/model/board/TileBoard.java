@@ -11,15 +11,15 @@ import com.zombicide.missiongen.config.ConfigLoader;
 
 public class TileBoard extends BaseBoard {
 
-    public TileBoard(String boardId, Image backgroundImage, int width) {
-        super(boardId, backgroundImage, width, width);
+    public TileBoard(String boardId, Image backgroundImage, int width,String imagePath) {
+        super(boardId, backgroundImage, width, width, imagePath);
     }
 
     public TileBoard(TileBoard boardToCopy) {
         super(boardToCopy);
     }
 
-    public static TileBoard createEmptyBoard() {
+    public static TileBoard createEmptyBoard(String edition, String collection) {
         int tileWidth = ConfigLoader.getInstance().getPropertyAsInt("tile.width");
         // carga la imagen de fondo desde classparh resources
         Image backgroundImage;
@@ -29,6 +29,6 @@ public class TileBoard extends BaseBoard {
             backgroundImage = new BufferedImage(tileWidth, tileWidth, BufferedImage.TYPE_INT_ARGB);
             e.printStackTrace();
         }
-        return new TileBoard(UUID.randomUUID().toString(), backgroundImage, tileWidth);
+        return new TileBoard(UUID.randomUUID().toString(), backgroundImage, tileWidth,"/images/no_tile.png");
     }
 }

@@ -15,6 +15,9 @@ import com.zombicide.missiongen.DTO.MissionDTO;
 import com.zombicide.missiongen.model.areas.BoardArea;
 import com.zombicide.missiongen.model.areas.BoardAreaConnection;
 import com.zombicide.missiongen.model.board.MissionBoard;
+import com.zombicide.missiongen.model.board.MissionTileEntry;
+
+
 
 public class Mission {
 
@@ -27,6 +30,13 @@ public class Mission {
     private String imagePath;
     private String missionName;
     private MissionBoard missionBoard;
+
+    class TileInfo {
+        int row;
+        int col;
+        String name;
+        int rotation;
+    }
 
     private static final Logger logger = LoggerFactory.getLogger(Mission.class);
 
@@ -41,22 +51,9 @@ public class Mission {
         this.imagePath = imagePath;
         this.missionName = missionName;
         this.missionBoard = missionBoard;
-        // initBoard();
     }
 
-    private void initBoard() {
-        String missionBoardId = edition + "." + collection + "." + missionName;
-        Image backgroundImage;
-        try {
-            backgroundImage = ImageIO.read(new File(imagePath));
-            this.missionBoard = new MissionBoard(missionBoardId, backgroundImage,
-                    width,
-                    height);
-        } catch (IOException e) {
-            logger.error("Error reading image: {}", imagePath, e);
-            return;
-        }
-    }
+   
 
     public int getRows() {
         return rows;
@@ -110,8 +107,9 @@ public class Mission {
         MissionBoard missionBoard = new MissionBoard(
                 missionDTO.edition + "." + missionDTO.collection + "." + missionDTO.missionName,
                 backgroundImage,
+                missionDTO.imagePath,
                 missionDTO.width,
-                missionDTO.height);
+                missionDTO.height, missionDTO.gridTiles);
 
         Mission mission = new Mission(missionDTO.rows, missionDTO.cols, missionDTO.width, missionDTO.height,
                 missionDTO.edition, missionDTO.collection, missionDTO.imagePath, missionDTO.missionName, missionBoard);
@@ -132,13 +130,19 @@ public class Mission {
         // Add tokens from DTO
         if (missionDTO.tokens != null) {
             for (com.zombicide.missiongen.DTO.TokenDTO tokenDTO : missionDTO.tokens) {
-                com.zombicide.missiongen.model.tokens.Token token = tokenDTO.toToken();
-                if (token != null) {
-                    mission.getMissionBoard().addToken(token);
+                if (tokenDTO != null) {
+                    com.zombicide.missiongen.model.tokens.Token token = tokenDTO.toToken();
+                    if (token != null) {
+                        mission.getMissionBoard().addToken(token);
+                    }
                 }
             }
         }
 
         return mission;
+    }
+
+    public MissionTileEntry[][] getGridTiles() {
+        return this.missionBoard.getGridTiles();
     }
 }

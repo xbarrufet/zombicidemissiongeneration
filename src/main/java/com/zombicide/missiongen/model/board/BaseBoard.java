@@ -20,6 +20,7 @@ import com.zombicide.missiongen.model.areas.BoardArea;
 import com.zombicide.missiongen.model.areas.BoardAreaConnection;
 import com.zombicide.missiongen.model.areas.BoardAreaFactiory;
 import com.zombicide.missiongen.model.areas.Direction;
+import com.zombicide.missiongen.model.helpers.ImageOperations;
 import com.zombicide.missiongen.model.tokens.Token;
 
 public abstract class BaseBoard {
@@ -30,13 +31,16 @@ public abstract class BaseBoard {
     private Image backgroundImage;
     private int width;
     private int height;
+    private int rotation = 0;
+
+    private String imagePath;
 
     private String boardId;
 
     private ConfigLoader config;
     private static final Logger logger = LoggerFactory.getLogger(BaseBoard.class);
 
-    public BaseBoard(String boardId, Image backgroundImage, int width, int height) {
+    public BaseBoard(String boardId, Image backgroundImage, int width, int height, String imagePath) {
         this.boardId = boardId;
         this.backgroundImage = backgroundImage;
         this.width = width;
@@ -45,6 +49,7 @@ public abstract class BaseBoard {
         this.areas = new ArrayList<>();
         this.connections = new ArrayList<>();
         this.tokens = new ArrayList<>();
+        this.imagePath = imagePath;
     }
 
     public BaseBoard(BaseBoard boardToCopy) {
@@ -240,10 +245,18 @@ public abstract class BaseBoard {
     }
 
     public void rotate() {
+        if(this.backgroundImage == null){
+            return;
+        }
+        this.backgroundImage = ImageOperations.rotateImageBy90Degrees(this.backgroundImage);
         rotateBoardAreas();
         rotateStreetAreas();
-        rotateImage();
         rotateConnections();
+        this.rotation = (this.rotation + 90) % 360;
+    }
+
+    public int getRotation() {
+        return this.rotation;
     }
 
     private void rotateStreetAreas() {
@@ -288,29 +301,29 @@ public abstract class BaseBoard {
         this.height = temp;
     }
 
-    // rotate the image 90 degrees clockwise
-    private void rotateImage() {
-        if (backgroundImage == null) {
-            return;
-        }
+    // // rotate the image 90 degrees clockwise
+    // private void rotateImage() {
+    //     if (backgroundImage == null) {
+    //         return;
+    //     }
 
-        int w = backgroundImage.getWidth(null);
-        int h = backgroundImage.getHeight(null);
+    //     int w = backgroundImage.getWidth(null);
+    //     int h = backgroundImage.getHeight(null);
 
-        java.awt.image.BufferedImage newImage = new java.awt.image.BufferedImage(h, w,
-                java.awt.image.BufferedImage.TYPE_INT_ARGB);
-        java.awt.Graphics2D g2d = newImage.createGraphics();
+    //     java.awt.image.BufferedImage newImage = new java.awt.image.BufferedImage(h, w,
+    //             java.awt.image.BufferedImage.TYPE_INT_ARGB);
+    //     java.awt.Graphics2D g2d = newImage.createGraphics();
 
-        AffineTransform at = new AffineTransform();
-        at.translate((h - w) / 2.0, (w - h) / 2.0);
-        at.rotate(Math.toRadians(90), w / 2.0, h / 2.0);
+    //     AffineTransform at = new AffineTransform();
+    //     at.translate((h - w) / 2.0, (w - h) / 2.0);
+    //     at.rotate(Math.toRadians(90), w / 2.0, h / 2.0);
 
-        g2d.setTransform(at);
-        g2d.drawImage(backgroundImage, 0, 0, null);
-        g2d.dispose();
+    //     g2d.setTransform(at);
+    //     g2d.drawImage(backgroundImage, 0, 0, null);
+    //     g2d.dispose();
 
-        this.backgroundImage = newImage;
-    }
+    //     this.backgroundImage = newImage;
+    // }
 
     private void rotateConnections() {
         for (BoardAreaConnection connection : connections) {
@@ -525,5 +538,10 @@ public abstract class BaseBoard {
         }
         return null;
     }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+    
 
 }

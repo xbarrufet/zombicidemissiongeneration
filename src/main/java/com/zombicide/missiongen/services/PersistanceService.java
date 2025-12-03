@@ -411,4 +411,94 @@ public class PersistanceService {
                 config.getMissionImagesFolder() + File.separator +
                 "mission_" + missionName + ".png";
     }
+
+    /**
+     * Exports a mission image with all tiles and tokens to a specified file path.
+     * 
+     * @param mission The mission to export
+     * @param exportPath The absolute path where the image should be saved
+     * @return true if the export was successful, false otherwise
+     */
+    public boolean exportMissionImage(com.zombicide.missiongen.model.Mission mission, String exportPath) {
+        try {
+            // Create the image with tiles and tokens
+            BufferedImage missionImage = createMissionImageWithTokens(mission);
+            
+            // Save to specified path
+            File exportFile = new File(exportPath);
+            File parentDir = exportFile.getParentFile();
+            if (parentDir != null && !parentDir.exists()) {
+                parentDir.mkdirs();
+            }
+            
+            ImageIO.write(missionImage, "png", exportFile);
+            logger.info("Mission image exported to: {}", exportPath);
+            return true;
+        } catch (Exception e) {
+            logger.error("Error exporting mission image to: {}", exportPath, e);
+            return false;
+        }
+    }
+
+    /**
+     * Creates a BufferedImage of the mission with all tiles and tokens rendered.
+     * 
+     * @param mission The mission to render
+     * @return BufferedImage containing the complete mission visualization
+     * @throws IOException 
+     */
+    private BufferedImage createMissionImageWithTokens(com.zombicide.missiongen.model.Mission mission) throws IOException {
+        // Get the base mission board image (tiles only)
+        Image baseImage = ImageIO.read(new File(mission.getImagePath()));
+        int width = baseImage.getWidth(null);
+        int height = baseImage.getHeight(null);
+
+        int boardWidth = mission.getMissionBoard().getWidth();
+        int boardHeight = mission.getMissionBoard().getHeight();
+
+        float scaleX = (float) width / boardWidth;
+        float scaleY = (float) height / boardHeight;
+        
+
+        
+        // Create a new BufferedImage to draw on
+        BufferedImage resultImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        java.awt.Graphics2D g2d = resultImage.createGraphics();
+        
+        // Enable high-quality rendering
+        g2d.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, 
+                            java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+        g2d.setRenderingHint(java.awt.RenderingHints.KEY_RENDERING, 
+                            java.awt.RenderingHints.VALUE_RENDER_QUALITY);
+        g2d.setRenderingHint(java.awt.RenderingHints.KEY_INTERPOLATION, 
+                            java.awt.RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+        g2d.setRenderingHint(java.awt.RenderingHints.KEY_ALPHA_INTERPOLATION, 
+                            java.awt.RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY);
+        g2d.setRenderingHint(java.awt.RenderingHints.KEY_COLOR_RENDERING, 
+                            java.awt.RenderingHints.VALUE_COLOR_RENDER_QUALITY);
+        
+        // Draw the base image (tiles)
+        g2d.drawImage(baseImage, 0, 0, width, height, null);
+        
+        // Draw all tokens
+        java.util.List<com.zombicide.missiongen.model.tokens.Token> tokens = mission.getMissionBoard().getTokens();
+        if (tokens != null) {
+            for (com.zombicide.missiongen.model.tokens.Token token : tokens) {
+                java.awt.Point location = token.getLocation();
+                if (location != null && token.getImage() != null) {
+                    int tokenWidth = (int)(token.getShape().getWidth()*scaleX);
+                    int tokenHeight = (int)(token.getShape().getHeight()*scaleY);
+                    
+                    // Calculate top-left corner from center point
+                    int x = (int)(location.x * scaleX) - tokenWidth / 2;
+                    int y = (int)(location.y * scaleY) - tokenHeight / 2;
+                    
+                    g2d.drawImage(token.getImage(), x, y, tokenWidth, tokenHeight, null);
+                }
+            }
+        }
+        
+        g2d.dispose();
+        return resultImage;
+    }
 }

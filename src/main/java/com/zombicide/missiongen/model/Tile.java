@@ -30,9 +30,9 @@ public class Tile {
 
     public Tile(String edition, String collection, String imagePath, String tileName) {
         this.edition = edition;
-        this.imagePath = imagePath;
         this.collection = collection;
         this.tileName = tileName;
+        this.imagePath = imagePath;
         this.configLoader = ConfigLoader.getInstance();
 
         this.initBoard();
@@ -43,8 +43,8 @@ public class Tile {
         String tileId = edition + "." + collection + "." + tileName;
         try {
             backgroundImage = ImageIO.read(new File(imagePath));
-            this.tileBoard = new TileBoard(tileId, backgroundImage,
-                    Integer.parseInt(configLoader.getProperty("tile.width")));
+            this.tileBoard = new TileBoard(tileId, backgroundImage, 
+                    Integer.parseInt(configLoader.getProperty("tile.width")), imagePath);
         } catch (IOException e) {
             logger.error("Error reading image: {}", imagePath, e);
             return;

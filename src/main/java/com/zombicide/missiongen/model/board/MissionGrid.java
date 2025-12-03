@@ -258,4 +258,18 @@ public class MissionGrid {
         return complete && validate();
     }
 
+    public MissionTileEntry[][] toMissionTileEntries() {
+        MissionTileEntry[][] entries = new MissionTileEntry[gridHeight][gridWidth];
+        for (int row = 0; row < gridHeight; row++) {
+            for (int col = 0; col < gridWidth; col++) {
+                TileBoard board = grid[row][col];
+                if (board != null) {
+                    entries[row][col] = new MissionTileEntry(board.getBoardId(),board.getImagePath(), board.getRotation(),row,col);
+                } else {
+                    entries[row][col] = null;
+                }
+            }
+        }
+        return entries;
+    }
 }

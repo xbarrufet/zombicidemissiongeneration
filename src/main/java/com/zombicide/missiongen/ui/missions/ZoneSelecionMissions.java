@@ -43,6 +43,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
 
     private JButton newMissionButton;
     private JButton saveMissionButton;
+    private JButton exportImageButton;
     private JButton deleteMissionButton;
 
     private JList<String> missionList;
@@ -125,6 +126,11 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         saveMissionButton.setEnabled(false);
         saveMissionButton.addActionListener(e -> onSaveMission());
         
+        // Export Image button
+        exportImageButton = new JButton("Export Image");
+        exportImageButton.setEnabled(false);
+        exportImageButton.addActionListener(e -> onExportImage());
+        
         // Delete Mission button
         deleteMissionButton = new JButton("Delete Mission");
         deleteMissionButton.setEnabled(false);
@@ -134,6 +140,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
     private void onGenerateMission() {
         layoutChangeListener.onMissionLayoutSelected();
         saveMissionButton.setEnabled(false);
+        exportImageButton.setEnabled(false);
         deleteMissionButton.setEnabled(false);
         this.currentMission = null; // Reset current mission when creating new
     }
@@ -186,8 +193,13 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         gbc.insets = new Insets(15, 5, 5, 5);
         add(saveMissionButton, gbc);
         
-        // Delete Mission button
+        // Export Image button
         gbc.gridy = 8;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        add(exportImageButton, gbc);
+        
+        // Delete Mission button
+        gbc.gridy = 9;
         gbc.insets = new Insets(5, 5, 5, 5);
         add(deleteMissionButton, gbc);
     }
@@ -334,10 +346,12 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             if (mission != null) {
                 this.currentMission = mission;
                 this.saveMissionButton.setEnabled(true);
+                this.exportImageButton.setEnabled(true);
                 this.deleteMissionButton.setEnabled(true);
                 notifyMissionSelected(mission);
             }
         } else {
+            this.exportImageButton.setEnabled(false);
             this.deleteMissionButton.setEnabled(false);
         }
     }
@@ -420,6 +434,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
                 // Clear current mission
                 currentMission = null;
                 deleteMissionButton.setEnabled(false);
+                exportImageButton.setEnabled(false);
                 saveMissionButton.setEnabled(false);
                 
                 // Reload missions list
@@ -443,6 +458,56 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             }
         } else {
             logger.info("Mission deletion cancelled by user");
+        }
+    }
+
+    private void onExportImage() {
+        if (currentMission == null) {
+            logger.warn("No mission selected to export");
+            return;
+        }
+
+        String missionName = currentMission.getMissionName();
+        
+        // Create file chooser
+        javax.swing.JFileChooser fileChooser = new javax.swing.JFileChooser();
+        fileChooser.setDialogTitle("Exportar imagen de la misión");
+        fileChooser.setSelectedFile(new java.io.File(missionName + ".png"));
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("PNG Images", "png"));
+        
+        int userSelection = fileChooser.showSaveDialog(this);
+        
+        if (userSelection == javax.swing.JFileChooser.APPROVE_OPTION) {
+            java.io.File fileToSave = fileChooser.getSelectedFile();
+            
+            // Ensure .png extension
+            if (!fileToSave.getName().toLowerCase().endsWith(".png")) {
+                fileToSave = new java.io.File(fileToSave.getAbsolutePath() + ".png");
+            }
+            
+            logger.info("Exporting mission image to: {}", fileToSave.getAbsolutePath());
+            
+            boolean exported = persistanceService.exportMissionImage(currentMission, fileToSave.getAbsolutePath());
+            
+            if (exported) {
+                logger.info("Mission image exported successfully");
+                javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Imagen exportada correctamente",
+                    "Exportación exitosa",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE
+                );
+            } else {
+                logger.error("Failed to export mission image");
+                javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Error al exportar la imagen",
+                    "Error",
+                    javax.swing.JOptionPane.ERROR_MESSAGE
+                );
+            }
+        } else {
+            logger.info("Export cancelled by user");
         }
     }
 
