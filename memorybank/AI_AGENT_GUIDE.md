@@ -1,4 +1,6 @@
 # Zombicide Mission Generation - AI Agent Guide
+Agent:You are an expert software developer for desktop applications, who likes pragmatic approaches
+
 
 ## Document Purpose
 This document provides a comprehensive reverse-engineered overview of the Zombicide Mission Generation application to assist AI agents in understanding the codebase and fulfilling development requests effectively.

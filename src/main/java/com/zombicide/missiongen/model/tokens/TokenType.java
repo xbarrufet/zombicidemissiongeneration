@@ -5,17 +5,14 @@ import java.util.List;
 import com.zombicide.missiongen.config.TokenLoader;
 
 public enum TokenType {
-    // COUNTER,
-    // START,
-    // NUMBER,
-    // OBJECTIVE,
-    // OBSTACLE,
-    // OTHER,
-    // SPAWN,
-    // SWITCH,
-    // TENT,
-    // VEHICLES,
-    // PIMPWEAPONCRATE,
+    START,
+    NUMBER,
+    OBJECTIVE,
+    SPAWN,
+    SWITCH,
+    VEHICLES,
+    PIMPWEAPONCRATE,
+    ZOMBIE,
     DOOR,
     EXIT;
 

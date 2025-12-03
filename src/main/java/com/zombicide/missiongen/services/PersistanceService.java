@@ -363,4 +363,52 @@ public class PersistanceService {
                 config.getMissionsFolder() + File.separator +
                 fileName + ".json";
     }
+
+    /**
+     * Deletes a mission from the persistence layer.
+     * 
+     * @param edition    Edition name
+     * @param collection Collection name
+     * @param missionName Mission name
+     * @return true if the mission was deleted successfully, false otherwise
+     */
+    public boolean deleteMission(String edition, String collection, String missionName) {
+        String missionJsonPath = getMissionJsonPath(edition, collection, missionName);
+        File jsonFile = new File(missionJsonPath);
+        
+        if (!jsonFile.exists()) {
+            logger.warn("Mission file does not exist: {}", missionJsonPath);
+            return false;
+        }
+        
+        boolean deleted = jsonFile.delete();
+        
+        if (deleted) {
+            logger.info("Mission {} deleted from {}", missionName, missionJsonPath);
+            
+            // Also try to delete the mission image if it exists
+            String missionImagePath = getMissionImagePath(edition, collection, missionName);
+            File imageFile = new File(missionImagePath);
+            if (imageFile.exists()) {
+                boolean imageDeleted = imageFile.delete();
+                if (imageDeleted) {
+                    logger.info("Mission image deleted: {}", missionImagePath);
+                } else {
+                    logger.warn("Failed to delete mission image: {}", missionImagePath);
+                }
+            }
+        } else {
+            logger.error("Failed to delete mission file: {}", missionJsonPath);
+        }
+        
+        return deleted;
+    }
+
+    private String getMissionImagePath(String edition, String collection, String missionName) {
+        return config.getEditionsFolder() + File.separator +
+                edition + File.separator +
+                collection + File.separator +
+                config.getMissionImagesFolder() + File.separator +
+                "mission_" + missionName + ".png";
+    }
 }

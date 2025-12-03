@@ -23,6 +23,7 @@ public class ZoneWorkAreaMissions extends ZoneWorkAreaPanel implements MissionSe
         super();
         zoneDraw = new ZoneMissionDraw();
         zoneProperties = new ZoneMissionProperties(zoneDraw);
+        zoneDraw.addMissionTokenSelectionListener(zoneProperties);
         init(); // Initialize layout and components
     }
 
@@ -63,6 +64,7 @@ public class ZoneWorkAreaMissions extends ZoneWorkAreaPanel implements MissionSe
         // Defer board loading until after layout is complete
         javax.swing.SwingUtilities.invokeLater(() -> {
             zoneDraw.setMissionBoard(mission.getMissionBoard());
+            zoneProperties.setMissionBoard(mission.getMissionBoard());
         });
     }
 }

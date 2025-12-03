@@ -124,6 +124,11 @@ public class ConfigLoader {
         return getProperty("folders.missions", "missions");
     }
 
+     public String getMissionImagesFolder() {
+        return getProperty("folders.missionImages", "missionImages");
+    }
+
+
     public Color getPropertyAsColor(String string, Color defaultValue) {
         String colorString = getProperty(string);
         if (colorString == null) {

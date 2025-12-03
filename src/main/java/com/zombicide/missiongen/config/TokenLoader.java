@@ -60,8 +60,6 @@ public class TokenLoader {
             }
 
             properties.load(input);
-            logger.info("Properties loaded successfully from {}", PROPERTIES_FILE);
-
         } catch (IOException e) {
             logger.error("Error loading properties file", e);
         }
@@ -97,13 +95,12 @@ public class TokenLoader {
     public Image getTokenImage(TokenType type, String subtype) {
         try {
             String imagePath = getTokenImagePath(type, subtype);
-            logger.info("Loading token image: {}", imagePath);
             if (!imagePath.startsWith("/")) {
                 imagePath = "/" + imagePath;
             }
             return ImageIO.read(this.getClass().getResource(imagePath));
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Error loading token image for type {} subtype {}", type.name(), subtype, e);
             return null;
         }
     }
@@ -111,7 +108,6 @@ public class TokenLoader {
     public int[] getTokenDimension(TokenType type) {
         String key = TOKEN_DIMENSION_ENTRY + type.name();
         String value = properties.getProperty(key);
-        logger.info("Loading token dimension: {} value {}", key, value);
         if (value == null) {
             return null;
         }

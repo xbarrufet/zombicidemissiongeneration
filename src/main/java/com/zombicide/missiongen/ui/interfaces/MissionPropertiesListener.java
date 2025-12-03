@@ -7,5 +7,7 @@ public interface MissionPropertiesListener {
     void onBoardAreasVisibilityUpdated(boolean visible);
 
     void onTokenSelected(String type, String subtype);
+    
+    void onTokenDeleted(Token token);
 
 }

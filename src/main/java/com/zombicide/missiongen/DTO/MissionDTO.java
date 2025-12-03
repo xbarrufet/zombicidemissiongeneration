@@ -18,10 +18,12 @@ public class MissionDTO {
 
     public List<BoardAreaDTO> areas;
     public List<BoardAreaConnectionDTO> connections;
+    public List<TokenDTO> tokens;
 
     public MissionDTO() {
         this.areas = new ArrayList<>();
         this.connections = new ArrayList<>();
+        this.tokens = new ArrayList<>();
     }
 
     public static MissionDTO fromMission(Mission mission) {
@@ -45,6 +47,11 @@ public class MissionDTO {
             if (board.getConnections() != null) {
                 for (com.zombicide.missiongen.model.areas.BoardAreaConnection connection : board.getConnections()) {
                     dto.connections.add(BoardAreaConnectionDTO.fromBoardAreaConnection(connection));
+                }
+            }
+            if (board.getTokens() != null) {
+                for (com.zombicide.missiongen.model.tokens.Token token : board.getTokens()) {
+                    dto.tokens.add(TokenDTO.fromToken(token));
                 }
             }
         }

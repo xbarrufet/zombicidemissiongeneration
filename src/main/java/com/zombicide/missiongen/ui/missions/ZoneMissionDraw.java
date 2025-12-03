@@ -29,6 +29,7 @@ import com.zombicide.missiongen.model.tokens.TokenType;
 import com.zombicide.missiongen.model.tokens.tokenType.Door;
 import com.zombicide.missiongen.ui.components.BoardBackgroundPanel;
 import com.zombicide.missiongen.ui.interfaces.MissionPropertiesListener;
+import com.zombicide.missiongen.ui.interfaces.MissionTokenSelectionListener;
 
 public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionPropertiesListener {
 
@@ -54,13 +55,20 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
 
     private SNAPPING_DIRECTION[] snappingDirection;
 
+    private List<MissionTokenSelectionListener> tokenSelectionListeners = new ArrayList<>();
+
     public ZoneMissionDraw() {
         super();
         setupMouseListeners();
         setupKeyListeners();
         setAreaIdsVisible(false);
         setAreaSelectionAllowed(false);
+        this.tokenSelectionListeners = new ArrayList<>();
         this.snappingDirection = new SNAPPING_DIRECTION[2];
+    }
+
+    public void addMissionTokenSelectionListener(MissionTokenSelectionListener listener) {
+        this.tokenSelectionListeners.add(listener);
     }
 
     private void setupMouseListeners() {
@@ -102,6 +110,13 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
                     cursorPosition = e.getPoint();
                     tokenPosition = convertPanelMouseToBaordCoordinates(cursorPosition);
                     selectedToken = getBoard().getTokenAtPoint(tokenPosition);
+                    if (selectedToken != null) {
+                        logger.info("Token selected: {} at {}", selectedToken.getType(), tokenPosition);
+                        notifyTokenSelected(selectedToken);
+                    } else {
+                        logger.info("No token at {}", tokenPosition);
+                        notifyTokenUnselected();
+                    }
                     repaint();
                 }
             }
@@ -309,6 +324,9 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
             getBoard().addToken(tokenToBeAdded);
             logger.info("Placed token {} at ({}, {}) in area {}", tokenToBeAdded.getType(), x, y, area.getAreaId());
 
+            // Notify selection of the new token
+            notifyTokenSelected(tokenToBeAdded);
+
             // Reset selection
             tokenToBeAdded = null;
             cursorPosition = null;
@@ -486,4 +504,31 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
         return connectedArea.getAreaId();
     }
 
+    private void notifyTokenSelected(Token token) {
+        for (MissionTokenSelectionListener listener : tokenSelectionListeners) {
+            listener.onTokenSelected(token);
+        }
+    }
+
+    private void notifyTokenUnselected() {
+        for (MissionTokenSelectionListener listener : tokenSelectionListeners) {
+            listener.onTokenUnSelected();
+        }
+    }
+
+    @Override
+    public void onTokenDeleted(Token token) {
+        logger.info("Token deletion requested: {}", token.getId());
+
+        // Remove token from board
+        if (getBoard() != null) {
+            getBoard().removeToken(token.getId());
+            logger.info("Token {} removed from area {}", token.getId(), token.getAreaId());
+        }
+
+        // Notify listeners that token is unselected
+        notifyTokenUnselected();
+        this.selectedToken = null;
+        repaint();
+    }
 }

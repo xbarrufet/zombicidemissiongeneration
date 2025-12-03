@@ -129,6 +129,16 @@ public class Mission {
             }
         }
 
+        // Add tokens from DTO
+        if (missionDTO.tokens != null) {
+            for (com.zombicide.missiongen.DTO.TokenDTO tokenDTO : missionDTO.tokens) {
+                com.zombicide.missiongen.model.tokens.Token token = tokenDTO.toToken();
+                if (token != null) {
+                    mission.getMissionBoard().addToken(token);
+                }
+            }
+        }
+
         return mission;
     }
 }

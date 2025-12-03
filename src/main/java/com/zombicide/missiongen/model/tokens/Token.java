@@ -80,6 +80,8 @@ public abstract class Token {
         } else {
             this.orientation = TokenOrientation.Horizontal;
         }
+        this.rotation = (this.rotation + 90) % 360;
+
         this.getShape().rotate();
         this.image = rotateImage();
     }

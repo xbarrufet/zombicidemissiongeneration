@@ -25,4 +25,15 @@ public class BoardAreaConnectionDTO {
         }
         return dto;
     }
+
+    public com.zombicide.missiongen.model.areas.BoardAreaConnection toBoardAreaConnection() {
+        java.util.UUID uuidA = java.util.UUID.fromString(this.areaA);
+        if (this.direction != null && !this.direction.isEmpty()) {
+            return new com.zombicide.missiongen.model.areas.BoardAreaConnection(uuidA,
+                    com.zombicide.missiongen.model.areas.DoorDirection.valueOf(this.direction));
+        } else {
+            java.util.UUID uuidB = java.util.UUID.fromString(this.areaB);
+            return new com.zombicide.missiongen.model.areas.BoardAreaConnection(uuidA, uuidB);
+        }
+    }
 }

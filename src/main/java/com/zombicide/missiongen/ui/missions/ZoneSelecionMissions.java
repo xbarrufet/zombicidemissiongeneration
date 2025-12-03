@@ -43,6 +43,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
 
     private JButton newMissionButton;
     private JButton saveMissionButton;
+    private JButton deleteMissionButton;
 
     private JList<String> missionList;
     private DefaultListModel<String> missionListModel;
@@ -55,6 +56,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
 
     private MissionGrid grid;
     private String newMissionName;
+    private Mission currentMission;
 
     public ZoneSelecionMissions(MissionFactoryService missionFactoryService,
             LayoutChangeListener layoutChangeListener) {
@@ -122,11 +124,18 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         saveMissionButton = new JButton("Save Mission");
         saveMissionButton.setEnabled(false);
         saveMissionButton.addActionListener(e -> onSaveMission());
+        
+        // Delete Mission button
+        deleteMissionButton = new JButton("Delete Mission");
+        deleteMissionButton.setEnabled(false);
+        deleteMissionButton.addActionListener(e -> onDeleteMission());
     }
 
     private void onGenerateMission() {
         layoutChangeListener.onMissionLayoutSelected();
         saveMissionButton.setEnabled(false);
+        deleteMissionButton.setEnabled(false);
+        this.currentMission = null; // Reset current mission when creating new
     }
 
     private void setupLayout() {
@@ -170,12 +179,17 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         gbc.insets = new Insets(5, 5, 5, 5);
         add(new JScrollPane(missionList), gbc);
 
-        // Save Mission button - aligned to bottom
+        // Save Mission button
         gbc.gridy = 7;
         gbc.weighty = 0.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(15, 5, 5, 5);
         add(saveMissionButton, gbc);
+        
+        // Delete Mission button
+        gbc.gridy = 8;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        add(deleteMissionButton, gbc);
     }
 
     private void loadEditions() {
@@ -318,8 +332,13 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             // Then load and notify mission selection after view is switched
             Mission mission = persistanceService.getMission(selectedEdition, selectedCollection, missionName);
             if (mission != null) {
+                this.currentMission = mission;
+                this.saveMissionButton.setEnabled(true);
+                this.deleteMissionButton.setEnabled(true);
                 notifyMissionSelected(mission);
             }
+        } else {
+            this.deleteMissionButton.setEnabled(false);
         }
     }
 
@@ -331,12 +350,23 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             this.newMissionName = "Mission-" + String.valueOf((int) (Math.random() *
                     100));
         }
-        String missionId = selectedEdition + "." + selectedCollection + "." +
-                newMissionName;
-        Mission mission = MissionFactoryService.createMission(missionId, selectedEdition, selectedCollection,
-                newMissionName, grid);
+        if (this.currentMission != null) {
+            // We are editing an existing mission
+            // Update name if changed (optional, but good practice)
+            // currentMission.setMissionName(newMissionName); // Mission name is final or we
+            // might want to allow renaming
 
-        persistanceService.persistMission(mission);
+            // Persist the existing mission object which has the updated board (tokens)
+            persistanceService.persistMission(currentMission);
+        } else {
+            // We are creating a new mission from grid
+            String missionId = selectedEdition + "." + selectedCollection + "." +
+                    newMissionName;
+            Mission mission = MissionFactoryService.createMission(missionId, selectedEdition, selectedCollection,
+                    newMissionName, grid);
+
+            persistanceService.persistMission(mission);
+        }
         // Reload missions list to show the newly saved mission
         loadMissions();
     }
@@ -360,6 +390,60 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
     @Override
     public void onMissionNameUpdated(String missionName) {
         this.newMissionName = missionName;
+    }
+
+    private void onDeleteMission() {
+        if (currentMission == null) {
+            logger.warn("No mission selected to delete");
+            return;
+        }
+
+        String missionName = currentMission.getMissionName();
+        
+        // Show confirmation dialog
+        int confirmation = javax.swing.JOptionPane.showConfirmDialog(
+            this,
+            "¿Estás seguro de que quieres eliminar la misión '" + missionName + "'?",
+            "Confirmar eliminación",
+            javax.swing.JOptionPane.YES_NO_OPTION,
+            javax.swing.JOptionPane.WARNING_MESSAGE
+        );
+
+        if (confirmation == javax.swing.JOptionPane.YES_OPTION) {
+            logger.info("Deleting mission: {}", missionName);
+            
+            boolean deleted = persistanceService.deleteMission(selectedEdition, selectedCollection, missionName);
+            
+            if (deleted) {
+                logger.info("Mission deleted successfully: {}", missionName);
+                
+                // Clear current mission
+                currentMission = null;
+                deleteMissionButton.setEnabled(false);
+                saveMissionButton.setEnabled(false);
+                
+                // Reload missions list
+                loadMissions();
+                
+                // Show success message
+                javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Misión eliminada correctamente",
+                    "Eliminación exitosa",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE
+                );
+            } else {
+                logger.error("Failed to delete mission: {}", missionName);
+                javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Error al eliminar la misión",
+                    "Error",
+                    javax.swing.JOptionPane.ERROR_MESSAGE
+                );
+            }
+        } else {
+            logger.info("Mission deletion cancelled by user");
+        }
     }
 
 }
