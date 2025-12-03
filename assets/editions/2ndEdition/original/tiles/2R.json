@@ -1,0 +1,114 @@
+{
+  "edition": "2ndEdition",
+  "collection": "original",
+  "imagePath": "assets/editions/2ndEdition/0_original/tileImages/2R.png",
+  "tileName": "2R",
+  "areas": [
+    {
+      "id": 6,
+      "x": 80,
+      "y": 83,
+      "width": 87,
+      "height": 85,
+      "areaType": "INDOOR_LIGHT"
+    },
+    {
+      "id": 7,
+      "x": 5,
+      "y": 83,
+      "width": 68,
+      "height": 85,
+      "areaType": "INDOOR_LIGHT"
+    },
+    {
+      "id": 8,
+      "x": 2,
+      "y": 178,
+      "width": 70,
+      "height": 68,
+      "areaType": "STREET"
+    },
+    {
+      "id": 9,
+      "x": 80,
+      "y": 178,
+      "width": 87,
+      "height": 66,
+      "areaType": "INDOOR_LIGHT"
+    },
+    {
+      "id": 10,
+      "x": 2,
+      "y": 4,
+      "width": 69,
+      "height": 67,
+      "areaType": "STREET"
+    },
+    {
+      "id": 11,
+      "x": 78,
+      "y": 4,
+      "width": 94,
+      "height": 65,
+      "areaType": "STREET"
+    },
+    {
+      "id": 12,
+      "x": 175,
+      "y": 5,
+      "width": 72,
+      "height": 69,
+      "areaType": "STREET"
+    },
+    {
+      "id": 13,
+      "x": 177,
+      "y": 78,
+      "width": 70,
+      "height": 94,
+      "areaType": "STREET"
+    },
+    {
+      "id": 14,
+      "x": 176,
+      "y": 175,
+      "width": 70,
+      "height": 69,
+      "areaType": "STREET"
+    }
+  ],
+  "connections": [
+    {
+      "areaA": 6,
+      "areaB": 9
+    },
+    {
+      "areaA": 7,
+      "areaB": 6
+    },
+    {
+      "areaA": 10,
+      "areaB": 11
+    },
+    {
+      "areaA": 11,
+      "areaB": 6
+    },
+    {
+      "areaA": 11,
+      "areaB": 12
+    },
+    {
+      "areaA": 12,
+      "areaB": 13
+    },
+    {
+      "areaA": 13,
+      "areaB": 6
+    },
+    {
+      "areaA": 13,
+      "areaB": 14
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "edition": "2ndEdition",
+  "collection": "0_original",
+  "imagePath": "assets/editions/2ndEdition/0_original/tileImages/3V.jpeg",
+  "boardId": "2ndEdition.0_original.3V",
+  "tileName": "3V",
+  "areas": [
+    {
+      "id": "cead3dac-c6ff-46f5-b089-d6d9dfa9f652",
+      "x": 0,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_LEFT_STREET"
+    },
+    {
+      "id": "73e81441-7c2f-4986-a98f-8d36e2457d9c",
+      "x": 0,
+      "y": 75,
+      "width": 75,
+      "height": 100,
+      "areaType": "OUTDOOR",
+      "areaLocation": "MIDDLE_LEFT_STREET"
+    },
+    {
+      "id": "17dcf673-948f-4365-b6d8-b70ff5acd327",
+      "x": 0,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_LEFT_STREET"
+    },
+    {
+      "id": "4f0b7167-9fc9-4c66-afe6-49c2dd03142d",
+      "x": 75,
+      "y": 175,
+      "width": 100,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_MIDDLE_STREET"
+    },
+    {
+      "id": "d8165393-2daa-4fda-9ea0-01d62d53f6e1",
+      "x": 175,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_RIGHT_STREET"
+    },
+    {
+      "id": "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+      "x": 75,
+      "y": 87,
+      "width": 87,
+      "height": 88,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "90e08c4a-a57f-4078-88ea-0b007889468a",
+      "x": 162,
+      "y": 87,
+      "width": 88,
+      "height": 88,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+      "x": 75,
+      "y": 0,
+      "width": 87,
+      "height": 87,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+      "x": 162,
+      "y": 0,
+      "width": 88,
+      "height": 87,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    }
+  ],
+  "connections": [
+    {
+      "areaA": "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+      "areaB": null,
+      "direction": "NORTH_CENTER"
+    },
+    {
+      "areaA": "90e08c4a-a57f-4078-88ea-0b007889468a",
+      "areaB": null,
+      "direction": "EAST_CENTER"
+    },
+    {
+      "areaA": "90e08c4a-a57f-4078-88ea-0b007889468a",
+      "areaB": "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+      "direction": null
+    },
+    {
+      "areaA": "90e08c4a-a57f-4078-88ea-0b007889468a",
+      "areaB": "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+      "direction": null
+    },
+    {
+      "areaA": "90e08c4a-a57f-4078-88ea-0b007889468a",
+      "areaB": "d8165393-2daa-4fda-9ea0-01d62d53f6e1",
+      "direction": null
+    },
+    {
+      "areaA": "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+      "areaB": "73e81441-7c2f-4986-a98f-8d36e2457d9c",
+      "direction": null
+    },
+    {
+      "areaA": "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+      "areaB": "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+      "direction": null
+    },
+    {
+      "areaA": "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+      "areaB": "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+      "direction": null
+    },
+    {
+      "areaA": "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+      "areaB": null,
+      "direction": "NORTH_RIGHT"
+    },
+    {
+      "areaA": "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+      "areaB": null,
+      "direction": "EAST_TOP"
+    }
+  ]
+}

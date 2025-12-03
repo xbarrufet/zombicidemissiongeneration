@@ -1,0 +1,190 @@
+{
+  "rows": 2,
+  "cols": 1,
+  "width": 500,
+  "height": 250,
+  "edition": "2ndEdition",
+  "collection": "0_original",
+  "imagePath": "assets/editions/2ndEdition/0_original/missionImages/mission_mission2.png",
+  "missionName": "mission2",
+  "areas": [
+    {
+      "id": "daa2ddfe-eb20-428c-9ebd-6ae0b6b54aa8",
+      "x": 175,
+      "y": 0,
+      "width": 150,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_RIGHT_STREET"
+    },
+    {
+      "id": "c22bd327-a0e8-4615-a651-d5ded503a744",
+      "x": 175,
+      "y": 75,
+      "width": 150,
+      "height": 100,
+      "areaType": "OUTDOOR",
+      "areaLocation": "MIDDLE_RIGHT_STREET"
+    },
+    {
+      "id": "9596b4cd-050f-4b5f-9349-2d81df4edd2b",
+      "x": 175,
+      "y": 175,
+      "width": 150,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_RIGHT_STREET"
+    },
+    {
+      "id": "9fc889bc-f503-4e52-82aa-cbe4fc4e3c41",
+      "x": 75,
+      "y": 175,
+      "width": 100,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_MIDDLE_STREET"
+    },
+    {
+      "id": "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f",
+      "x": 0,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_LEFT_STREET"
+    },
+    {
+      "id": "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+      "x": 87,
+      "y": 0,
+      "width": 88,
+      "height": 175,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "34616e67-d541-4f0c-94f0-516279568c3b",
+      "x": 0,
+      "y": 0,
+      "width": 87,
+      "height": 87,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "02b27ce3-b044-445f-8b23-f932df6b4120",
+      "x": 0,
+      "y": 87,
+      "width": 87,
+      "height": 88,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "4f0b7167-9fc9-4c66-afe6-49c2dd03142d",
+      "x": 325,
+      "y": 175,
+      "width": 100,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_MIDDLE_STREET"
+    },
+    {
+      "id": "d8165393-2daa-4fda-9ea0-01d62d53f6e1",
+      "x": 425,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_RIGHT_STREET"
+    },
+    {
+      "id": "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+      "x": 325,
+      "y": 87,
+      "width": 87,
+      "height": 88,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "90e08c4a-a57f-4078-88ea-0b007889468a",
+      "x": 412,
+      "y": 87,
+      "width": 88,
+      "height": 88,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+      "x": 325,
+      "y": 0,
+      "width": 87,
+      "height": 87,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+      "x": 412,
+      "y": 0,
+      "width": 88,
+      "height": 87,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    }
+  ],
+  "connections": [
+    {
+      "areaA": "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+      "areaB": "34616e67-d541-4f0c-94f0-516279568c3b",
+      "direction": null
+    },
+    {
+      "areaA": "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+      "areaB": "02b27ce3-b044-445f-8b23-f932df6b4120",
+      "direction": null
+    },
+    {
+      "areaA": "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+      "areaB": "9fc889bc-f503-4e52-82aa-cbe4fc4e3c41",
+      "direction": null
+    },
+    {
+      "areaA": "34616e67-d541-4f0c-94f0-516279568c3b",
+      "areaB": "02b27ce3-b044-445f-8b23-f932df6b4120",
+      "direction": null
+    },
+    {
+      "areaA": "90e08c4a-a57f-4078-88ea-0b007889468a",
+      "areaB": "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+      "direction": null
+    },
+    {
+      "areaA": "90e08c4a-a57f-4078-88ea-0b007889468a",
+      "areaB": "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+      "direction": null
+    },
+    {
+      "areaA": "90e08c4a-a57f-4078-88ea-0b007889468a",
+      "areaB": "d8165393-2daa-4fda-9ea0-01d62d53f6e1",
+      "direction": null
+    },
+    {
+      "areaA": "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+      "areaB": "c22bd327-a0e8-4615-a651-d5ded503a744",
+      "direction": null
+    },
+    {
+      "areaA": "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+      "areaB": "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+      "direction": null
+    },
+    {
+      "areaA": "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+      "areaB": "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+      "direction": null
+    }
+  ]
+}

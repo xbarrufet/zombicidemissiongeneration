@@ -1,0 +1,102 @@
+{
+  "edition": "2ndEdition",
+  "collection": "0_original",
+  "imagePath": "assets/editions/2ndEdition/0_original/tileImages/9R.png",
+  "boardId": "2ndEdition.0_original.9R",
+  "tileName": "9R",
+  "areas": [
+    {
+      "id": "fc814d24-ce10-40e0-8d3d-f387ac5d72e0",
+      "x": 0,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_LEFT_STREET"
+    },
+    {
+      "id": "11f3ef0d-f5a2-454c-980a-890b2bf6af47",
+      "x": 75,
+      "y": 0,
+      "width": 100,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_MIDDLE_STREET"
+    },
+    {
+      "id": "91cf8027-8be2-4678-9d97-4e33b8363f48",
+      "x": 175,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_RIGHT_STREET"
+    },
+    {
+      "id": "9ee2bbca-7fac-4e4b-a67e-6a8b59e6e4c4",
+      "x": 0,
+      "y": 75,
+      "width": 75,
+      "height": 100,
+      "areaType": "OUTDOOR",
+      "areaLocation": "MIDDLE_LEFT_STREET"
+    },
+    {
+      "id": "ae0476ad-fef5-4ecb-b08b-9e9cd3134ef0",
+      "x": 175,
+      "y": 75,
+      "width": 75,
+      "height": 100,
+      "areaType": "OUTDOOR",
+      "areaLocation": "MIDDLE_RIGHT_STREET"
+    },
+    {
+      "id": "846cd607-0d61-4e1f-a65c-fc9ef8c06978",
+      "x": 0,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_LEFT_STREET"
+    },
+    {
+      "id": "805ded3b-5d56-49c6-9b35-e9119b4c00e7",
+      "x": 175,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_RIGHT_STREET"
+    },
+    {
+      "id": "7e68737f-d211-4252-99e1-fe3ec17e0042",
+      "x": 75,
+      "y": 175,
+      "width": 100,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_MIDDLE_STREET"
+    },
+    {
+      "id": "82c11e6e-fdc5-40b9-9a08-f75e6db0fe94",
+      "x": 75,
+      "y": 75,
+      "width": 100,
+      "height": 100,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    }
+  ],
+  "connections": [
+    {
+      "areaA": "82c11e6e-fdc5-40b9-9a08-f75e6db0fe94",
+      "areaB": "11f3ef0d-f5a2-454c-980a-890b2bf6af47",
+      "direction": null
+    },
+    {
+      "areaA": "82c11e6e-fdc5-40b9-9a08-f75e6db0fe94",
+      "areaB": "7e68737f-d211-4252-99e1-fe3ec17e0042",
+      "direction": null
+    }
+  ]
+}

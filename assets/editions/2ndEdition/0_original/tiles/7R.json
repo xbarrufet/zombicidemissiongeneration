@@ -1,0 +1,112 @@
+{
+  "edition": "2ndEdition",
+  "collection": "0_original",
+  "imagePath": "assets/editions/2ndEdition/0_original/tileImages/7R.png",
+  "boardId": "2ndEdition.0_original.7R",
+  "tileName": "7R",
+  "areas": [
+    {
+      "id": "648ff5ef-88ae-473e-a15a-249e564f464b",
+      "x": 0,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_LEFT_STREET"
+    },
+    {
+      "id": "0fc2663d-f137-4dbb-b518-c4733e95e493",
+      "x": 75,
+      "y": 0,
+      "width": 100,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_MIDDLE_STREET"
+    },
+    {
+      "id": "9110d25c-ff96-48d4-bb16-3b64118bb3af",
+      "x": 175,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_RIGHT_STREET"
+    },
+    {
+      "id": "ca42ae9a-1d73-4a82-bc7e-4dce62f833f6",
+      "x": 0,
+      "y": 75,
+      "width": 75,
+      "height": 100,
+      "areaType": "OUTDOOR",
+      "areaLocation": "MIDDLE_LEFT_STREET"
+    },
+    {
+      "id": "be5e01c1-c53e-4220-89f6-a8d28723d32c",
+      "x": 175,
+      "y": 75,
+      "width": 75,
+      "height": 100,
+      "areaType": "OUTDOOR",
+      "areaLocation": "MIDDLE_RIGHT_STREET"
+    },
+    {
+      "id": "438d1e70-2ead-4c64-9922-9b94c670c693",
+      "x": 0,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_LEFT_STREET"
+    },
+    {
+      "id": "2fe2bba3-3592-4831-a0b1-919244b55fe4",
+      "x": 175,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_RIGHT_STREET"
+    },
+    {
+      "id": "a2651395-4da8-41ec-81e0-2d3ca422bd65",
+      "x": 75,
+      "y": 75,
+      "width": 100,
+      "height": 91,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "0150ae04-4cef-4d5f-b97f-013aca81c171",
+      "x": 75,
+      "y": 166,
+      "width": 100,
+      "height": 84,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    }
+  ],
+  "connections": [
+    {
+      "areaA": "a2651395-4da8-41ec-81e0-2d3ca422bd65",
+      "areaB": "0fc2663d-f137-4dbb-b518-c4733e95e493",
+      "direction": null
+    },
+    {
+      "areaA": "a2651395-4da8-41ec-81e0-2d3ca422bd65",
+      "areaB": "0150ae04-4cef-4d5f-b97f-013aca81c171",
+      "direction": null
+    },
+    {
+      "areaA": "0150ae04-4cef-4d5f-b97f-013aca81c171",
+      "areaB": "438d1e70-2ead-4c64-9922-9b94c670c693",
+      "direction": null
+    },
+    {
+      "areaA": "0150ae04-4cef-4d5f-b97f-013aca81c171",
+      "areaB": null,
+      "direction": "SOUTH_CENTER"
+    }
+  ]
+}

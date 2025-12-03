@@ -1,0 +1,129 @@
+{
+  "edition": "2ndEdition",
+  "collection": "0_original",
+  "imagePath": "assets/editions/2ndEdition/0_original/tileImages/8V.png",
+  "boardId": "2ndEdition.0_original.8V",
+  "tileName": "8V",
+  "areas": [
+    {
+      "id": "da3a648e-12a9-4f75-bc21-52c3d82d2d56",
+      "x": 175,
+      "y": 0,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "TOP_RIGHT_STREET"
+    },
+    {
+      "id": "5d3a1ac8-396f-4e1d-97b8-917ab7da70e2",
+      "x": 175,
+      "y": 75,
+      "width": 75,
+      "height": 100,
+      "areaType": "OUTDOOR",
+      "areaLocation": "MIDDLE_RIGHT_STREET"
+    },
+    {
+      "id": "48587901-3168-4fa7-8524-afb831362677",
+      "x": 175,
+      "y": 175,
+      "width": 75,
+      "height": 75,
+      "areaType": "OUTDOOR",
+      "areaLocation": "BOTTOM_RIGHT_STREET"
+    },
+    {
+      "id": "60d05d71-b08c-47b1-a8e6-5089ca47d73a",
+      "x": 112,
+      "y": 0,
+      "width": 63,
+      "height": 103,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "939c0226-af6a-4998-9739-413175b19842",
+      "x": 112,
+      "y": 103,
+      "width": 63,
+      "height": 147,
+      "areaType": "INDOOR_LIGHT",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "49a1de88-452b-4cb4-8821-a97ad2a889bc",
+      "x": 0,
+      "y": 0,
+      "width": 112,
+      "height": 142,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    },
+    {
+      "id": "3f1264e2-d378-4fa4-83fe-b72c1775e490",
+      "x": 0,
+      "y": 142,
+      "width": 112,
+      "height": 108,
+      "areaType": "INDOOR_DARK",
+      "areaLocation": "OTHER"
+    }
+  ],
+  "connections": [
+    {
+      "areaA": "939c0226-af6a-4998-9739-413175b19842",
+      "areaB": "60d05d71-b08c-47b1-a8e6-5089ca47d73a",
+      "direction": null
+    },
+    {
+      "areaA": "939c0226-af6a-4998-9739-413175b19842",
+      "areaB": "49a1de88-452b-4cb4-8821-a97ad2a889bc",
+      "direction": null
+    },
+    {
+      "areaA": "939c0226-af6a-4998-9739-413175b19842",
+      "areaB": "3f1264e2-d378-4fa4-83fe-b72c1775e490",
+      "direction": null
+    },
+    {
+      "areaA": "939c0226-af6a-4998-9739-413175b19842",
+      "areaB": "5d3a1ac8-396f-4e1d-97b8-917ab7da70e2",
+      "direction": null
+    },
+    {
+      "areaA": "939c0226-af6a-4998-9739-413175b19842",
+      "areaB": null,
+      "direction": "SOUTH_CENTER"
+    },
+    {
+      "areaA": "60d05d71-b08c-47b1-a8e6-5089ca47d73a",
+      "areaB": null,
+      "direction": "NORTH_CENTER"
+    },
+    {
+      "areaA": "49a1de88-452b-4cb4-8821-a97ad2a889bc",
+      "areaB": "3f1264e2-d378-4fa4-83fe-b72c1775e490",
+      "direction": null
+    },
+    {
+      "areaA": "49a1de88-452b-4cb4-8821-a97ad2a889bc",
+      "areaB": null,
+      "direction": "NORTH_LEFT"
+    },
+    {
+      "areaA": "49a1de88-452b-4cb4-8821-a97ad2a889bc",
+      "areaB": null,
+      "direction": "WEST_TOP"
+    },
+    {
+      "areaA": "3f1264e2-d378-4fa4-83fe-b72c1775e490",
+      "areaB": null,
+      "direction": "WEST_BOTTOM"
+    },
+    {
+      "areaA": "3f1264e2-d378-4fa4-83fe-b72c1775e490",
+      "areaB": null,
+      "direction": "SOUTH_LEFT"
+    }
+  ]
+}
