@@ -1,6 +1,5 @@
 package com.zombicide.missiongen.ui.missions;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -9,9 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -30,7 +26,12 @@ import com.zombicide.missiongen.ui.interfaces.LayoutChangeListener;
 import com.zombicide.missiongen.ui.interfaces.MissionLayoutUpdate;
 import com.zombicide.missiongen.ui.interfaces.MissionSelectionListener;
 import com.zombicide.missiongen.ui.interfaces.PanelSelectionListener;
-import com.zombicide.missiongen.ui.missionLayout.ZoneMissionGridCell;
+import com.zombicide.missiongen.ui.components.styled.StyledButton;
+import com.zombicide.missiongen.ui.components.styled.StyledComboBox;
+import com.zombicide.missiongen.ui.components.styled.StyledLabel;
+import com.zombicide.missiongen.ui.components.styled.MissionListCellRenderer;
+import com.zombicide.missiongen.ui.theme.UIConstants;
+import com.zombicide.missiongen.ui.components.notification.ToastManager;
 
 public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate {
     private static final Logger logger = LoggerFactory.getLogger(ZoneSelecionMissions.class);
@@ -38,13 +39,13 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
     private PersistanceService persistanceService;
     private MissionFactoryService missionFactoryService;
 
-    private JComboBox<String> editionsChoice;
-    private JComboBox<String> collectionsChoice;
+    private StyledComboBox<String> editionsChoice;
+    private StyledComboBox<String> collectionsChoice;
 
-    private JButton newMissionButton;
-    private JButton saveMissionButton;
-    private JButton exportImageButton;
-    private JButton deleteMissionButton;
+    private StyledButton newMissionButton;
+    private StyledButton saveMissionButton;
+    private StyledButton exportImageButton;
+    private StyledButton deleteMissionButton;
 
     private JList<String> missionList;
     private DefaultListModel<String> missionListModel;
@@ -67,16 +68,21 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         missionSelectionListeners = new java.util.ArrayList<>();
         collectionSelectionListeners = new java.util.ArrayList<>();
 
-        setBackground(new Color(230, 230, 250));
-        Dimension fixedSize = new Dimension(250, 750);
+        setBackground(UIConstants.BACKGROUND);
+        Dimension fixedSize = new Dimension(UIConstants.SELECTION_PANEL_WIDTH, UIConstants.DRAW_PANEL_SIZE);
         setPreferredSize(fixedSize);
         setMinimumSize(fixedSize);
         setMaximumSize(fixedSize);
 
-        // Add border
+        // Add modern border
         setBorder(javax.swing.BorderFactory.createCompoundBorder(
-                javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, Color.GRAY),
-                javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+                javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, UIConstants.BORDER),
+                javax.swing.BorderFactory.createEmptyBorder(
+                    UIConstants.SPACING_MD,
+                    UIConstants.SPACING_MD,
+                    UIConstants.SPACING_MD,
+                    UIConstants.SPACING_MD
+                )));
 
         initComponents();
         setupLayout();
@@ -85,7 +91,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
 
     private void initComponents() {
         // Editions dropdown
-        editionsChoice = new JComboBox<>();
+        editionsChoice = new StyledComboBox<>();
         editionsChoice.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -94,7 +100,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         });
 
         // Collections dropdown
-        collectionsChoice = new JComboBox<>();
+        collectionsChoice = new StyledComboBox<>();
         collectionsChoice.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -102,11 +108,13 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             }
         });
 
-        // Missions list
+        // Missions list with custom renderer
         missionListModel = new DefaultListModel<>();
         missionList = new JList<>(missionListModel);
         missionList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         missionList.setVisibleRowCount(20);
+        missionList.setCellRenderer(new MissionListCellRenderer());
+        missionList.setBackground(UIConstants.PANEL_BACKGROUND);
         missionList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -116,23 +124,23 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             }
         });
 
-        // New Mission button
-        newMissionButton = new JButton("Add New Mission");
+        // New Mission button (Primary style)
+        newMissionButton = new StyledButton("Add New Mission", StyledButton.ButtonStyle.PRIMARY);
         newMissionButton.setEnabled(true);
         newMissionButton.addActionListener(e -> onGenerateMission());
 
-        // Save Mission button
-        saveMissionButton = new JButton("Save Mission");
+        // Save Mission button (Success style)
+        saveMissionButton = new StyledButton("Save Mission", StyledButton.ButtonStyle.SUCCESS);
         saveMissionButton.setEnabled(false);
         saveMissionButton.addActionListener(e -> onSaveMission());
         
-        // Export Image button
-        exportImageButton = new JButton("Export Image");
+        // Export Image button (Secondary style)
+        exportImageButton = new StyledButton("Export Image", StyledButton.ButtonStyle.SECONDARY);
         exportImageButton.setEnabled(false);
         exportImageButton.addActionListener(e -> onExportImage());
         
-        // Delete Mission button
-        deleteMissionButton = new JButton("Delete Mission");
+        // Delete Mission button (Danger style)
+        deleteMissionButton = new StyledButton("Delete Mission", StyledButton.ButtonStyle.DANGER);
         deleteMissionButton.setEnabled(false);
         deleteMissionButton.addActionListener(e -> onDeleteMission());
     }
@@ -155,7 +163,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         // Editions label
         gbc.gridx = 0;
         gbc.gridy = 0;
-        add(new JLabel("Ediciones:"), gbc);
+        add(new StyledLabel("Ediciones:", StyledLabel.LabelStyle.LABEL), gbc);
 
         // Editions dropdown
         gbc.gridy = 1;
@@ -163,7 +171,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
 
         // Collections label
         gbc.gridy = 2;
-        add(new JLabel("Colecciones:"), gbc);
+        add(new StyledLabel("Colecciones:", StyledLabel.LabelStyle.LABEL), gbc);
 
         // Collections dropdown
         gbc.gridy = 3;
@@ -177,7 +185,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         // Missions label
         gbc.gridy = 5;
         gbc.insets = new Insets(15, 5, 5, 5);
-        add(new JLabel("Misiones:"), gbc);
+        add(new StyledLabel("Misiones:", StyledLabel.LabelStyle.LABEL), gbc);
 
         // Missions list (wrapped in scroll pane)
         gbc.gridy = 6;
@@ -285,6 +293,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         if (selected != null) {
             selectedEdition = (String) selected;
             logger.info("Edition selected: {}", selectedEdition);
+            clearWorkArea();
             loadCollections();
         }
     }
@@ -294,6 +303,7 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         if (selected != null) {
             selectedCollection = (String) selected;
             logger.info("Collection selected: {}", selectedCollection);
+            clearWorkArea();
             loadMissions();
             notifyEditionCollectionSelected(selectedEdition, selectedCollection);
         }
@@ -345,12 +355,13 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             Mission mission = persistanceService.getMission(selectedEdition, selectedCollection, missionName);
             if (mission != null) {
                 this.currentMission = mission;
-                this.saveMissionButton.setEnabled(true);
-                this.exportImageButton.setEnabled(true);
+                this.saveMissionButton.setEnabled(true); // Always enabled when editing a mission
+                this.exportImageButton.setEnabled(true); // Always enabled when editing a mission
                 this.deleteMissionButton.setEnabled(true);
                 notifyMissionSelected(mission);
             }
         } else {
+            this.saveMissionButton.setEnabled(false);
             this.exportImageButton.setEnabled(false);
             this.deleteMissionButton.setEnabled(false);
         }
@@ -364,25 +375,33 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             this.newMissionName = "Mission-" + String.valueOf((int) (Math.random() *
                     100));
         }
-        if (this.currentMission != null) {
-            // We are editing an existing mission
-            // Update name if changed (optional, but good practice)
-            // currentMission.setMissionName(newMissionName); // Mission name is final or we
-            // might want to allow renaming
+        
+        try {
+            if (this.currentMission != null) {
+                // We are editing an existing mission
+                // Update name if changed (optional, but good practice)
+                // currentMission.setMissionName(newMissionName); // Mission name is final or we
+                // might want to allow renaming
 
-            // Persist the existing mission object which has the updated board (tokens)
-            persistanceService.persistMission(currentMission);
-        } else {
-            // We are creating a new mission from grid
-            String missionId = selectedEdition + "." + selectedCollection + "." +
-                    newMissionName;
-            Mission mission = MissionFactoryService.createMission(missionId, selectedEdition, selectedCollection,
-                    newMissionName, grid);
+                // Persist the existing mission object which has the updated board (tokens)
+                persistanceService.persistMission(currentMission);
+                ToastManager.getInstance().showSuccess("Mission saved successfully!");
+            } else {
+                // We are creating a new mission from grid
+                String missionId = selectedEdition + "." + selectedCollection + "." +
+                        newMissionName;
+                Mission mission = MissionFactoryService.createMission(missionId, selectedEdition, selectedCollection,
+                        newMissionName, grid);
 
-            persistanceService.persistMission(mission);
+                persistanceService.persistMission(mission);
+                ToastManager.getInstance().showSuccess("Mission '" + newMissionName + "' created successfully!");
+            }
+            // Reload missions list to show the newly saved mission
+            loadMissions();
+        } catch (Exception e) {
+            logger.error("Failed to save mission", e);
+            ToastManager.getInstance().showError("Failed to save mission: " + e.getMessage());
         }
-        // Reload missions list to show the newly saved mission
-        loadMissions();
     }
 
     // Getters for external access
@@ -397,8 +416,13 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
     @Override
     public void onMissionGridUpdated(MissionGrid grid) {
         this.grid = grid;
-        // if all cells has board, save button is enaled
-        saveMissionButton.setEnabled(grid.isCompleteAndValid());
+        // Save button is enabled only when grid is complete and valid (MissionLayout mode)
+        // In Mission editing mode, save button is always enabled (set in onMissionSelected)
+        if (this.currentMission == null) {
+            // We are in MissionLayout mode (creating new mission)
+            saveMissionButton.setEnabled(grid.isCompleteAndValid());
+        }
+        // If currentMission != null, we're editing an existing mission, keep save button enabled
     }
 
     @Override
@@ -440,25 +464,42 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
                 // Reload missions list
                 loadMissions();
                 
-                // Show success message
-                javax.swing.JOptionPane.showMessageDialog(
-                    this,
-                    "Misión eliminada correctamente",
-                    "Eliminación exitosa",
-                    javax.swing.JOptionPane.INFORMATION_MESSAGE
-                );
+                // Show success toast
+                ToastManager.getInstance().showSuccess("Mission '" + missionName + "' deleted successfully!");
             } else {
                 logger.error("Failed to delete mission: {}", missionName);
-                javax.swing.JOptionPane.showMessageDialog(
-                    this,
-                    "Error al eliminar la misión",
-                    "Error",
-                    javax.swing.JOptionPane.ERROR_MESSAGE
-                );
+                ToastManager.getInstance().showError("Failed to delete mission");
             }
         } else {
             logger.info("Mission deletion cancelled by user");
         }
+    }
+
+    /**
+     * Clears the work area and resets all buttons when edition or collection changes
+     */
+    private void clearWorkArea() {
+        // Clear current mission
+        currentMission = null;
+        grid = null;
+        newMissionName = null;
+        
+        // Disable all action buttons
+        saveMissionButton.setEnabled(false);
+        exportImageButton.setEnabled(false);
+        deleteMissionButton.setEnabled(false);
+        
+        // Clear mission list selection
+        missionList.clearSelection();
+        
+        // Notify listeners to clear their displays
+        for (MissionSelectionListener listener : missionSelectionListeners) {
+            if (listener instanceof ZoneWorkAreaMissions) {
+                ((ZoneWorkAreaMissions) listener).clear();
+            }
+        }
+        
+        logger.info("Work area cleared");
     }
 
     private void onExportImage() {
@@ -491,20 +532,10 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             
             if (exported) {
                 logger.info("Mission image exported successfully");
-                javax.swing.JOptionPane.showMessageDialog(
-                    this,
-                    "Imagen exportada correctamente",
-                    "Exportación exitosa",
-                    javax.swing.JOptionPane.INFORMATION_MESSAGE
-                );
+                ToastManager.getInstance().showSuccess("Mission image exported to " + fileToSave.getName());
             } else {
                 logger.error("Failed to export mission image");
-                javax.swing.JOptionPane.showMessageDialog(
-                    this,
-                    "Error al exportar la imagen",
-                    "Error",
-                    javax.swing.JOptionPane.ERROR_MESSAGE
-                );
+                ToastManager.getInstance().showError("Failed to export mission image");
             }
         } else {
             logger.info("Export cancelled by user");

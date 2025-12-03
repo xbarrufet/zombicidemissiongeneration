@@ -178,12 +178,14 @@
   "tokens" : [ ],
   "gridTiles" : [ [ {
     "tileName" : "2ndEdition.0_original.1V",
+    "imagePath" : null,
     "rotation" : 0,
     "row" : 0,
     "col" : 0,
     "null" : false
   }, {
     "tileName" : "2ndEdition.0_original.3V",
+    "imagePath" : null,
     "rotation" : 90,
     "row" : 0,
     "col" : 1,

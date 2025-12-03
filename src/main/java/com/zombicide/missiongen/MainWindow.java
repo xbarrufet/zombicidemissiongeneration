@@ -24,6 +24,8 @@ import com.zombicide.missiongen.ui.missions.ZoneSelecionMissions;
 import com.zombicide.missiongen.ui.missions.ZoneWorkAreaMissions;
 import com.zombicide.missiongen.ui.tiles.ZoneSelecionTiles;
 import com.zombicide.missiongen.ui.tiles.ZoneWorkAreaTiles;
+import com.zombicide.missiongen.ui.components.styled.StatusBar;
+import com.zombicide.missiongen.ui.components.notification.ToastManager;
 
 public class MainWindow extends JFrame implements LayoutChangeListener {
     private static final Logger logger = LoggerFactory.getLogger(MainWindow.class);
@@ -35,6 +37,7 @@ public class MainWindow extends JFrame implements LayoutChangeListener {
     private ZoneWorkAreaMissionLayout missionWorkAreaPanel;
     private ZoneWorkAreaMissions missionsViewerPanel;
     private ZoneWorkAreaPanel currentWorkAreaPanel;
+    private StatusBar statusBar;
 
     public MainWindow() {
         super("Mission Generation - Zombicide");
@@ -84,6 +87,12 @@ public class MainWindow extends JFrame implements LayoutChangeListener {
         zoneSelecionMissions.addMissionSelectionListener(missionsViewerPanel);
         zoneSelecionMissions.addCollectionSelectionListener(missionWorkAreaPanel.getZoneMissionGridProperties());
 
+        // Initialize status bar
+        statusBar = new StatusBar();
+        
+        // Initialize toast manager
+        ToastManager.getInstance().initialize(this);
+
         logger.info("Components initialized");
     }
 
@@ -110,6 +119,15 @@ public class MainWindow extends JFrame implements LayoutChangeListener {
         // gbc.fill = GridBagConstraints.BOTH;
         // add(tileWorkAreaPanel, gbc);
         this.replaceWorkArea(missionWorkAreaPanel);
+
+        // Status bar - Bottom
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        gbc.weightx = 1.0;
+        gbc.weighty = 0.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        add(statusBar, gbc);
 
         logger.info("Layout configured");
     }
@@ -180,6 +198,15 @@ public class MainWindow extends JFrame implements LayoutChangeListener {
 
     public ZoneSelecionTiles getZoneSelecionTiles() {
         return zoneSelecionTiles;
+    }
+
+    /**
+     * Gets the status bar.
+     * 
+     * @return The status bar component
+     */
+    public StatusBar getStatusBar() {
+        return statusBar;
     }
 
     private void setupWindow() {
