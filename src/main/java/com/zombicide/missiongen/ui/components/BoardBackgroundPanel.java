@@ -47,6 +47,7 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
 
     private boolean areaDrawingVisible = true;
     private boolean areaIdsVisible = true;
+    private boolean areaSelectionAllowed = true;
 
     public BoardBackgroundPanel() {
         this.config = ConfigLoader.getInstance();
@@ -74,6 +75,9 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
     }
 
     protected void onLeftClick(Point point) {
+        if (!areaSelectionAllowed) {
+            return;
+        }
         BoardArea clickedArea = getBoardAreaAtPoint(point);
         if (clickedArea != null) {
             // Normal click: clear selection and select only this area
@@ -91,6 +95,9 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
     }
 
     protected void onAlternativeLeftClick(Point point) {
+        if (!areaSelectionAllowed) {
+            return;
+        }
         BoardArea clickedArea = getBoardAreaAtPoint(point);
         if (clickedArea != null) {
             // SHIFT + click: toggle area in selection
@@ -124,20 +131,19 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
         int tileY = (int) ((panelPoint.y - imgYOffset) / currentRenderScale);
         Point tilePoint = new Point(tileX, tileY);
 
-        //Point tilePoint = convertPanelToTileCoordinates(panelPoint);
+        // Point tilePoint = convertPanelToTileCoordinates(panelPoint);
 
         return this.getBoard().getAreaAtPoint(tilePoint);
     }
-
 
     public Point convertPanelMouseToBaordCoordinates(Point panelPoint) {
         // Convert panel coordinates to board coordinates
         // panelX = boardX * scale + offsetX
         // boardX = (panelX - offsetX) / scale
-        
+
         int boardX = (int) ((panelPoint.x - imgXOffset) / currentRenderScale);
         int boardY = (int) ((panelPoint.y - imgYOffset) / currentRenderScale);
-        
+
         return new Point(boardX, boardY);
     }
 
@@ -157,6 +163,14 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
 
     public boolean isAreaIdsVisible() {
         return areaIdsVisible;
+    }
+
+    protected void setAreaSelectionAllowed(boolean allowed) {
+        this.areaSelectionAllowed = allowed;
+    }
+
+    public boolean isAreaSelectionAllowed() {
+        return areaSelectionAllowed;
     }
 
     @Override
@@ -314,5 +328,4 @@ public class BoardBackgroundPanel extends ZoneDrawPanel {
         this.notifyAreasChanged();
     }
 
-   
 }

@@ -155,6 +155,19 @@ public abstract class BaseBoard {
         return false;
     }
 
+    public boolean connectionExists(UUID areaA, UUID areaB) {
+        return connections.stream()
+                .anyMatch(connection -> connection.getAreaAId().equals(areaA) && connection.getAreaBId().equals(areaB)
+                        || connection.getAreaAId().equals(areaB) && connection.getAreaBId().equals(areaA));
+    }
+
+    public BoardAreaConnection getBoardAreaConnection(UUID areaA, UUID areaB) {
+        return connections.stream()
+                .filter(connection -> connection.getAreaAId().equals(areaA) && connection.getAreaBId().equals(areaB)
+                        || connection.getAreaAId().equals(areaB) && connection.getAreaBId().equals(areaA))
+                .findFirst().orElse(null);
+    }
+
     public void splitAreaHorizontally(UUID areaId, int splitPoint) {
         BoardArea area = areas.stream().filter(a -> a.getAreaId().equals(areaId)).findFirst().orElse(null);
         if (area == null) {
@@ -502,6 +515,15 @@ public abstract class BaseBoard {
 
     public String getBoardId() {
         return this.boardId;
+    }
+
+    public Token getTokenAtPoint(Point point) {
+        for (Token token : tokens) {
+            if (token.isPointInShape(point)) {
+                return token;
+            }
+        }
+        return null;
     }
 
 }

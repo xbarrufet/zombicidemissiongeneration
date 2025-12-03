@@ -20,6 +20,7 @@ public abstract class Token {
     TokenOrientation orientation; // The orientation of the token
     UUID areaId; // The id of the area the token is in
     String subtype; // The subtype of the token
+    int rotation;
 
     public Token(TokenType type, TokenShape shape, TokenOrientation orientation,
             String subtype, Image image) {
@@ -29,6 +30,7 @@ public abstract class Token {
         this.subtype = subtype;
         this.orientation = orientation;
         this.image = image;
+        this.rotation = 0;
     }
 
     public void setLocation(Point location, UUID areaId) {
@@ -59,17 +61,21 @@ public abstract class Token {
     public UUID getId() {
         return id;
     }
+
     public String getSubtype() {
         return subtype;
     }
-    
 
     public Image getImage() {
         return image;
     }
 
+    public int getRotation() {
+        return rotation;
+    }
+
     public void rotate() {
-        if(this.orientation == TokenOrientation.Horizontal) {
+        if (this.orientation == TokenOrientation.Horizontal) {
             this.orientation = TokenOrientation.Vertical;
         } else {
             this.orientation = TokenOrientation.Horizontal;
@@ -94,18 +100,18 @@ public abstract class Token {
 
         // 4. Create the rotation transformation
         AffineTransform transform = new AffineTransform();
-        
+
         // Step 4a: Rotate 90 degrees (Math.PI / 2 radians)
         // The rotation is centered at (0, 0) for the coordinate system.
-        transform.rotate(Math.toRadians(90)); 
-        
+        transform.rotate(Math.toRadians(90));
+
         // Step 4b: Translate the image to the correct position
         // After rotating 90 clockwise, the original image's top-left corner (0,0)
         // moves to (new_width, 0), which is (height, 0).
-        // To bring it into the visible area of the new image, we translate by `height` 
+        // To bring it into the visible area of the new image, we translate by `height`
         // in the X direction (or new image's width).
         transform.translate(0, -width); // The correct translation is often a bit tricky.
-        // If we use the rotation center at (0,0), a 90-degree clockwise rotation 
+        // If we use the rotation center at (0,0), a 90-degree clockwise rotation
         // moves the original point (x, y) to (y, -x).
         // The image now has a negative y-coordinate. We must translate it back.
         // A simpler approach is:
@@ -120,8 +126,8 @@ public abstract class Token {
 
         return rotatedImage;
     }
-    
-    private  BufferedImage toBufferedImage(Image img) {
+
+    private BufferedImage toBufferedImage(Image img) {
         if (img instanceof BufferedImage) {
             return (BufferedImage) img;
         }
@@ -135,5 +141,9 @@ public abstract class Token {
         bGr.dispose();
 
         return bimage;
+    }
+
+    public boolean isPointInShape(Point point) {
+        return this.shape.isPointInShape(this.location, point);
     }
 }
