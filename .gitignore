@@ -47,3 +47,10 @@ __pycache__/
 test-data-temp/
 test-data-temp-edge/
 .gemini/
+
+# Assets - only images
+**/tileImages/
+**/missionImages/
+
+# macOS files
+.DS_Store
