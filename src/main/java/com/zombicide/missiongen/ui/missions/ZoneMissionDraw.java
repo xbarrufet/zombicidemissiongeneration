@@ -444,8 +444,9 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
         token.setLocation(tokenPosition, area.getAreaId());
         if (token.getType() == TokenType.DOOR) {
             UUID connectedAreaId = getDoorBoardAreaConnection(tokenPosition, area.getAreaId());
-            BoardAreaConnection connection = getBoard().getBoardAreaConnection(area.getAreaId(), connectedAreaId);
-            ((Door) token).setBoardAreaConnection(connection);
+            Door door = (Door) token;
+            door.setAreaA(area.getAreaId());
+            door.setAreaB(connectedAreaId);
         }
         return token;
     }
@@ -503,7 +504,7 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
                 checkPoint = new Point(doorPosition.x, doorPosition.y + tokenToBeAdded.getShape().getHeight());
                 break;
             case 270: // LEFT
-                checkPoint = new Point(doorPosition.x - tokenToBeAdded.getShape().getWidth(), doorPosition.x);
+                checkPoint = new Point(doorPosition.x - tokenToBeAdded.getShape().getWidth(), doorPosition.y);
                 break;
         }
         BoardArea connectedArea = getBoard().getAreaAtPoint(checkPoint);
@@ -544,5 +545,11 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
         notifyTokenUnselected();
         this.selectedToken = null;
         repaint();
+    }
+
+    @Override
+    public void onMissionNameUpdated(String missionName) {
+        // Mission name updated - no action needed in draw view
+        logger.debug("Mission name updated to: {}", missionName);
     }
 }

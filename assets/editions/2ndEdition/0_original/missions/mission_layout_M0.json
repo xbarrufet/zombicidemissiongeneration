@@ -5,10 +5,10 @@
   "height" : 250,
   "edition" : "2ndEdition",
   "collection" : "0_original",
-  "imagePath" : "assets/editions/2ndEdition/0_original/missionImages/mission_background_mission1.png",
-  "missionName" : "mission1",
+  "imagePath" : "assets/editions/2ndEdition/0_original/missionImages/mission_background_M0.png",
+  "missionName" : "M0",
   "areas" : [ {
-    "id" : "ab84e71c-9bfb-4e7f-ad95-58c16e4bb8e4",
+    "id" : "025e010b-c1b6-4b33-961e-df9fbbd48dfc",
     "x" : 175,
     "y" : 0,
     "width" : 150,
@@ -17,7 +17,7 @@
     "areaLocation" : "TOP_RIGHT_STREET",
     "boardGameAssets" : null
   }, {
-    "id" : "51ad203a-882a-4413-890d-f9078d1e0013",
+    "id" : "b1a42104-60db-47a2-8f5d-1f69099d552a",
     "x" : 175,
     "y" : 75,
     "width" : 150,
@@ -26,7 +26,7 @@
     "areaLocation" : "MIDDLE_RIGHT_STREET",
     "boardGameAssets" : null
   }, {
-    "id" : "689cd376-6db7-49ee-8e61-fe5bf06342fe",
+    "id" : "d4bb1fd9-4173-493e-b125-239358c47ac8",
     "x" : 175,
     "y" : 175,
     "width" : 150,
@@ -160,7 +160,7 @@
     "direction" : null
   }, {
     "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
-    "areaB" : "689cd376-6db7-49ee-8e61-fe5bf06342fe",
+    "areaB" : "d4bb1fd9-4173-493e-b125-239358c47ac8",
     "direction" : null
   }, {
     "areaA" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
@@ -176,19 +176,18 @@
     "direction" : null
   } ],
   "tokens" : [ {
-    "type" : "START",
-    "id" : "9398bcff-5eec-452c-ab1a-87c7253130dd",
+    "id" : "397d0207-ec7a-4de8-b3ec-d41d5c198818",
     "location" : {
-      "x" : 50.0,
-      "y" : 218.0
+      "x" : 37.0,
+      "y" : 212.0
     },
     "type" : "START",
     "subtype" : "StartToken",
     "rotation" : 0,
-    "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f"
+    "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f",
+    "properties" : { }
   }, {
-    "type" : "EXIT",
-    "id" : "60cb4dc1-a2ae-46a5-992b-ed9d836552f1",
+    "id" : "46333e7f-a81a-4693-a839-2c7279baf5ee",
     "location" : {
       "x" : 12.0,
       "y" : 212.0
@@ -196,10 +195,10 @@
     "type" : "EXIT",
     "subtype" : "ExitToken",
     "rotation" : 270,
-    "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f"
+    "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f",
+    "properties" : { }
   }, {
-    "type" : "SPAWN",
-    "id" : "445bd0d1-8e81-47f5-b96d-46dc93db049c",
+    "id" : "fa617085-a750-4c47-ac43-ea56c64df4a3",
     "location" : {
       "x" : 488.0,
       "y" : 37.0
@@ -207,43 +206,43 @@
     "type" : "SPAWN",
     "subtype" : "SpawnLocator1",
     "rotation" : 90,
-    "areaId" : "cead3dac-c6ff-46f5-b089-d6d9dfa9f652"
+    "areaId" : "cead3dac-c6ff-46f5-b089-d6d9dfa9f652",
+    "properties" : { }
   }, {
-    "type" : "SPAWN",
-    "id" : "89236b7e-81ec-4e1e-a713-abe036dc35d5",
+    "id" : "ae525c96-0ae4-445e-96f9-cae815dc242b",
     "location" : {
-      "x" : 244.0,
+      "x" : 250.0,
       "y" : 12.0
     },
     "type" : "SPAWN",
     "subtype" : "SpawnTokenRedInverted",
     "rotation" : 0,
-    "areaId" : "ab84e71c-9bfb-4e7f-ad95-58c16e4bb8e4"
+    "areaId" : "025e010b-c1b6-4b33-961e-df9fbbd48dfc",
+    "properties" : { }
   }, {
-    "type" : "ZOMBIE",
-    "id" : "c5b877d5-a3e0-420f-a0d5-443da9db33c1",
+    "id" : "9d6708bf-3622-47d3-968a-ff1f137a17c5",
     "location" : {
-      "x" : 294.0,
-      "y" : 66.0
-    },
-    "type" : "ZOMBIE",
-    "subtype" : "ZombieStandardRunnerToken",
-    "rotation" : 0,
-    "areaId" : "ab84e71c-9bfb-4e7f-ad95-58c16e4bb8e4"
-  }, {
-    "type" : "ZOMBIE",
-    "id" : "b1a46f45-da32-4fbc-a311-b66c8df4d428",
-    "location" : {
-      "x" : 209.0,
-      "y" : 65.0
+      "x" : 205.0,
+      "y" : 48.0
     },
     "type" : "ZOMBIE",
     "subtype" : "ZombieStandardFattyToken",
     "rotation" : 0,
-    "areaId" : "ab84e71c-9bfb-4e7f-ad95-58c16e4bb8e4"
+    "areaId" : "025e010b-c1b6-4b33-961e-df9fbbd48dfc",
+    "properties" : { }
   }, {
+    "id" : "757b2356-a811-41ac-9e83-e32f960d2265",
+    "location" : {
+      "x" : 293.0,
+      "y" : 48.0
+    },
     "type" : "ZOMBIE",
-    "id" : "411e0f65-32e9-4406-86ee-670f76d203fb",
+    "subtype" : "ZombieStandardRunnerToken",
+    "rotation" : 0,
+    "areaId" : "025e010b-c1b6-4b33-961e-df9fbbd48dfc",
+    "properties" : { }
+  }, {
+    "id" : "e253b33a-22d8-4a59-882b-42eed3d2bf8f",
     "location" : {
       "x" : 250.0,
       "y" : 125.0
@@ -251,10 +250,10 @@
     "type" : "ZOMBIE",
     "subtype" : "ZombieStandardWalkerToken",
     "rotation" : 0,
-    "areaId" : "51ad203a-882a-4413-890d-f9078d1e0013"
+    "areaId" : "b1a42104-60db-47a2-8f5d-1f69099d552a",
+    "properties" : { }
   }, {
-    "type" : "ZOMBIE",
-    "id" : "3e7384e2-1f30-4172-b374-17ed4c4741b6",
+    "id" : "13e200bf-3a16-457c-a79e-7cbb5c49d3c7",
     "location" : {
       "x" : 250.0,
       "y" : 218.0
@@ -262,51 +261,52 @@
     "type" : "ZOMBIE",
     "subtype" : "ZombieStandardWalkerToken",
     "rotation" : 0,
-    "areaId" : "689cd376-6db7-49ee-8e61-fe5bf06342fe"
+    "areaId" : "d4bb1fd9-4173-493e-b125-239358c47ac8",
+    "properties" : { }
   }, {
-    "type" : "PIMPWEAPONCRATE",
-    "id" : "4f729a69-83f9-4485-a4db-83e9dac61b8d",
-    "location" : {
-      "x" : 150.0,
-      "y" : 140.0
-    },
-    "type" : "PIMPWEAPONCRATE",
-    "subtype" : "PimweaponCrate",
-    "rotation" : 0,
-    "areaId" : "9c4f35e3-aa16-4015-9e40-9233e66207c1"
-  }, {
-    "type" : "PIMPWEAPONCRATE",
-    "id" : "bef79bec-9aa8-420f-b691-4cc6dc4012a1",
-    "location" : {
-      "x" : 399.0,
-      "y" : 228.0
-    },
-    "type" : "PIMPWEAPONCRATE",
-    "subtype" : "PimweaponCrate",
-    "rotation" : 0,
-    "areaId" : "90e08c4a-a57f-4078-88ea-0b007889468a"
-  }, {
-    "type" : "OBJECTIVE",
-    "id" : "94ec2d8c-ed7e-44e8-9826-74c0d70c7c1c",
+    "id" : "1767c02c-a37b-46d3-804b-12e376ef7ce7",
     "location" : {
       "x" : 476.0,
-      "y" : 183.0
+      "y" : 186.0
     },
     "type" : "OBJECTIVE",
     "subtype" : "ObjectiveRed",
     "rotation" : 0,
-    "areaId" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f"
+    "areaId" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+    "properties" : { }
   }, {
-    "type" : "OBJECTIVE",
-    "id" : "2b6ec5d3-e29a-433e-a3de-87192c1c5639",
+    "id" : "d9edffd8-7599-4690-bf13-0d746282a146",
     "location" : {
       "x" : 64.0,
-      "y" : 148.0
+      "y" : 146.0
     },
     "type" : "OBJECTIVE",
     "subtype" : "ObjectiveRed",
     "rotation" : 0,
-    "areaId" : "02b27ce3-b044-445f-8b23-f932df6b4120"
+    "areaId" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "properties" : { }
+  }, {
+    "id" : "8cedd9f9-8021-4bcc-8176-a3856784aaf0",
+    "location" : {
+      "x" : 152.0,
+      "y" : 143.0
+    },
+    "type" : "OBJECTIVE",
+    "subtype" : "ObjectiveRed",
+    "rotation" : 0,
+    "areaId" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "properties" : { }
+  }, {
+    "id" : "a4fdaba4-e383-46d9-8ca6-2d569311f005",
+    "location" : {
+      "x" : 399.0,
+      "y" : 225.0
+    },
+    "type" : "OBJECTIVE",
+    "subtype" : "ObjectiveRed",
+    "rotation" : 0,
+    "areaId" : "90e08c4a-a57f-4078-88ea-0b007889468a",
+    "properties" : { }
   } ],
   "gridTiles" : [ [ {
     "tileName" : "2ndEdition.0_original.1V",

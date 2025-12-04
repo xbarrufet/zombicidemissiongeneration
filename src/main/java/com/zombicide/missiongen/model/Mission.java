@@ -87,6 +87,10 @@ public class Mission {
         return missionName;
     }
 
+    public void setMissionName(String missionName) {
+        this.missionName = missionName;
+    }
+
     public MissionBoard getMissionBoard() {
         return missionBoard;
     }

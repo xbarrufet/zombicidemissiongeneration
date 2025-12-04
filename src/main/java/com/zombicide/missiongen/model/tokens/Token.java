@@ -5,7 +5,9 @@ import java.awt.Image;
 import java.awt.Point;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import com.zombicide.missiongen.config.TokenLoader;
@@ -21,6 +23,7 @@ public abstract class Token {
     UUID areaId; // The id of the area the token is in
     String subtype; // The subtype of the token
     int rotation;
+    Map<String, String> properties; // Type-specific properties
 
     public Token(TokenType type, TokenShape shape, TokenOrientation orientation,
             String subtype, Image image) {
@@ -31,6 +34,7 @@ public abstract class Token {
         this.orientation = orientation;
         this.image = image;
         this.rotation = 0;
+        this.properties = new HashMap<>();
     }
 
     public void setLocation(Point location, UUID areaId) {
@@ -147,5 +151,21 @@ public abstract class Token {
 
     public boolean isPointInShape(Point point) {
         return this.shape.isPointInShape(this.location, point);
+    }
+
+    public void setProperty(String key, String value) {
+        this.properties.put(key, value);
+    }
+
+    public String getProperty(String key) {
+        return this.properties.get(key);
+    }
+
+    public Map<String, String> getProperties() {
+        return this.properties;
+    }
+
+    public void setProperties(Map<String, String> properties) {
+        this.properties = properties != null ? properties : new HashMap<>();
     }
 }

@@ -379,11 +379,10 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
         try {
             if (this.currentMission != null) {
                 // We are editing an existing mission
-                // Update name if changed (optional, but good practice)
-                // currentMission.setMissionName(newMissionName); // Mission name is final or we
-                // might want to allow renaming
+                // Update mission name if changed
+                this.currentMission.setMissionName(this.newMissionName);
 
-                // Persist the existing mission object which has the updated board (tokens)
+                // Persist the existing mission object which has the updated board (tokens) and name
                 persistanceService.persistMission(currentMission);
                 ToastManager.getInstance().showSuccess("Mission saved successfully!");
             } else {

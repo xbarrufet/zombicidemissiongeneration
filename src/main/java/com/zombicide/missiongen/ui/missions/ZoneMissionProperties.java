@@ -12,7 +12,7 @@ import com.zombicide.missiongen.ui.interfaces.MissionTokenSelectionListener;
 
 public class ZoneMissionProperties extends ZonePropertiesPanel implements MissionTokenSelectionListener {
 
-    private javax.swing.JLabel missionNameLabel;
+    private javax.swing.JTextField missionNameField;
     private MissionPropertiesListener listener;
     private static final Logger logger = LoggerFactory.getLogger(ZoneMissionProperties.class);
 
@@ -31,7 +31,14 @@ public class ZoneMissionProperties extends ZonePropertiesPanel implements Missio
     }
 
     private void initComponents() {
-        missionNameLabel = new javax.swing.JLabel("No mission loaded");
+        missionNameField = new javax.swing.JTextField("No mission loaded");
+        missionNameField.setColumns(20);
+        missionNameField.addActionListener(e -> {
+            // Notify listener when mission name is changed
+            if (listener != null) {
+                listener.onMissionNameUpdated(missionNameField.getText());
+            }
+        });
         
         // Initialize the three panels
         panelTokenTree = new PanelTokenTree();
@@ -73,7 +80,7 @@ public class ZoneMissionProperties extends ZonePropertiesPanel implements Missio
         // Mission Name
         add(new javax.swing.JLabel("Mission:"), gbc);
         gbc.gridy++;
-        add(missionNameLabel, gbc);
+        add(missionNameField, gbc);
 
         gbc.gridy++;
         gbc.weighty = 1.0;
@@ -134,11 +141,11 @@ public class ZoneMissionProperties extends ZonePropertiesPanel implements Missio
     }
 
     public void setMissionInfo(String missionName, int rows, int cols, int areasCount) {
-        missionNameLabel.setText(missionName);
+        missionNameField.setText(missionName);
     }
 
     public void clearMissionInfo() {
-        missionNameLabel.setText("No mission loaded");
+        missionNameField.setText("No mission loaded");
     }
 
     @Override

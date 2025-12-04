@@ -5,7 +5,6 @@ import com.zombicide.missiongen.model.tokens.TokenFactory;
 import com.zombicide.missiongen.model.tokens.tokenType.Door;
 
 public class DoorDTO extends TokenDTO {
-    public BoardAreaConnectionDTO boardAreaConnection;
 
     public DoorDTO() {
         super();
@@ -13,8 +12,12 @@ public class DoorDTO extends TokenDTO {
 
     public static DoorDTO fromDoor(Door door) {
         DoorDTO dto = new DoorDTO();
-        if (door.getBoardAreaConnection() != null) {
-            dto.boardAreaConnection = BoardAreaConnectionDTO.fromBoardAreaConnection(door.getBoardAreaConnection());
+        // Store area IDs in properties
+        if (door.getAreaA() != null) {
+            dto.properties.put("areaA", door.getAreaA().toString());
+        }
+        if (door.getAreaB() != null) {
+            dto.properties.put("areaB", door.getAreaB().toString());
         }
         return dto;
     }
@@ -32,8 +35,14 @@ public class DoorDTO extends TokenDTO {
                 door.rotate();
             }
 
-            if (this.boardAreaConnection != null) {
-                door.setBoardAreaConnection(this.boardAreaConnection.toBoardAreaConnection());
+            // Restore area connections from properties
+            if (this.properties != null) {
+                if (this.properties.containsKey("areaA")) {
+                    door.setAreaA(java.util.UUID.fromString(this.properties.get("areaA")));
+                }
+                if (this.properties.containsKey("areaB")) {
+                    door.setAreaB(java.util.UUID.fromString(this.properties.get("areaB")));
+                }
             }
             return door;
         }

@@ -9,5 +9,7 @@ public interface MissionPropertiesListener {
     void onTokenSelected(String type, String subtype);
     
     void onTokenDeleted(Token token);
+    
+    void onMissionNameUpdated(String missionName);
 
 }
