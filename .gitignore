@@ -47,6 +47,8 @@ __pycache__/
 test-data-temp/
 test-data-temp-edge/
 .gemini/
+logs/
+mission-generation.log
 
 # Assets - only images
 **/tileImages/
