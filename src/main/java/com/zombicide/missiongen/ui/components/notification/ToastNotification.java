@@ -99,13 +99,16 @@ public class ToastNotification extends JPanel {
                     opacity = 0.0f;
                     fadeTimer.stop();
                     // Notify parent to remove this component
-                    if (getParent() != null) {
-                        getParent().remove(ToastNotification.this);
-                        getParent().revalidate();
-                        getParent().repaint();
+                    java.awt.Container parent = getParent();
+                    if (parent != null) {
+                        parent.remove(ToastNotification.this);
+                        parent.revalidate();
+                        parent.repaint();
                     }
                 }
-                repaint();
+                if (getParent() != null) {
+                    repaint();
+                }
             }
         });
         fadeTimer.start();
@@ -155,5 +158,17 @@ public class ToastNotification extends JPanel {
             hideTimer.stop();
         }
         fadeOut();
+    }
+    
+    @Override
+    public void removeNotify() {
+        super.removeNotify();
+        // Stop all timers when component is removed
+        if (hideTimer != null) {
+            hideTimer.stop();
+        }
+        if (fadeTimer != null) {
+            fadeTimer.stop();
+        }
     }
 }

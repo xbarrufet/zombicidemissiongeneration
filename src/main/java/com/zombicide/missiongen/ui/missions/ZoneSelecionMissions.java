@@ -394,8 +394,12 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
                         newMissionName, grid);
 
                 persistanceService.persistMission(mission);
+                this.currentMission = mission; // Set as current mission after creation
                 ToastManager.getInstance().showSuccess("Mission '" + newMissionName + "' created successfully!");
             }
+            // Keep buttons enabled after saving
+            this.saveMissionButton.setEnabled(true);
+            this.exportImageButton.setEnabled(true);
             // Reload missions list to show the newly saved mission
             loadMissions();
         } catch (Exception e) {

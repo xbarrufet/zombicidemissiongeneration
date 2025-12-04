@@ -177,7 +177,7 @@
   } ],
   "tokens" : [ {
     "type" : "EXIT",
-    "id" : "57ecfb9f-5365-474f-b676-4ac85a11d547",
+    "id" : "f980e060-2596-47c2-bba0-be019af57c00",
     "location" : {
       "x" : 12.0,
       "y" : 212.0
@@ -188,7 +188,7 @@
     "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f"
   }, {
     "type" : "START",
-    "id" : "81f379ab-beea-45d0-921d-62b63849ffa7",
+    "id" : "6611a14a-6472-45ff-adaf-1cdcb58df61c",
     "location" : {
       "x" : 37.0,
       "y" : 212.0
@@ -197,6 +197,72 @@
     "subtype" : "StartToken",
     "rotation" : 0,
     "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f"
+  }, {
+    "type" : "SPAWN",
+    "id" : "66b0c0f5-b980-419f-8a2a-77438fbca5f3",
+    "location" : {
+      "x" : 488.0,
+      "y" : 37.0
+    },
+    "type" : "SPAWN",
+    "subtype" : "SpawnLocator1",
+    "rotation" : 90,
+    "areaId" : "cead3dac-c6ff-46f5-b089-d6d9dfa9f652"
+  }, {
+    "type" : "SPAWN",
+    "id" : "f0b0ea02-9abf-46d8-9ffa-2eba643efff6",
+    "location" : {
+      "x" : 250.0,
+      "y" : 12.0
+    },
+    "type" : "SPAWN",
+    "subtype" : "SpawnTokenRedInverted",
+    "rotation" : 0,
+    "areaId" : "b9e1bbe6-745a-4297-9a95-417d671a1566"
+  }, {
+    "type" : "ZOMBIE",
+    "id" : "dd3929fc-48bf-44b7-949d-c001f4309ef6",
+    "location" : {
+      "x" : 293.0,
+      "y" : 44.0
+    },
+    "type" : "ZOMBIE",
+    "subtype" : "ZombieStandardFattyToken",
+    "rotation" : 0,
+    "areaId" : "b9e1bbe6-745a-4297-9a95-417d671a1566"
+  }, {
+    "type" : "ZOMBIE",
+    "id" : "74b27ab8-2917-4a0c-b801-d9141094eec9",
+    "location" : {
+      "x" : 209.0,
+      "y" : 44.0
+    },
+    "type" : "ZOMBIE",
+    "subtype" : "ZombieStandardRunnerToken",
+    "rotation" : 0,
+    "areaId" : "b9e1bbe6-745a-4297-9a95-417d671a1566"
+  }, {
+    "type" : "ZOMBIE",
+    "id" : "323830f8-0c83-419f-843d-3277f0aa5ba4",
+    "location" : {
+      "x" : 250.0,
+      "y" : 125.0
+    },
+    "type" : "ZOMBIE",
+    "subtype" : "ZombieStandardWalkerToken",
+    "rotation" : 0,
+    "areaId" : "c2f96190-abdc-4b41-a097-4634803918b5"
+  }, {
+    "type" : "ZOMBIE",
+    "id" : "1dfb6390-475a-4b35-ac35-8363d468a67b",
+    "location" : {
+      "x" : 250.0,
+      "y" : 218.0
+    },
+    "type" : "ZOMBIE",
+    "subtype" : "ZombieStandardWalkerToken",
+    "rotation" : 0,
+    "areaId" : "79e48854-5f2b-4937-9e9c-59a545a0348d"
   } ],
   "gridTiles" : [ [ {
     "tileName" : "2ndEdition.0_original.1V",

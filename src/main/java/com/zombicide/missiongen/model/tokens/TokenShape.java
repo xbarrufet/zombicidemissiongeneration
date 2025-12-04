@@ -26,10 +26,16 @@ public class TokenShape {
     }
 
     public int getWidth() {
+        if(shape == Shape.CIRCLE) {
+            return Radius * 2;
+        }
         return width;
     }
 
     public int getHeight() {
+        if(shape == Shape.CIRCLE) {
+            return Radius * 2;
+        }
         return height;
     }
 
