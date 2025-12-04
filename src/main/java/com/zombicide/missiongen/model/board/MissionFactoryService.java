@@ -32,10 +32,11 @@ public class MissionFactoryService {
     public static Mission createMission(String missionId, String edition, String collection, String missionName,
             MissionGrid grid) {
 
-            String imagePath = ConfigLoader.getInstance().getProperty("folders.editions") + "/"
+            ConfigLoader config = ConfigLoader.getInstance();
+            String imagePath = config.getProperty("folders.editions") + "/"
         + edition + "/" + collection + "/"
-        + ConfigLoader.getInstance().getProperty("folders.missionImages") + "/" + "mission_" + missionName
-        + ".png";
+        + config.getProperty("folders.missionImages") + "/" 
+        + config.getMissionImagePrefix() + missionName + config.getMissionImageSuffix();
         MissionBoard missionBoard = createMissionBoard(grid,  imagePath);
 
       

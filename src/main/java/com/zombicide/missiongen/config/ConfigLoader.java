@@ -128,6 +128,42 @@ public class ConfigLoader {
         return getProperty("folders.missionImages", "missionImages");
     }
 
+    /**
+     * Gets the mission layout file prefix.
+     * 
+     * @return The mission layout file prefix
+     */
+    public String getMissionLayoutPrefix() {
+        return getProperty("file.mission_layout.prefix", "mission_");
+    }
+
+    /**
+     * Gets the mission layout file suffix.
+     * 
+     * @return The mission layout file suffix
+     */
+    public String getMissionLayoutSuffix() {
+        return getProperty("file.mission_layout.suffix", ".json");
+    }
+
+    /**
+     * Gets the mission image file prefix.
+     * 
+     * @return The mission image file prefix
+     */
+    public String getMissionImagePrefix() {
+        return getProperty("file.mission_image.prefix", "mission_");
+    }
+
+    /**
+     * Gets the mission image file suffix.
+     * 
+     * @return The mission image file suffix
+     */
+    public String getMissionImageSuffix() {
+        return getProperty("file.mission_image.suffix", ".png");
+    }
+
 
     public Color getPropertyAsColor(String string, Color defaultValue) {
         String colorString = getProperty(string);

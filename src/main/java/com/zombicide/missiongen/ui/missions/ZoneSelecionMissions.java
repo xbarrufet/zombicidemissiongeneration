@@ -400,8 +400,21 @@ public class ZoneSelecionMissions extends JPanel implements MissionLayoutUpdate 
             // Keep buttons enabled after saving
             this.saveMissionButton.setEnabled(true);
             this.exportImageButton.setEnabled(true);
+            this.deleteMissionButton.setEnabled(true);
             // Reload missions list to show the newly saved mission
             loadMissions();
+            
+            // Switch to mission view after saving
+            if (layoutChangeListener != null) {
+                layoutChangeListener.onMissionSelected();
+            }
+            // Notify listeners with the saved mission
+            notifyMissionSelected(currentMission);
+            
+            // Ensure buttons remain enabled after all operations
+            this.saveMissionButton.setEnabled(true);
+            this.exportImageButton.setEnabled(true);
+            this.deleteMissionButton.setEnabled(true);
         } catch (Exception e) {
             logger.error("Failed to save mission", e);
             ToastManager.getInstance().showError("Failed to save mission: " + e.getMessage());

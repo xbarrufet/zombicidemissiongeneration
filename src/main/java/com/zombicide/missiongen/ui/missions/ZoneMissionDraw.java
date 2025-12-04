@@ -56,6 +56,10 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
     private SNAPPING_DIRECTION[] snappingDirection;
 
     private List<MissionTokenSelectionListener> tokenSelectionListeners = new ArrayList<>();
+    
+    // Store current token type and subtype for continuous placement
+    private String currentTokenType;
+    private String currentTokenSubtype;
 
     public ZoneMissionDraw() {
         super();
@@ -178,7 +182,8 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
                     cursorPosition = null;
                     snappedTokenPosition = null;
                     repaint();
-                    logger.info("Token selection cancelled");
+                    logger.info("Token selection cancelled, keeping type {} subtype {} for AddNew mode", currentTokenType, currentTokenSubtype);
+                    // Note: We keep currentTokenType and currentTokenSubtype so ZoneProperties can stay in AddNew mode
                 }
                 if (e.getKeyCode() == KeyEvent.VK_R && inTokenToBeAdddedState()) {
                     tokenToBeAdded.rotate();
@@ -324,11 +329,18 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
             getBoard().addToken(tokenToBeAdded);
             logger.info("Placed token {} at ({}, {}) in area {}", tokenToBeAdded.getType(), x, y, area.getAreaId());
 
-            // Notify selection of the new token
-            notifyTokenSelected(tokenToBeAdded);
+            // Don't notify token selection after placement - stay in AddNew mode
+            // Token selection should only be notified when clicking on existing tokens
 
-            // Reset selection
-            tokenToBeAdded = null;
+            // Continue placement mode - create a new token of the same type/subtype
+            if (currentTokenType != null && currentTokenSubtype != null) {
+                TokenType tokenType = TokenType.fromString(currentTokenType);
+                tokenToBeAdded = TokenFactory.createToken(tokenType, currentTokenSubtype);
+                logger.info("Continuing placement mode with same token type: {} {}", currentTokenType, currentTokenSubtype);
+            } else {
+                tokenToBeAdded = null;
+            }
+            
             cursorPosition = null;
             snappedTokenPosition = null;
             repaint();
@@ -341,10 +353,12 @@ public class ZoneMissionDraw extends BoardBackgroundPanel implements MissionProp
     public void onTokenSelected(String type, String subtype) {
         TokenType tokenType = TokenType.fromString(type);
         this.tokenToBeAdded = TokenFactory.createToken(tokenType, subtype);
+        this.currentTokenType = type;
+        this.currentTokenSubtype = subtype;
         this.cursorPosition = null;
         this.snappedTokenPosition = null;
         requestFocusInWindow();
-        logger.info("Token selected: {}", tokenToBeAdded.getType());
+        logger.info("Token selected: {} - {}", tokenToBeAdded.getType(), subtype);
     }
 
     private Point[] getHorizontalSnappLine(Point tokenCenter, BoardArea area) {

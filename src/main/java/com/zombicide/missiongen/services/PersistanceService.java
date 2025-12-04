@@ -170,7 +170,34 @@ public class PersistanceService {
                 edition + File.separator +
                 collection + File.separator +
                 config.getMissionsFolder();
-        return getFilesInDirectory(missionsPath, "missions", edition, collection, true);
+        
+        String prefix = config.getMissionLayoutPrefix();
+        String suffix = config.getMissionLayoutSuffix();
+        
+        File directory = new File(missionsPath);
+
+        if (!directory.exists() || !directory.isDirectory()) {
+            logger.warn("missions directory does not exist: {}", missionsPath);
+            return Collections.emptyList();
+        }
+
+        File[] files = directory.listFiles(File::isFile);
+        if (files == null || files.length == 0) {
+            logger.info("No missions found for edition '{}', collection '{}'",
+                    edition, collection);
+            return Collections.emptyList();
+        }
+
+        List<String> fileNames = Arrays.stream(files)
+                .map(File::getName)
+                .filter(name -> name.startsWith(prefix) && name.endsWith(suffix))
+                .map(name -> name.substring(prefix.length(), name.length() - suffix.length()))
+                .sorted()
+                .collect(Collectors.toList());
+
+        logger.info("Found {} missions for edition '{}', collection '{}'",
+                fileNames.size(), edition, collection);
+        return fileNames;
     }
 
     /**
@@ -361,7 +388,7 @@ public class PersistanceService {
                 edition + File.separator +
                 collection + File.separator +
                 config.getMissionsFolder() + File.separator +
-                fileName + ".json";
+                config.getMissionLayoutPrefix() + fileName + config.getMissionLayoutSuffix();
     }
 
     /**
@@ -409,7 +436,7 @@ public class PersistanceService {
                 edition + File.separator +
                 collection + File.separator +
                 config.getMissionImagesFolder() + File.separator +
-                "mission_" + missionName + ".png";
+                config.getMissionImagePrefix() + missionName + config.getMissionImageSuffix();
     }
 
     /**

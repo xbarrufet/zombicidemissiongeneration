@@ -1,0 +1,326 @@
+{
+  "rows" : 2,
+  "cols" : 1,
+  "width" : 500,
+  "height" : 250,
+  "edition" : "2ndEdition",
+  "collection" : "0_original",
+  "imagePath" : "assets/editions/2ndEdition/0_original/missionImages/mission_background_mission1.png",
+  "missionName" : "mission1",
+  "areas" : [ {
+    "id" : "ab84e71c-9bfb-4e7f-ad95-58c16e4bb8e4",
+    "x" : 175,
+    "y" : 0,
+    "width" : 150,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "TOP_RIGHT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "51ad203a-882a-4413-890d-f9078d1e0013",
+    "x" : 175,
+    "y" : 75,
+    "width" : 150,
+    "height" : 100,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "MIDDLE_RIGHT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "689cd376-6db7-49ee-8e61-fe5bf06342fe",
+    "x" : 175,
+    "y" : 175,
+    "width" : 150,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_RIGHT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "9fc889bc-f503-4e52-82aa-cbe4fc4e3c41",
+    "x" : 75,
+    "y" : 175,
+    "width" : 100,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_MIDDLE_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f",
+    "x" : 0,
+    "y" : 175,
+    "width" : 75,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "BOTTOM_LEFT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "x" : 87,
+    "y" : 0,
+    "width" : 88,
+    "height" : 175,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "x" : 0,
+    "y" : 0,
+    "width" : 87,
+    "height" : 87,
+    "areaType" : "INDOOR_LIGHT",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "x" : 0,
+    "y" : 87,
+    "width" : 87,
+    "height" : 88,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "cead3dac-c6ff-46f5-b089-d6d9dfa9f652",
+    "x" : 425,
+    "y" : 0,
+    "width" : 75,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "TOP_RIGHT_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "73e81441-7c2f-4986-a98f-8d36e2457d9c",
+    "x" : 325,
+    "y" : 0,
+    "width" : 100,
+    "height" : 75,
+    "areaType" : "OUTDOOR",
+    "areaLocation" : "TOP_MIDDLE_STREET",
+    "boardGameAssets" : null
+  }, {
+    "id" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+    "x" : 325,
+    "y" : 75,
+    "width" : 88,
+    "height" : 87,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "90e08c4a-a57f-4078-88ea-0b007889468a",
+    "x" : 325,
+    "y" : 162,
+    "width" : 88,
+    "height" : 88,
+    "areaType" : "INDOOR_LIGHT",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+    "x" : 413,
+    "y" : 75,
+    "width" : 87,
+    "height" : 87,
+    "areaType" : "INDOOR_LIGHT",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  }, {
+    "id" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+    "x" : 413,
+    "y" : 162,
+    "width" : 87,
+    "height" : 88,
+    "areaType" : "INDOOR_DARK",
+    "areaLocation" : "OTHER",
+    "boardGameAssets" : null
+  } ],
+  "connections" : [ {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "direction" : null
+  }, {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "direction" : null
+  }, {
+    "areaA" : "9c4f35e3-aa16-4015-9e40-9233e66207c1",
+    "areaB" : "9fc889bc-f503-4e52-82aa-cbe4fc4e3c41",
+    "direction" : null
+  }, {
+    "areaA" : "34616e67-d541-4f0c-94f0-516279568c3b",
+    "areaB" : "02b27ce3-b044-445f-8b23-f932df6b4120",
+    "direction" : null
+  }, {
+    "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
+    "areaB" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+    "direction" : null
+  }, {
+    "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
+    "areaB" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+    "direction" : null
+  }, {
+    "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
+    "areaB" : "689cd376-6db7-49ee-8e61-fe5bf06342fe",
+    "direction" : null
+  }, {
+    "areaA" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+    "areaB" : "73e81441-7c2f-4986-a98f-8d36e2457d9c",
+    "direction" : null
+  }, {
+    "areaA" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
+    "areaB" : "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+    "direction" : null
+  }, {
+    "areaA" : "fede8726-3d1b-40ba-9a98-03c8a31aee57",
+    "areaB" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
+    "direction" : null
+  } ],
+  "tokens" : [ {
+    "type" : "START",
+    "id" : "9398bcff-5eec-452c-ab1a-87c7253130dd",
+    "location" : {
+      "x" : 50.0,
+      "y" : 218.0
+    },
+    "type" : "START",
+    "subtype" : "StartToken",
+    "rotation" : 0,
+    "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f"
+  }, {
+    "type" : "EXIT",
+    "id" : "60cb4dc1-a2ae-46a5-992b-ed9d836552f1",
+    "location" : {
+      "x" : 12.0,
+      "y" : 212.0
+    },
+    "type" : "EXIT",
+    "subtype" : "ExitToken",
+    "rotation" : 270,
+    "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f"
+  }, {
+    "type" : "SPAWN",
+    "id" : "445bd0d1-8e81-47f5-b96d-46dc93db049c",
+    "location" : {
+      "x" : 488.0,
+      "y" : 37.0
+    },
+    "type" : "SPAWN",
+    "subtype" : "SpawnLocator1",
+    "rotation" : 90,
+    "areaId" : "cead3dac-c6ff-46f5-b089-d6d9dfa9f652"
+  }, {
+    "type" : "SPAWN",
+    "id" : "89236b7e-81ec-4e1e-a713-abe036dc35d5",
+    "location" : {
+      "x" : 244.0,
+      "y" : 12.0
+    },
+    "type" : "SPAWN",
+    "subtype" : "SpawnTokenRedInverted",
+    "rotation" : 0,
+    "areaId" : "ab84e71c-9bfb-4e7f-ad95-58c16e4bb8e4"
+  }, {
+    "type" : "ZOMBIE",
+    "id" : "c5b877d5-a3e0-420f-a0d5-443da9db33c1",
+    "location" : {
+      "x" : 294.0,
+      "y" : 66.0
+    },
+    "type" : "ZOMBIE",
+    "subtype" : "ZombieStandardRunnerToken",
+    "rotation" : 0,
+    "areaId" : "ab84e71c-9bfb-4e7f-ad95-58c16e4bb8e4"
+  }, {
+    "type" : "ZOMBIE",
+    "id" : "b1a46f45-da32-4fbc-a311-b66c8df4d428",
+    "location" : {
+      "x" : 209.0,
+      "y" : 65.0
+    },
+    "type" : "ZOMBIE",
+    "subtype" : "ZombieStandardFattyToken",
+    "rotation" : 0,
+    "areaId" : "ab84e71c-9bfb-4e7f-ad95-58c16e4bb8e4"
+  }, {
+    "type" : "ZOMBIE",
+    "id" : "411e0f65-32e9-4406-86ee-670f76d203fb",
+    "location" : {
+      "x" : 250.0,
+      "y" : 125.0
+    },
+    "type" : "ZOMBIE",
+    "subtype" : "ZombieStandardWalkerToken",
+    "rotation" : 0,
+    "areaId" : "51ad203a-882a-4413-890d-f9078d1e0013"
+  }, {
+    "type" : "ZOMBIE",
+    "id" : "3e7384e2-1f30-4172-b374-17ed4c4741b6",
+    "location" : {
+      "x" : 250.0,
+      "y" : 218.0
+    },
+    "type" : "ZOMBIE",
+    "subtype" : "ZombieStandardWalkerToken",
+    "rotation" : 0,
+    "areaId" : "689cd376-6db7-49ee-8e61-fe5bf06342fe"
+  }, {
+    "type" : "PIMPWEAPONCRATE",
+    "id" : "4f729a69-83f9-4485-a4db-83e9dac61b8d",
+    "location" : {
+      "x" : 150.0,
+      "y" : 140.0
+    },
+    "type" : "PIMPWEAPONCRATE",
+    "subtype" : "PimweaponCrate",
+    "rotation" : 0,
+    "areaId" : "9c4f35e3-aa16-4015-9e40-9233e66207c1"
+  }, {
+    "type" : "PIMPWEAPONCRATE",
+    "id" : "bef79bec-9aa8-420f-b691-4cc6dc4012a1",
+    "location" : {
+      "x" : 399.0,
+      "y" : 228.0
+    },
+    "type" : "PIMPWEAPONCRATE",
+    "subtype" : "PimweaponCrate",
+    "rotation" : 0,
+    "areaId" : "90e08c4a-a57f-4078-88ea-0b007889468a"
+  }, {
+    "type" : "OBJECTIVE",
+    "id" : "94ec2d8c-ed7e-44e8-9826-74c0d70c7c1c",
+    "location" : {
+      "x" : 476.0,
+      "y" : 183.0
+    },
+    "type" : "OBJECTIVE",
+    "subtype" : "ObjectiveRed",
+    "rotation" : 0,
+    "areaId" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f"
+  }, {
+    "type" : "OBJECTIVE",
+    "id" : "2b6ec5d3-e29a-433e-a3de-87192c1c5639",
+    "location" : {
+      "x" : 64.0,
+      "y" : 148.0
+    },
+    "type" : "OBJECTIVE",
+    "subtype" : "ObjectiveRed",
+    "rotation" : 0,
+    "areaId" : "02b27ce3-b044-445f-8b23-f932df6b4120"
+  } ],
+  "gridTiles" : [ [ {
+    "tileName" : "2ndEdition.0_original.1V",
+    "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/1V.jpeg",
+    "rotation" : 0,
+    "row" : 0,
+    "col" : 0,
+    "null" : false
+  }, {
+    "tileName" : "2ndEdition.0_original.3V",
+    "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/3V.jpeg",
+    "rotation" : 90,
+    "row" : 0,
+    "col" : 1,
+    "null" : false
+  } ] ]
+}
