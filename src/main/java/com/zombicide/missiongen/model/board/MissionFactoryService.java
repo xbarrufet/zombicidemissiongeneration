@@ -424,7 +424,8 @@ public class MissionFactoryService {
                 MissionTileEntry entry = entries[i][j];
                 if(entry!=null){
                     try {
-                        images[i][j] = ImageIO.read(new File(entry.getImagePath()));
+                        Image img = ImageIO.read(new File(entry.getImagePath()));
+                        images[i][j] = ImageOperations.rotateImage(img, entry.getRotation());
                     } catch (IOException e) {
                        logger.error("Error loading tile image for tile: {}", entry.getTileName(), e);
                         return null;

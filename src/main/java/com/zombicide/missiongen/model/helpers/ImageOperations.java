@@ -12,28 +12,30 @@ import com.zombicide.missiongen.config.ConfigLoader;
 public class ImageOperations {
     
 
-
-    public static Image rotateImageBy90Degrees(Image img) {
-       if (img == null) {
+    public static Image rotateImage(Image img, int angleDegrees) {
+        if (img == null) {
             return null;
         }
 
         int w = img.getWidth(null);
         int h = img.getHeight(null);
 
-        java.awt.image.BufferedImage newImage = new java.awt.image.BufferedImage(h, w,
+        java.awt.image.BufferedImage newImage = new java.awt.image.BufferedImage(w, h,
                 java.awt.image.BufferedImage.TYPE_INT_ARGB);
         java.awt.Graphics2D g2d = newImage.createGraphics();
 
         AffineTransform at = new AffineTransform();
-        at.translate((h - w) / 2.0, (w - h) / 2.0);
-        at.rotate(Math.toRadians(90), w / 2.0, h / 2.0);
+        at.rotate(Math.toRadians(angleDegrees), w / 2.0, h / 2.0);
 
         g2d.setTransform(at);
         g2d.drawImage(img, 0, 0, null);
         g2d.dispose();
 
         return newImage;
+    }
+
+    public static Image rotateImageBy90Degrees(Image img) {
+      return rotateImage(img, 90);
     }
 
     public static Image loadTileImage(String tileId) throws IOException {

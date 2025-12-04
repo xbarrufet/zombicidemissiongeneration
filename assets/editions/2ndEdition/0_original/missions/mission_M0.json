@@ -5,10 +5,10 @@
   "height" : 250,
   "edition" : "2ndEdition",
   "collection" : "0_original",
-  "imagePath" : "assets/editions/2ndEdition/0_original/missionImages/mission_missionA.png",
-  "missionName" : "missionA",
+  "imagePath" : "assets/editions/2ndEdition/0_original/missionImages/mission_mission_M0.png",
+  "missionName" : "mission_M0",
   "areas" : [ {
-    "id" : "988f60fc-9877-4c2c-945f-3ce877ff79df",
+    "id" : "b9e1bbe6-745a-4297-9a95-417d671a1566",
     "x" : 175,
     "y" : 0,
     "width" : 150,
@@ -17,7 +17,7 @@
     "areaLocation" : "TOP_RIGHT_STREET",
     "boardGameAssets" : null
   }, {
-    "id" : "df969fe8-d2e3-4a78-86f7-e8e0efb7cc70",
+    "id" : "c2f96190-abdc-4b41-a097-4634803918b5",
     "x" : 175,
     "y" : 75,
     "width" : 150,
@@ -26,7 +26,7 @@
     "areaLocation" : "MIDDLE_RIGHT_STREET",
     "boardGameAssets" : null
   }, {
-    "id" : "8789929d-75e4-4d27-b7f4-e262d901590e",
+    "id" : "79e48854-5f2b-4937-9e9c-59a545a0348d",
     "x" : 175,
     "y" : 175,
     "width" : 150,
@@ -160,7 +160,7 @@
     "direction" : null
   }, {
     "areaA" : "90e08c4a-a57f-4078-88ea-0b007889468a",
-    "areaB" : "8789929d-75e4-4d27-b7f4-e262d901590e",
+    "areaB" : "79e48854-5f2b-4937-9e9c-59a545a0348d",
     "direction" : null
   }, {
     "areaA" : "89f1201a-bd16-4c4e-abc8-24ed512f38bc",
@@ -175,17 +175,39 @@
     "areaB" : "6f22c03d-56b7-40ba-93bc-a3818c32fc3f",
     "direction" : null
   } ],
-  "tokens" : [ ],
+  "tokens" : [ {
+    "type" : "EXIT",
+    "id" : "57ecfb9f-5365-474f-b676-4ac85a11d547",
+    "location" : {
+      "x" : 12.0,
+      "y" : 212.0
+    },
+    "type" : "EXIT",
+    "subtype" : "ExitToken",
+    "rotation" : 270,
+    "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f"
+  }, {
+    "type" : "START",
+    "id" : "81f379ab-beea-45d0-921d-62b63849ffa7",
+    "location" : {
+      "x" : 37.0,
+      "y" : 212.0
+    },
+    "type" : "START",
+    "subtype" : "StartToken",
+    "rotation" : 0,
+    "areaId" : "c3fe6a65-bd29-4baf-9b7c-9f6721c4788f"
+  } ],
   "gridTiles" : [ [ {
     "tileName" : "2ndEdition.0_original.1V",
-    "imagePath" : null,
+    "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/1V.jpeg",
     "rotation" : 0,
     "row" : 0,
     "col" : 0,
     "null" : false
   }, {
     "tileName" : "2ndEdition.0_original.3V",
-    "imagePath" : null,
+    "imagePath" : "assets/editions/2ndEdition/0_original/tileImages/3V.jpeg",
     "rotation" : 90,
     "row" : 0,
     "col" : 1,
